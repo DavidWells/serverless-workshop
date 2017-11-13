@@ -1,0 +1,70 @@
+
+service: event-driven-app
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    MY_TABLE: { Ref: myDynamoTable }
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:Scan
+        - dynamodb:DeleteItem # New DeleteItem permission for `delete` function
+        - dynamodb:GetRecords # New permissions needed for stream
+        - dynamodb:GetShardIterator
+        - dynamodb:DescribeStream
+        - dynamodb:ListStreams
+      Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
+
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
+  scan:
+    handler: handler.scan
+    events:
+      - http:
+          path: scan
+          method: post
+          cors: true
+
+  # New delete function
+  delete:
+    handler: handler.delete
+    events:
+      - http:
+          path: delete
+          method: post
+          cors: true
+  # New stream handler function
+  handleStream:
+    handler: handler.dynamoStreamHandler
+    events:
+      - stream:
+          type: dynamodb
+          arn: { Fn::GetAtt: [ myDynamoTable, StreamArn ] }
+          batchSize: 1
+
+resources:
+  Resources:
+    myDynamoTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: 'my-table-name'
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES

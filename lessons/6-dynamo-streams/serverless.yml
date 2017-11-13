@@ -1,0 +1,51 @@
+
+service: event-driven-app
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    MY_TABLE: { Ref: myDynamoTable }
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        # The IAM role must be updated to include DeleteItem
+        - dynamodb:PutItem
+        - dynamodb:Scan
+      Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
+
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
+  scan:
+    handler: handler.scan
+    events:
+      - http:
+          path: scan
+          method: post
+          cors: true
+
+  # Add a `delete` function triggered by an http POST
+  # Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne
+
+resources:
+  Resources:
+    myDynamoTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: 'my-table-name'
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        # add a stream to the dynamoDB table
