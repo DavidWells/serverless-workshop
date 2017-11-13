@@ -1,0 +1,28 @@
+
+service: using-http-cors-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  # Define the IAM role needed for the function to access the newly created dynamo table
+  # See final code for example
+
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
+  scan:
+    handler: handler.scan
+    events:
+      - http:
+          path: scan
+          method: post
+          cors: true
+
+# use the resources block to define a dynamoDB table
+resources:
+

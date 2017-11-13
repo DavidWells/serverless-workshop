@@ -1,0 +1,20 @@
+
+service: using-http-cors-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.functionWithCors
+    events:
+      - http:
+          path: function-with-cors
+          method: post
+          # WORKSHOP_START
+          # Add cors settings. docs link: http://bit.ly/2mkgV4P
+          # WORKSHOP_END
+          # FINAL_START
+          cors: true
+          # FINAL_END

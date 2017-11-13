@@ -1,0 +1,16 @@
+
+service: serverless-variables-syntax-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    MY_SECRET: ${file(./secrets.json):MY_SECRET}
+
+functions:
+  foo:
+    handler: handler.foo
+    events:
+      - http:
+          path: foo
+          method: get

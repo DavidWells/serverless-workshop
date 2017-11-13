@@ -1,0 +1,24 @@
+
+service: using-env-variables-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    MY_ENV_VAR: 'hello there'
+
+functions:
+  foo:
+    handler: handler.foo
+    events:
+      - http:
+          path: foo
+          method: get
+  bar:
+    handler: handler.bar
+    environment:
+      MY_ENV_VAR_FOR_BAR: 'only bar has this'
+    events:
+      - http:
+          path: bar
+          method: get

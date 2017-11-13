@@ -1,0 +1,49 @@
+
+service: using-http-cors-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    # Here we reference the table name defined below. This is a cloud formation ref
+    MY_TABLE: { Ref: myDynamoTable }
+  # Here we add a custom IAM statement to allow the function to access our dynamoDB Table
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:Scan
+      Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
+
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
+  scan:
+    handler: handler.scan
+    events:
+      - http:
+          path: scan
+          method: post
+          cors: true
+
+
+resources:
+  Resources:
+    myDynamoTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: 'my-table-name'
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

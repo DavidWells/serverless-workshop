@@ -1,0 +1,15 @@
+{
+  "name": "qcon-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessions-code-complete",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Wells",
+  "license": "MIT",
+  "devDependencies": {
+    "split-guide-yml": "0.0.3"
+  }
+}

@@ -1,0 +1,21 @@
+
+service: serverless-variables-syntax-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  # change the hardcoded secret to a serverless variable reference
+  # 1. Create a secrets.json file
+  # 2. reference the file with serverless variable syntax for `MY_SECRET` value
+  # 3. .gitignore secrets.json
+  # variables doc link http://bit.ly/2zw4DM9
+  environment:
+    MY_SECRET: xyz123
+
+functions:
+  foo:
+    handler: handler.foo
+    events:
+      - http:
+          path: foo
+          method: get
