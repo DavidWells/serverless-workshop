@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessions-code-complete",
+    "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessons-code-complete",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Wells",

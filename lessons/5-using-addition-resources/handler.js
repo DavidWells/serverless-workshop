@@ -10,12 +10,12 @@ module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime()
   const body = JSON.parse(event.body)
 
-  if (!body || !body.title) {
+  if (!body || !body.email) {
     return callback(null, {
       statusCode: 401,
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
-        error: 'no body found or title found'
+        error: 'no body found or email found'
       })
     })
   }
@@ -25,7 +25,7 @@ module.exports.create = (event, context, callback) => {
     Item: {
       id: Math.random().toString(36).slice(2),
       timestamp: timestamp,
-      title: body.title
+      email: body.email
     },
   }
 

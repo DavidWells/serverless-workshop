@@ -1,5 +1,5 @@
 
-service: using-http-cors-example
+service: event-driven-app
 
 provider:
   name: aws
@@ -41,7 +41,6 @@ functions:
 # use the resources block to define a dynamoDB table
 resources:
 # WORKSHOP_END
-
 # FINAL_START
 resources:
   Resources:
