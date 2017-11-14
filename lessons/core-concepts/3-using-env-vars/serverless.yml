@@ -4,7 +4,7 @@ service: using-env-variables-example
 provider:
   name: aws
   runtime: nodejs6.10
-  # Step 1. add an environment variable for all functions to access. http://bit.ly/2yVp4CR
+  # Step 1. In this_file, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
 
 functions:
   foo:
@@ -21,4 +21,5 @@ functions:
           path: bar
           method: get
 
-# Step 5. After adding your environment variables to serverless.yml and handler.js. Run `sls deploy` to deploy the service
+# Step 5. After adding your environment variables to serverless.yml and handler.js.
+# Run `sls deploy` to deploy the service #

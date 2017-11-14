@@ -8,10 +8,15 @@ This lesson will teach you the basics of using environment variables in lambda f
 
 ## Steps
 
-1. In `serverless.yml` add a new property under the `providers` key called `environment` and add in a key value pair `MY_ENV_VAR` equal to a random value.
+<!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
+ 1. In `serverless.yml`, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
 
-2. In `handler.js` you know have access to the newly defined value on the `process.env` of the function. `console.log(process.env.MY_ENV_VAR)`
+ 2. add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
 
-3. Run `sls deploy` and invoke your function
+ 3. In `handler.js`, Grab the global env variable and return it in the foo function response
 
-4. Run `sls logs -f functionName` and you will see your environment value console.logged
+ 4. In `handler.js`, Grab the env variable defined on bar function and return it in the bar function response
+
+ 5. After adding your environment variables to serverless.yml and handler.js.
+Run `sls deploy` to deploy the service
+<!-- AUTO-GENERATED-CONTENT:END -->
