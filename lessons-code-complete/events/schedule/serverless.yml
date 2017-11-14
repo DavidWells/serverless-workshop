@@ -7,6 +7,6 @@ provider:
 
 functions:
   cron:
-    handler: handler.cron
+    handler: handler.cronFunction
     events:
       - schedule: rate(1 minute)

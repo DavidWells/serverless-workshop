@@ -13,7 +13,16 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 |- lessons-code-complete (answers if you need to see them)
 ```
 
-## lessons
+## Table of Contents
+
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Using this repo](#using-this-repo)
+- [Workshop Lessons](#workshop-lessons)
+- [Helpful Tools](#helpful-tools)
+- [Troubleshooting & FAQ](#troubleshooting--faq)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Workshop Lessons
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_LIST)-->
 | Lesson | Final Code  |
@@ -24,16 +33,16 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 | [4 Using Serverless Variable Syntax](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/4-using-serverless-variable-syntax)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/4-using-serverless-variable-syntax)  |
 | [5 Using Addition Resources](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/5-using-addition-resources)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/5-using-addition-resources)  |
 | [Dynamodb Streams](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/dynamodb-streams)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
+| [S3](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/s3)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/s3)  |
+| [Schedule](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/schedule)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/schedule)  |
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+## Helpful Tools
 
-Yaml parsers:
+- [yaml validator](http://yaml-online-parser.appspot.com/)
+- [yaml linter & validator](https://jsonformatter.org/yaml-validator)
 
-- http://yaml-online-parser.appspot.com/
-- https://jsonformatter.org/yaml-validator
+## Troubleshooting & FAQ
 
-
-# Troubleshoot
-
-- check your syntax
+- `Y A M L Exception`? check your `yaml` indentation syntax. [yaml validator](http://yaml-online-parser.appspot.com/) |  [yaml validator two](https://jsonformatter.org/yaml-validator)

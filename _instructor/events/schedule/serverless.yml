@@ -7,7 +7,7 @@ provider:
 
 functions:
   cron:
-    handler: handler.cron
+    handler: handler.cronFunction
     # WORKSHOP_START
     # Add an schedule event to trigger this function every minute
     # Schedule event docs: http://bit.ly/2ACbjVU

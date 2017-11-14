@@ -1,5 +1,5 @@
 /* Cron function */
-module.exports.cron = (event, context, callback) => {
+module.exports.cronFunction = (event, context, callback) => {
   const time = new Date()
   console.log(`Function "${context.functionName}" ran at ${time}`)
 }
