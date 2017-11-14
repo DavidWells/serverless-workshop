@@ -40,8 +40,19 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 
 ## Helpful Tools
 
+- [PostMan](https://www.getpostman.com/) - desktop app for quick & easy endpoint testing
+- [NVM](https://github.com/creationix/nvm) - Node version manager
 - [yaml validator](http://yaml-online-parser.appspot.com/)
 - [yaml linter & validator](https://jsonformatter.org/yaml-validator)
+
+## Prerequisites & Setup Steps
+
+1. **Install the latest LTS version of **[Node](https://nodejs.org/). [How to install Node](https://docs.npmjs.com/getting-started/installing-node).
+2. **Install [git](https://git-scm.com/downloads) version control**.
+3. **Setup a AWS account (if you don't already have one). **You can setup a free account here: [setup free AWS account](https://aws.amazon.com/free/). It's recommended to not use pre-existing AWS account running production code.
+4. **[Install serverless CLI](https://serverless.com/framework/docs/getting-started/) **by running `npm install serverless -g` on the command line. 
+5. **Run `serverless --help` in your terminal to validate the Serverless CLI works on your machine.**
+6. **Then connect the serverless framework with your AWS credentials**. [See the docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/) or [watch the video](https://www.youtube.com/watch?v=KngM5bfpttA)
 
 ## Troubleshooting & FAQ
 
