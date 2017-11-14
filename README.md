@@ -1,13 +1,15 @@
-# Serverless WORKSHOP_END
+# Serverless Workshop
 
 Welcome to the workshop. This repo will guide us through our serverless journey.
 
-## Repo
+## Using this repo
 
-The repo works like this:
+Work from the **lessons** folders.
+
+If you need help, look in the **lessons-code-complete** directory for the completed code.
 
 ```
-|- lessons (work off these)
+|- lessons (work from these)
 |- lessons-code-complete (answers if you need to see them)
 ```
 
@@ -30,3 +32,8 @@ Yaml parsers:
 
 - http://yaml-online-parser.appspot.com/
 - https://jsonformatter.org/yaml-validator
+
+
+# Troubleshoot
+
+- check your syntax
