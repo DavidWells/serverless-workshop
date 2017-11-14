@@ -38,13 +38,16 @@ const config = {
       md += '|:--------------------------- |:-----|\n';
       examples.forEach((example) => {
         const contents = fs.readFileSync(example, 'utf8')
+        const parentDir = path.basename(path.dirname(path.dirname(example)))
         const dirname = path.basename(path.dirname(example))
         console.log('dirname', dirname)
-        const exampleUrl = `https://github.com/davidwells/sls-workshop/tree/master/${dirname}`;
-        const completeLink = 'link';
-        const description = (contents) ? `<br/> stuff` : '';
+        console.log('parentDir', parentDir)
+        const repoBase = 'https://github.com/davidwells/sls-workshop/tree/master'
+        const lessonLink = `${repoBase}/lessons/${parentDir}/${dirname}`;
+        const answersLink = `${repoBase}/lessons-code-complete/${parentDir}/${dirname}`;
+        const description = (contents) ? `` : '';
         // add table rows
-        md += `| [${formatPluginName(dirname)}](${exampleUrl}) ${description} | ${completeLink} |\n`;
+        md += `| [${formatPluginName(dirname)}](${lessonLink}) ${description} | [Answers](${answersLink})  |\n`;
       });
 
       return md;
