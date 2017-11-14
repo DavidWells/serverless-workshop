@@ -1,0 +1,87 @@
+
+service: aws-s3-event-example
+
+# WORKSHOP_START
+# Define a `custom` block and make a bucketName
+# WORKSHOP_END
+# FINAL_START
+custom:
+  bucketName: my-globally-unique-bucket-name-with-random-string
+# FINAL_END
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  # WORKSHOP_START
+  # Expose the bucketName to `environment` variables
+  # WORKSHOP_END
+  # FINAL_START
+  environment:
+    BUCKET_NAME: ${self:custom.bucketName}
+  # FINAL_END
+  # WORKSHOP_START
+  # Create the IAM role `iamRoleStatements` needed to `GetObject` & `PutObject`
+  # Narrow the scope of the permission to the two buckets in this service
+  # WORKSHOP_END
+  # FINAL_START
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource: [
+        "arn:aws:s3:::${self:custom.bucketName}/*",
+        "arn:aws:s3:::${self:custom.bucketName}-output/*"
+        ]
+  # FINAL_END
+
+functions:
+  save:
+    handler: save.saveImage
+    # WORKSHOP_START
+    # Attach the save function to an http POST endpoint
+    # WORKSHOP_END
+    events:
+      - http:
+          path: save-image
+          method: post
+          cors: true
+  # WORKSHOP_START
+  # Attach the save function to an http POST endpoint
+  # WORKSHOP_END
+  resize:
+    handler: resize.handleImageResize
+  # WORKSHOP_START
+  # attach the s3 event to this function and trigger when images are added to bucket
+  # a.k.a the `ObjectCreated` s3 event. docs link http://bit.ly/2zyiRMB
+  # WORKSHOP_END
+  # FINAL_START
+    events:
+      - s3:
+          bucket: ${self:custom.bucketName}
+          event: s3:ObjectCreated:*
+  # FINAL_END
+
+# WORKSHOP_START
+# Add an additional bucket in `resources`. This bucket will be used for storing the resized images
+# WORKSHOP_END
+# FINAL_START
+resources:
+  Resources:
+    UploadBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.bucketName}-output
+        AccessControl: PublicRead
+        CorsConfiguration:
+          CorsRules:
+            - AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - HEAD
+              AllowedOrigins:
+              - "*"
+              AllowedHeaders:
+              - "*"
+# FINAL_END

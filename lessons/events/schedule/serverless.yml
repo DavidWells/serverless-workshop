@@ -1,0 +1,12 @@
+
+service: aws-scheduled-cron
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  cron:
+    handler: handler.cron
+    # Add an schedule event to trigger this function every minute
+    # Schedule event docs: http://bit.ly/2ACbjVU

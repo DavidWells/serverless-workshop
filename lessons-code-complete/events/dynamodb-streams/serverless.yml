@@ -9,18 +9,15 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        # WORKSHOP_START
-        # The IAM role must be updated to include DeleteItem
-        # WORKSHOP_END
         - dynamodb:PutItem
         - dynamodb:Scan
-        # FINAL_START
-        - dynamodb:DeleteItem # New DeleteItem permission for `delete` function
-        - dynamodb:GetRecords # New permissions needed for stream
+        # New DeleteItem permission for `delete` function
+        - dynamodb:DeleteItem
+        # New permissions needed for stream
+        - dynamodb:GetRecords
         - dynamodb:GetShardIterator
         - dynamodb:DescribeStream
         - dynamodb:ListStreams
-        # FINAL_END
       Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
 
 functions:
@@ -38,11 +35,6 @@ functions:
           path: scan
           method: post
           cors: true
-
-  # WORKSHOP_START
-  # Add a `delete` function triggered by an http POST
-  # WORKSHOP_END
-  # FINAL_START
   # New delete function
   delete:
     handler: handler.delete
@@ -51,11 +43,6 @@ functions:
           path: delete
           method: post
           cors: true
-  # FINAL_END
-  # WORKSHOP_START
-  # Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne
-  # WORKSHOP_END
-  # FINAL_START
   # New stream handler function
   handleStream:
     handler: handler.dynamoStreamHandler
@@ -64,7 +51,6 @@ functions:
           type: dynamodb
           arn: { Fn::GetAtt: [ myDynamoTable, StreamArn ] }
           batchSize: 1
-  # FINAL_END
 
 resources:
   Resources:
@@ -81,10 +67,5 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        # WORKSHOP_START
-        # add a stream to the dynamoDB table
-        # WORKSHOP_END
-        # FINAL_START
         StreamSpecification:
           StreamViewType: NEW_AND_OLD_IMAGES
-        # FINAL_END

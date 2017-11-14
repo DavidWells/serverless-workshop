@@ -2,3 +2,5 @@
 /node_modules
 
 .serverless
+
+/_instructor/core-concepts/3-using-env-vars/test.js

@@ -5,8 +5,7 @@ provider:
   name: aws
   runtime: nodejs6.10
   # WORKSHOP_START
-  # add an environment variable for all functions to access.
-  # docs link: http://bit.ly/2yVp4CR
+  # Step 1. In this_file, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
   # WORKSHOP_END
   # FINAL_START
   environment:
@@ -23,8 +22,7 @@ functions:
   bar:
     handler: handler.bar
     # WORKSHOP_START
-    # add an environment variable here scoped only for the bar function
-    # docs link: http://bit.ly/2yVp4CR
+    # Step 2. add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
     # WORKSHOP_END
     # FINAL_START
     environment:
@@ -34,3 +32,8 @@ functions:
       - http:
           path: bar
           method: get
+
+# WORKSHOP_START
+# Step 5. After adding your environment variables to serverless.yml and handler.js.
+# Run `sls deploy` to deploy the service #
+# WORKSHOP_END

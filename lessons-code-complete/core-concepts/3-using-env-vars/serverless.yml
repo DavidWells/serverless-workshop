@@ -4,8 +4,8 @@ service: using-env-variables-example
 provider:
   name: aws
   runtime: nodejs6.10
-  # add an environment variable for all functions to access.
-  # docs link: http://bit.ly/2yVp4CR
+  environment:
+    MY_ENV_VAR: 'hello there'
 
 functions:
   foo:
@@ -16,9 +16,10 @@ functions:
           method: get
   bar:
     handler: handler.bar
-    # add an environment variable here scoped only for the bar function
-    # docs link: http://bit.ly/2yVp4CR
+    environment:
+      MY_ENV_VAR_FOR_BAR: 'only bar has this'
     events:
       - http:
           path: bar
           method: get
+

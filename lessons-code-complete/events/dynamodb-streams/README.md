@@ -1,6 +1,6 @@
 # Defining additional resources
 
-This lesson we will be adding a delete function to remove users from the database and trigger another function from the dynamo deletion event
+This lesson we will be adding a delete function to remove users from the database and trigger another function from the dynamo `REMOVE` event
 
 ## Steps
 
@@ -11,11 +11,9 @@ This lesson we will be adding a delete function to remove users from the databas
 
   POST to your endpoint with `{ "id": "id-here"}`
 
-## DynamoDB cloudformation
+5.
 
-Cloudformation can be tricky at first. Below is the cloud formation template for a new dynamoDB table.
-
-For additional cloudformation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation
+## DynamoDB cloudformation with stream
 
 ```yml
 Resources:
@@ -36,3 +34,5 @@ Resources:
       StreamSpecification:
         StreamViewType: NEW_AND_OLD_IMAGES
 ```
+
+For additional cloudformation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation

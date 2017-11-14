@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "node docs.js",
+    "presplit": "rm -rf lessons && rm -rf lessons-code-complete",
     "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessons-code-complete",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

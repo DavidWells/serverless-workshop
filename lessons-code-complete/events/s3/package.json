@@ -1,0 +1,16 @@
+{
+  "name": "aws-s3",
+  "version": "1.0.0",
+  "description": "aws s3 image resizer",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
+  "author": "David Wells",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0",
+    "gm": "^1.23.0",
+    "node-fetch": "^1.6.3"
+  }
+}

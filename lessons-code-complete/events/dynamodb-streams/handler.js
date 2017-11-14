@@ -128,6 +128,12 @@ module.exports.dynamoStreamHandler = (event, context, callback) => {
     console.log(record.eventID)
     console.log(record.eventName)
     console.log('DynamoDB Record: %j', record.dynamodb)
+    if (record.eventName === 'INSERT') {
+      console.log('INSERT EVENT. DO WELCOME STUFF')
+    }
+    if (record.eventName === 'REMOVE') {
+      console.log('REMOVAL EVENT. DO REMOVAL STUFF')
+    }
   })
   return callback(null, `Successfully processed ${event.Records.length} records.`);
 }

@@ -1,0 +1,54 @@
+
+service: aws-s3-event-example
+
+custom:
+  bucketName: my-globally-unique-bucket-name-with-random-string
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    BUCKET_NAME: ${self:custom.bucketName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource: [
+        "arn:aws:s3:::${self:custom.bucketName}/*",
+        "arn:aws:s3:::${self:custom.bucketName}-output/*"
+        ]
+
+functions:
+  save:
+    handler: save.saveImage
+    events:
+      - http:
+          path: save-image
+          method: post
+          cors: true
+  resize:
+    handler: resize.handleImageResize
+    events:
+      - s3:
+          bucket: ${self:custom.bucketName}
+          event: s3:ObjectCreated:*
+
+resources:
+  Resources:
+    UploadBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.bucketName}-output
+        AccessControl: PublicRead
+        CorsConfiguration:
+          CorsRules:
+            - AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - HEAD
+              AllowedOrigins:
+              - "*"
+              AllowedHeaders:
+              - "*"

@@ -9,9 +9,10 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        # The IAM role must be updated to include DeleteItem
         - dynamodb:PutItem
         - dynamodb:Scan
+        # The IAM role must be updated to include `DeleteItem`
+        # For Dynamo Stream access. You will need the `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions
       Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
 
 functions:
@@ -29,7 +30,6 @@ functions:
           path: scan
           method: post
           cors: true
-
   # Add a `delete` function triggered by an http POST
   # Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne
 
