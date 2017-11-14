@@ -15,7 +15,7 @@ functions:
           method: get
   bar:
     handler: handler.bar
-    # Step 2. add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
+    # Step 2. In this_file, add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
     events:
       - http:
           path: bar
