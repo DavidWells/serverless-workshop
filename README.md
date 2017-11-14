@@ -19,6 +19,7 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 - [Using this repo](#using-this-repo)
 - [Workshop Lessons](#workshop-lessons)
 - [Helpful Tools](#helpful-tools)
+- [Prerequisites & Setup Steps](#prerequisites--setup-steps)
 - [Troubleshooting & FAQ](#troubleshooting--faq)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
