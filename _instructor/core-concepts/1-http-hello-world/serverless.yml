@@ -9,8 +9,7 @@ functions:
   hello:
     handler: handler.hello
     # WORKSHOP_START
-    # Add an http GET event to trigger this function
-    # docs link: http://bit.ly/2mkgV4P
+    # Step 4. In this_file, add an `http` GET event to trigger this function. http://bit.ly/2mkgV4P #
     # WORKSHOP_END
     # FINAL_START
     events:

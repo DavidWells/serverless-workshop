@@ -15,15 +15,16 @@ const formatPluginName = (string) => { // eslint-disable-line
 const cleanMatches = (matches) => {
   return matches.map((m) => {
     return m
-
       .replace(/^\s+|\s+$/g,'')
       .replace(/\/\*/g, '') // remove js comments
       .replace(/\*\//g, '') // remove js comments
       .replace(/^#/g, '') // remove # comments
       .replace(/#$/g, '') // remove # comments
+      .replace(/^\<\!--/g, '') // remove html comments
+      .replace(/--\>$/g, '') // remove html comments
       .replace(/^\s+|\s+$/g,'')
       .replace(/\n#\s+/g,'\n')
-      .replace(/^Step/g, '')
+      .replace(/^Step\s+/g, '')
   })
 }
 
@@ -54,6 +55,7 @@ const config = {
       })
       const jsRegex = /\/\* Step([\s\S]*?)\*\//g
       const ymlRegex = / *?# Step([\s\S]*?) #\n*?/g
+      const htmlRegex = / *?\<\!-- Step([\s\S]*?) ?--\>\n*?/g
       var matches = []
       if (lessonFiles) {
         lessonFiles.map((f) => {
@@ -64,6 +66,8 @@ const config = {
             regex = jsRegex
           } else if (fileType === '.yml' || fileType === '.yaml') {
             regex = ymlRegex
+          } else if (fileType === '.md') {
+            regex = htmlRegex
           }
 
           const hasMatch = fileContents.match(regex)

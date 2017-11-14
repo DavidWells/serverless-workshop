@@ -9,14 +9,32 @@ This lesson will teach you the basics of using environment variables in lambda f
 ## Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
- 1. In `serverless.yml`, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
+1. In `serverless.yml`, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
 
- 2. In `serverless.yml`, add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
+1. hhhhhhhhhh
 
- 3. In `handler.js`, Grab the global env variable and return it in the foo function response
+2. In `serverless.yml`, add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
 
- 4. In `handler.js`, Grab the env variable defined on bar function and return it in the bar function response
+3. In `handler.js`, use `process.env` to grab the your global environment variable and return it in the `foo` function response
 
- 5. After adding your environment variables to serverless.yml and handler.js.
+4. In `handler.js`, use `process.env` to grab the env variable defined on bar function and return it in the bar function response
+
+5. After adding your environment variables to serverless.yml and handler.js.
 Run `sls deploy` to deploy the service
+
+7. hhhhhhhhhh dldkskljkld
+
+  ```js
+  sdlkfjsldj
+  ```
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+
+<!-- Step 1. hhhhhhhhhh -->
+
+<!-- Step 7. hhhhhhhhhh dldkskljkld
+
+  ```js
+  sdlkfjsldj
+  ```
+-->
