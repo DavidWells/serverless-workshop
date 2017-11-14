@@ -4,11 +4,6 @@ This lesson will walk you through creating a basic http functions triggered by a
 
 ## Steps
 
-1. First write your code in `handler.js`
-2. Then `sls deploy`
-3. Then update `serverless.yml` with the http event
-4. Then deploy again
-
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. In `handler.js`, Create a `200` response code and return the `event` in the response body
 
@@ -44,9 +39,6 @@ This lesson will walk you through creating a basic http functions triggered by a
   sls info
   ```
 <!-- AUTO-GENERATED-CONTENT:END -->
-
-
-Run `sls info` in your terminal to get your live endpoint information
 
 <!-- SCROLL UP FOR STEPS -->
 
