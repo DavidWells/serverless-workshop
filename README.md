@@ -46,3 +46,9 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 ## Troubleshooting & FAQ
 
 - `Y A M L Exception`? check your `yaml` indentation syntax. [yaml validator](http://yaml-online-parser.appspot.com/) |  [yaml validator two](https://jsonformatter.org/yaml-validator)
+
+- `Unable to import module 'handler': Error at Function.Module._resolveFilename (module.js:469:15)`
+
+  This error means lambda can't find your included `node_modules`. Make sure you `npm install` in your project and install all your dependancies locally before running `sls deploy`
+
+- `Unable to delete bucket` error. Your s3 bucket in question might have files in it. You will need to head into AWS cloudformation in the console and manually delete the stack.
