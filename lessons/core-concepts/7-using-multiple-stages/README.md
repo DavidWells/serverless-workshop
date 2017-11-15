@@ -1,5 +1,13 @@
 # Deploying to Multiple Stages
 
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Background](#background)
+- [Lesson Steps](#lesson-steps)
+- [Real World Examples](#real-world-examples)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Background
+
 When building real world applications it's recommended that you leverage multiple stages to avoid breaking things for users when adding new features.
 
 Typically companies will leverage stages like:
@@ -46,7 +54,7 @@ However, you can override this value in a number of ways.
 
     See `serverless.yml` [variable syntax](http://bit.ly/2zw4DM9) for more information.
 
-## Steps
+## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. **Deploy to `dev` stage**
@@ -82,6 +90,10 @@ However, you can override this value in a number of ways.
 5. In `serverless.yml`, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables http://bit.ly/2AHvkKO
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+
+## Real World Examples
+
+- [Scope Project](https://github.com/serverless/scope/tree/master/backend)
 
 <!-- IGNORE BELOW COMMENTS! SCROLL UP FOR STEPS -->
 
