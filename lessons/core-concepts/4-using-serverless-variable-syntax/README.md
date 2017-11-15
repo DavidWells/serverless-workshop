@@ -30,23 +30,23 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 
 4. After adding the new file reference variable, it's time to deploy. Open your terminal and run the following command:
 
-  ```bash
-  sls deploy
-  ```
+    ```bash
+    sls deploy
+    ```
 
-  If you run into an error, check that the [serverless variable syntax](http://bit.ly/2i91Puy) is correct.
+    If you run into an error, check that the [serverless variable syntax](http://bit.ly/2i91Puy) is correct.
 
 5. Trigger the function and validate your variable is correct.
 
-  Visit the url and validate your variable is in the response.
-  ```bash
-  https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/dev
-  ```
+    Visit the url and validate your variable is in the response.
+    ```bash
+    https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/dev
+    ```
 
-  or open your terminal and run the following command:
-  ```bash
-  sls invoke -f foo
-  ```
+    or open your terminal and run the following command:
+    ```bash
+    sls invoke -f foo
+    ```
 
 
 ## Other Serverless variable sources:

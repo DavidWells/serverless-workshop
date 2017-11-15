@@ -12,8 +12,8 @@ This lesson will walk you through creating a basic http functions triggered by a
 
 3. After your handler has a response. It's time to deploy the `cors` enabled endpoint. Open your terminal and run the following command:
 
-  ```bash
-  sls deploy
-  ```
+    ```bash
+    sls deploy
+    ```
 
 
