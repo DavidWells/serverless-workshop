@@ -1,5 +1,13 @@
 # Extending Serverless Functionality with plugins
 
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Background](#background)
+- [Lesson Steps](#lesson-steps)
+- [Building Plugins](#building-plugins)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Background
+
 Sometimes users need custom functionality that the core serverless framework doesn't do out of the box.
 
 To achieve this, users can extend the base cli functionality by tapping into lifecycle hooks or creating new hooks.
@@ -14,7 +22,7 @@ To achieve this, users can extend the base cli functionality by tapping into lif
 
 There are a ton of [serverless plugins](https://github.com/serverless/plugins#community-contributed-plugins) out there.
 
-## Steps
+## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. **Discovering Plugins**

@@ -5,13 +5,17 @@ provider:
   name: aws
   runtime: nodejs6.10
   # WORKSHOP_START
-  # Define the IAM role needed for the function to access the newly created dynamo table
-  # See final code for example
+  # Step 3. In this_file, add the database table name to the service's `environment` variables. The `aws-sdk` will need to know the table name in order to access the table
   # WORKSHOP_END
   # FINAL_START
   environment:
     # Here we reference the table name defined below. This is a cloud formation ref
     MY_TABLE: { Ref: myDynamoTable }
+  # FINAL_END
+  # WORKSHOP_START
+  # Step 2. In this_file, add a new IAM role the lambda function needs in order to access the newly created dynamoDB table.
+  # WORKSHOP_END
+  # FINAL_START
   # Here we add a custom IAM statement to allow the function to access our dynamoDB Table
   iamRoleStatements:
     - Effect: Allow
@@ -38,7 +42,7 @@ functions:
           cors: true
 
 # WORKSHOP_START
-# use the resources block to define a dynamoDB table
+# Step 1. Add the dynamoDB cloudformation to the `resources` block of this_file #
 resources:
 # WORKSHOP_END
 # FINAL_START
