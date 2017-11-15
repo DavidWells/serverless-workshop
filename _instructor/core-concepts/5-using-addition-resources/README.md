@@ -3,6 +3,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
+- [About DynamoDB](#about-dynamodb)
 - [DynamoDB CloudFormation](#dynamodb-cloudformation)
 - [IAM Roles](#iam-roles)
 <!-- AUTO-GENERATED-CONTENT:END -->
@@ -53,8 +54,26 @@ This lesson will cover adding additional resources to your serverless service. W
     }
     ```
 
+    `curl` example:
+    ```bash
+    curl -vvv -X POST -d '{"email": "lololol@lolol.com"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
+    ```
+
     You should receive a response with the new item. (or an error if dynamo fails)
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## About DynamoDB
+
+DynamoDB is a noSQL database thats crazy fast.
+
+It can also trigger lambda functions. 🔥
+
+Key concepts: `Partition Key`, `Sort key`, & `Provisioned Throughput`
+
+![dynamo-schema](https://user-images.githubusercontent.com/532272/32819548-ad9aa9d2-c97e-11e7-8161-b261cd1f8696.png)
+
+- [Intro to DynamoDB](https://blog.insightdatascience.com/getting-started-with-aws-serverless-architecture-tutorial-on-kinesis-and-dynamodb-using-twitter-38a1352ca16d#6aea)
+- [22 hour video course on all things Dynamo](https://acloud.guru/learn/aws-dynamodb)
 
 ## DynamoDB CloudFormation
 
@@ -113,6 +132,11 @@ Additionally you can dive deeper by checking out this video: [Become an AWS IAM 
     {
       "email": "lololol@lolol.com"
     }
+    ```
+
+    `curl` example:
+    ```bash
+    curl -vvv -X POST -d '{"email": "lololol@lolol.com"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
     ```
 
     You should receive a response with the new item. (or an error if dynamo fails)

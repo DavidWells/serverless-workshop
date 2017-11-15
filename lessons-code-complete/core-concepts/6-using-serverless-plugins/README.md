@@ -1,10 +1,8 @@
 # Extending Serverless Functionality with plugins
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Building Plugins](#building-plugins)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
 
@@ -24,7 +22,6 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
 
 ## Lesson Steps
 
-<!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. **Discovering Plugins**
 
     **Via the CLI:**
@@ -73,7 +70,6 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
     ```
 
     Typically this works but some plugins aren't validating inputs. If you run into any errors, manually remove the plugin from the `plugins` array in the `serverless.yml` file
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 
 ## Building Plugins
@@ -84,60 +80,8 @@ Building a plugin is very straight forward. Check out these resources for more i
 - [How To Write Your First Plugin For The Serverless Framework - Part 2](https://serverless.com/blog/writing-serverless-plugins-2/)
 - [Super Simple Plugin Boilerplate](https://github.com/DavidWells/super-simple-serverless-plugin/blob/master/index.js)
 
-<!-- IGNORE BELOW COMMENTS! SCROLL UP FOR STEPS -->
-
-<!-- Step 1. **Discovering Plugins**
-
-    **Via the CLI:**
-    ```bash
-    sls plugins list
-    ```
-
-    **Online:**  
-
-    Head to the [Serverless Plugins repository](https://github.com/serverless/plugins#community-contributed-plugins) for a list of available plugins
--->
-
-<!-- Step 2. **Installing Plugins**
-
-    ```bash
-    sls plugin install -n serverless-stack-output
-    ```
-
-    This command will install the plugin into your node_modules folder and save it to the package.json devDependencies.
-
-    The command also automatically added this plugin to the `plugins` array in `serverless.yml`
-
-    ```yml
-    plugins:
-      - serverless-stack-output
-    ```
-
--->
-
-<!-- Step 3. **Configuring Plugins**
-
-    Plugins handle a wide variety of use cases and thus have their own configuration requirements. Make sure to read the README.md of the plugin you are using to add any additional configuration it may require.
 
 
-    The `serverless-stack-output` plugin requires a new field in `serverless.yml`
-
-    ```yml
-    custom:
-      output:
-        file: .serverless/manifest.json
-    ```
-
-    This will output cloudformation values into a `manifest.json` file for us for easily plugging into a frontend application
--->
 
 
-<!-- Step 4. **Removing Plugins**
 
-    ```bash
-    sls plugin uninstall -n serverless-stack-output
-    ```
-
-    Typically this works but some plugins aren't validating inputs. If you run into any errors, manually remove the plugin from the `plugins` array in the `serverless.yml` file
-
--->

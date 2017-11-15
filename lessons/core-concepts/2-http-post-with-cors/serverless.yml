@@ -12,4 +12,4 @@ functions:
       - http:
           path: function-with-cors
           method: post
-          # Step 1. In this_file, Add cors settings to `http` event. http://bit.ly/2mkgV4P
+          # Step 1. In this_file, add the `cors` settings to `http` event. See the http event docs for more info http://bit.ly/2mkgV4P #

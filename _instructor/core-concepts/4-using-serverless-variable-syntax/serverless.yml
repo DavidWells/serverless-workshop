@@ -1,21 +1,19 @@
 
 service: serverless-variables-syntax-example
 
+# WORKSHOP_START
+# Step 2. In this_file, replace the hardcoded value for the for `MY_SECRET` environment variable with a serverless variable using the file reference syntax `${file(path):key}`. Reference the `VAR_FROM_FILE` value from `secrets.json` #
+# WORKSHOP_END
 provider:
   name: aws
   runtime: nodejs6.10
   # WORKSHOP_START
-  # change the hardcoded secret to a serverless variable reference
-  # 1. Create a secrets.json file
-  # 2. reference the file with serverless variable syntax for `MY_SECRET` value
-  # 3. .gitignore secrets.json
-  # variables doc link http://bit.ly/2zw4DM9
   environment:
     MY_SECRET: xyz123
   # WORKSHOP_END
   # FINAL_START
   environment:
-    MY_SECRET: ${file(./secrets.json):MY_SECRET}
+    MY_SECRET: ${file(./secrets.json):VAR_FROM_FILE}
   # FINAL_END
 
 functions:

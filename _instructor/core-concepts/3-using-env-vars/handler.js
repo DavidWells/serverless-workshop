@@ -1,5 +1,5 @@
 // WORKSHOP_START
-/* Step 3. In this_file, use `process.env` to grab the your global environment variable and return it in the `foo` function response */
+/* Step 3. In this_file, access your newly created enviroment variable off of `process.env` and return it in the `foo` function response */
 // WORKSHOP_END
 module.exports.foo = (event, context, callback) => {
   // FINAL_START
@@ -28,7 +28,7 @@ module.exports.foo = (event, context, callback) => {
 }
 
 // WORKSHOP_START
-/* Step 4. In this_file, use `process.env` to grab the env variable defined on bar function and return it in the bar function response  */
+/* Step 4. In this_file, access your newly created `bar` enviroment variable off of `process.env` and return it in the `bar` function response  */
 // WORKSHOP_END
 module.exports.bar = (event, context, callback) => {
   // FINAL_START

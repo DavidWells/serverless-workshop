@@ -1,10 +1,8 @@
 # Deploying to Multiple Stages
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Real World Examples](#real-world-examples)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
 
@@ -56,7 +54,6 @@ However, you can override this value in a number of ways.
 
 ## Lesson Steps
 
-<!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. **Deploy to `dev` stage**
 
     Run the following command in your CLI
@@ -88,39 +85,11 @@ However, you can override this value in a number of ways.
 4. In `serverless.yml`, set the stage key to the custom.stage value set in previous step
 
 5. In `serverless.yml`, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables http://bit.ly/2AHvkKO
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 
 ## Real World Examples
 
 - [Scope Project](https://github.com/serverless/scope/tree/master/backend)
 
-<!-- IGNORE BELOW COMMENTS! SCROLL UP FOR STEPS -->
 
-<!-- Step 1. **Deploy to `dev` stage**
 
-    Run the following command in your CLI
-    ```bash
-    sls deploy
-    ```
-
-    Then get the info about the service
-    ```bash
-    sls info
-    ```
--->
-
-<!-- Step 2. **Deploy to `prod` stage**
-
-    Run the following command in your CLI
-    ```bash
-    sls deploy --stage prod
-    ```
-
-    Run the following command in your CLI
-    ```bash
-    sls info --stage prod
-    ```
-
-    Note that the `sls info` needs the `--stage` flag to pull back the correct `prod` information
--->

@@ -1,10 +1,8 @@
 # Using Serverless variable syntax
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Other Serverless variable sources:](#other-serverless-variable-sources)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
 
@@ -16,11 +14,40 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 
 ## Lesson Steps
 
-1. Create a `secrets.json` file and add a `MY_SECRET` key and random value in the file.
+1. Create a `secrets.json` file in this directory and add a `MY_SECRET` key and random value in the file.
 
-2. Use the [file reference syntax](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-in-other-files) to replace the hardcoded value for the for `MY_SECRET` value in the `serverless.yml`'s `environment` property.
+    ```json
+    {
+      "VAR_FROM_FILE": "super-secret-api-key"
+    }
+    ```
 
-3. create a `.gitignore` and add `secrets.json`. This will ensure it is not committed into source control
+2. In `serverless.yml`, replace the hardcoded value for the for `MY_SECRET` environment variable with a serverless variable using the file reference syntax `${file(path):key}`. Reference the `VAR_FROM_FILE` value from `secrets.json`
+
+3. Create a `.gitignore` file in this directory ignore the `secrets.json` file.
+
+    This is important for keeping secret values, like API keys, out of version control.
+
+4. After adding the new file reference variable, it's time to deploy. Open your terminal and run the following command:
+
+  ```bash
+  sls deploy
+  ```
+
+  If you run into an error, check that the [serverless variable syntax](http://bit.ly/2i91Puy) is correct.
+
+5. Trigger the function and validate your variable is correct.
+
+  Visit the url and validate your variable is in the response.
+  ```bash
+  https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/dev
+  ```
+
+  or open your terminal and run the following command:
+  ```bash
+  sls invoke -f foo
+  ```
+
 
 ## Other Serverless variable sources:
 
@@ -32,3 +59,11 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 - [variables from AWS SSM Parameter Store](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-using-the-ssm-parameter-store)
 - [CloudFormation stack outputs](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-cloudformation-outputs)
 - [properties exported from Javascript files (sync or async)](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-in-javascript-files)
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@ This lesson will walk you through creating a basic http functions triggered by a
 ## Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
-1. In `serverless.yml`, Add cors settings to `http` event. http://bit.ly/2mkgV4P
+1. In `serverless.yml`, add the `cors` settings to `http` event. See the http event docs for more info http://bit.ly/2mkgV4P
 
 2. In `handler.js`, Set `headers` in the function response for CORS to work.  http://bit.ly/2mkgV4P
 

@@ -1,10 +1,10 @@
 
 service: using-env-variables-example
 
+# Step 1. In this_file, add an environment key & value to the `provider` section. This will allow all functions in the secret to access the value. http://bit.ly/2yVp4CR #
 provider:
   name: aws
   runtime: nodejs6.10
-  # Step 1. In this_file, add an environment variable for all functions to access. http://bit.ly/2yVp4CR
 
 functions:
   foo:
@@ -13,9 +13,9 @@ functions:
       - http:
           path: foo
           method: get
+  # Step 2. In this_file, add an environment variable to the `bar` function. Adding `enviroment` to the function level scope them to a single function. http://bit.ly/2yVp4CR #
   bar:
     handler: handler.bar
-    # Step 2. In this_file, add an environment variable only `bar` function to access. http://bit.ly/2yVp4CR
     events:
       - http:
           path: bar

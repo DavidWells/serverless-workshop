@@ -1,6 +1,8 @@
+/**
+ Script used for creating docs. Nothing to see here
+ */
 const fs = require('fs')
 const path = require('path')
-const url = require('url')
 const markdownMagic = require('markdown-magic')
 const globby = require('markdown-magic').globby
 

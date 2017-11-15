@@ -7,6 +7,7 @@
     "docs": "node docs.js",
     "presplit": "rm -rf lessons && rm -rf lessons-code-complete && npm run docs",
     "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessons-code-complete",
+    "postsplit": "node postDocs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Wells",
