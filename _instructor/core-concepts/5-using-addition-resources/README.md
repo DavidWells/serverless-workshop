@@ -4,6 +4,7 @@
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [DynamoDB Cloud formation](#dynamodb-cloud-formation)
+- [IAM Roles](#iam-roles)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
@@ -28,14 +29,14 @@ This lesson will cover adding additional resources to your serverless service. W
 
 3. In `serverless.yml`, add the database table name to the service's `environment` variables. The `aws-sdk` will need to know the table name in order to access the table
 
-4. **Deploy the service **
+4. **Deploy the service**
 
     Run the following command in your CLI
     ```bash
     sls deploy
     ```
 
-5. **Trigger the live create endpoint **
+5. **Trigger the live create endpoint**
 
     To get information about the service run
     ```bash
@@ -59,7 +60,7 @@ This lesson will cover adding additional resources to your serverless service. W
 
 Cloudformation can be tricky at first. Below is the cloud formation template for a new dynamoDB table.
 
-For additional cloudformation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation
+For additional cloudformation information check out. [cloudformation video tutorials](https://acloud.guru/learn/aws-cloudformation) and [advanced cloudformation video tutorials](https://acloud.guru/learn/aws-advanced-cloudformation)
 
 ```yml
 Resources:
@@ -78,7 +79,13 @@ Resources:
         WriteCapacityUnits: 1
 ```
 
-<!-- Step 4. **Deploy the service **
+## IAM Roles
+
+AWS IAM is one of the trickiest bits of working with lambda. [Read this introductory post](https://serverless.com/blog/abcs-of-iam-permissions/) to get the hang out IAM.
+
+Additionally you can dive deeper by checking out this video: [Become an AWS IAM Policy Ninja in 60 Minutes or Less](https://www.youtube.com/watch?v=y7-fAT3z8Lo)
+
+<!-- Step 4. **Deploy the service**
 
     Run the following command in your CLI
     ```bash
@@ -86,7 +93,7 @@ Resources:
     ```
 -->
 
-<!-- Step 5. **Trigger the live create endpoint **
+<!-- Step 5. **Trigger the live create endpoint**
 
     To get information about the service run
     ```bash
