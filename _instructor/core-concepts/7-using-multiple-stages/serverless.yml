@@ -2,7 +2,7 @@
 service: using-multiple-stages
 
 # WORKSHOP_START
-# Step 3. In this_file, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev' #
+# Step 3. In this_file, add a `custom` block and define a `stage` property. Set that property to a serverless `${variable, defaultValue}` with a default value of 'dev' #
 # WORKSHOP_END
 # FINAL_START
 custom:
@@ -19,7 +19,7 @@ provider:
   stage: ${self:custom.stage}
   # FINAL_END
   # WORKSHOP_START
-  # Step 5. In this_file, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables
+  # Step 5. In this_file, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables http://bit.ly/2AHvkKO
   # WORKSHOP_END
   # FINAL_START
   environment:

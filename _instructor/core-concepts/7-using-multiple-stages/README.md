@@ -75,11 +75,11 @@ However, you can override this value in a number of ways.
 
     Note that the `sls info` needs the `--stage` flag to pull back the correct `prod` information
 
-3. In `serverless.yml`, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev'
+3. In `serverless.yml`, add a `custom` block and define a `stage` property. Set that property to a serverless `${variable, defaultValue}` with a default value of 'dev'
 
 4. In `serverless.yml`, set the stage key to the custom.stage value set in previous step
 
-5. In `serverless.yml`, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables
+5. In `serverless.yml`, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables http://bit.ly/2AHvkKO
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 
