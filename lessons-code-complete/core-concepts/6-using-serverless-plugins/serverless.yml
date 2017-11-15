@@ -1,0 +1,21 @@
+
+service: using-serverless-plugins
+
+plugins:
+  - serverless-stack-output
+
+custom:
+  output:
+    file: .serverless/manifest.json
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get

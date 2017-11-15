@@ -38,6 +38,20 @@ This lesson will walk you through creating a basic http functions triggered by a
   ```bash
   sls info
   ```
+
+9. Now lets scaffold a project the easy way via the `serverless create` command. In your terminal run
+
+  To see a list of available templates run:
+  ```bash
+  sls create
+  ```
+
+  To scaffold out a new service in a sub directory run:
+
+  ```bash
+  sls create -t hello-world -p my-new-service
+  # This will create a new service in the my-new-service directory
+  ```
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 <!-- SCROLL UP FOR STEPS -->
@@ -74,5 +88,21 @@ This lesson will walk you through creating a basic http functions triggered by a
 
   ```bash
   sls info
+  ```
+-->
+
+
+<!-- Step 9. Now lets scaffold a project the easy way via the `serverless create` command. In your terminal run
+
+  To see a list of available templates run:
+  ```bash
+  sls create
+  ```
+
+  To scaffold out a new service in a sub directory run:
+
+  ```bash
+  sls create -t hello-world -p my-new-service
+  # This will create a new service in the my-new-service directory
   ```
 -->

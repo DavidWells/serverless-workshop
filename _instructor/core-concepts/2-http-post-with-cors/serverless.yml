@@ -13,7 +13,7 @@ functions:
           path: function-with-cors
           method: post
           # WORKSHOP_START
-          # Add cors settings. docs link: http://bit.ly/2mkgV4P
+          # Step 1. In this_file, Add cors settings to `http` event. http://bit.ly/2mkgV4P
           # WORKSHOP_END
           # FINAL_START
           cors: true

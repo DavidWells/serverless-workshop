@@ -33,6 +33,7 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 | [3 Using Env Vars](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/3-using-env-vars)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/3-using-env-vars)  |
 | [4 Using Serverless Variable Syntax](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/4-using-serverless-variable-syntax)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/4-using-serverless-variable-syntax)  |
 | [5 Using Addition Resources](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/5-using-addition-resources)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/5-using-addition-resources)  |
+| [6 Using Serverless Plugins](https://github.com/davidwells/sls-workshop/tree/master/lessons/core-concepts/6-using-serverless-plugins)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/core-concepts/6-using-serverless-plugins)  |
 | [Dynamodb Streams](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/dynamodb-streams)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
 | [S3](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/s3)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/s3)  |
 | [Schedule](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/schedule)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/schedule)  |
@@ -64,3 +65,5 @@ If you need help, look in the **lessons-code-complete** directory for the comple
   This error means lambda can't find your included `node_modules`. Make sure you `npm install` in your project and install all your dependancies locally before running `sls deploy`
 
 - `Unable to delete bucket` error. Your s3 bucket in question might have files in it. You will need to head into AWS cloudformation in the console and manually delete the stack.
+
+- `Stack [xyz] cannot be deleted while in status UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS` This happens when cloudformation gets stuck in a weird state. You might need to log into the AWS console, head into cloudformation and delete the stack from the UI

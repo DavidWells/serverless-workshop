@@ -1,0 +1,14 @@
+{
+  "name": "using-serverless-plugins",
+  "version": "1.0.0",
+  "description": "using-serverless-plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-stack-output": "^0.2.3"
+  }
+}
