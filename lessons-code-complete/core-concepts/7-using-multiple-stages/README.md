@@ -76,15 +76,6 @@ However, you can override this value in a number of ways.
     Note that the `sls info` needs the `--stage` flag to pull back the correct `prod` information
 
 3. In `serverless.yml`, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev'
-WORKSHOP_END
-FINAL_START
-custom:
-  stage: ${opt:stage, 'dev'}
-FINAL_END
-
-provider:
-  name: aws
-  runtime: nodejs6.10
 
 4. In `serverless.yml`, set the stage key to the custom.stage value set in previous step
 

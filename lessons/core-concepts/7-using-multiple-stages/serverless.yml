@@ -1,7 +1,7 @@
 
 service: using-multiple-stages
 
-# Step 3. In this_file, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev'
+# Step 3. In this_file, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev' #
 
 provider:
   name: aws
