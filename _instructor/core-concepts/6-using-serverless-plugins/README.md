@@ -2,9 +2,15 @@
 
 Sometimes users need custom functionality that the core serverless framework doesn't do out of the box.
 
-To achieve this, users can extend it's functionality by tapping into frameworks lifecycle hooks.
+To achieve this, users can extend the base cli functionality by tapping into lifecycle hooks or creating new hooks.
 
-**Example:** Tapping into the `after:deploy` hook to run additional CI/CD workflows
+**Examples:**
+
+- Transpile es6 or typescript code on `before:package` hook
+- Scanning dependancies for security vulnerabilities on `before:deploy` hook
+- Tapping into the `after:deploy` hook to run additional CI/CD workflows
+- Wiring up custom domains on `after:deploy` hook
+- etc
 
 There are a ton of [serverless plugins](https://github.com/serverless/plugins#community-contributed-plugins) out there.
 
