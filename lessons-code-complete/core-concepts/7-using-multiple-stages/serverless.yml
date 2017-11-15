@@ -1,9 +1,15 @@
 
 service: using-multiple-stages
 
+custom:
+  stage: ${opt:stage, 'dev'}
+
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: ${self:custom.stage}
+  environment:
+    MY_STAGE_SPECIFIC_VAR: ${file(./config.${self:custom.stage}.json):projectName}
 
 functions:
   hello:

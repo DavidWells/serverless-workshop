@@ -1,10 +1,13 @@
 
 service: using-multiple-stages
 
+# Step 3. In this_file, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev'
+
 provider:
   name: aws
   runtime: nodejs6.10
-  # Step 3. In this_file, set the stage key to a serverless variable. Information on variables: http://bit.ly/2zw4DM9
+  # Step 4. In this_file, set the stage key to the custom.stage value set in previous step
+  # Step 5. In this_file, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables
 
 functions:
   hello:

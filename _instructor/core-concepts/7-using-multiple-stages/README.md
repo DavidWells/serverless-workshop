@@ -10,11 +10,11 @@ Typically companies will leverage stages like:
 
 The serverless framework makes it extremely easy to leverage as many stages as you wish.
 
-By default, when running `serverless deploy`, the stage is set to `dev`
+By default, when running the `serverless deploy` command the stage is set to `dev`
 
 However, you can override this value in a number of ways.
 
-1. Via sls flags
+1. via command line flags
 
     ```
     sls deploy --stage prod
@@ -31,7 +31,7 @@ However, you can override this value in a number of ways.
       stage: qa
     ```
 
-3. via custom variable in `serverless.yml`
+3. Using custom variables in `serverless.yml`
 
     ```
     service: using-multiple-stages
@@ -75,7 +75,20 @@ However, you can override this value in a number of ways.
 
     Note that the `sls info` needs the `--stage` flag to pull back the correct `prod` information
 
-3. In `serverless.yml`, set the stage key to a serverless variable. Information on variables: http://bit.ly/2zw4DM9
+3. In `serverless.yml`, add a `custom` block and define a `stage` property. Set that property to a serverless ${variable} with a default value of 'dev'
+WORKSHOP_END
+FINAL_START
+custom:
+  stage: ${opt:stage, 'dev'}
+FINAL_END
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+4. In `serverless.yml`, set the stage key to the custom.stage value set in previous step
+
+5. In `serverless.yml`, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 
