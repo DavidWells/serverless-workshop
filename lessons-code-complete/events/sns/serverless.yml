@@ -1,0 +1,42 @@
+service: aws-sns-message
+
+custom:
+  topicName: topic-one
+  standAloneTopic: MyCustomTopic
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    TOPIC_NAME: ${self:custom.topicName}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "sns:Publish"
+      Resource: arn:aws:sns:${self:provider.region}:*:${self:custom.topicName}
+
+functions:
+  topicOneProducer:
+    handler: handler.eventProducer
+    events:
+      - http:
+          path: trigger
+          method: get
+          cors: true
+  topicOneConsumer:
+    handler: handler.eventConsumer
+    events:
+      - sns: ${self:custom.topicName}
+  topicTwoConsumer:
+    handler: handler.eventConsumer
+    events:
+      - sns:
+        arn: { "Fn::Join" : ["", [ "arn:aws:sns:", { "Ref" : "AWS::Region" }, ":", { "Ref" : "AWS::AccountId" }, ":MyCustomTopic" ] ]  }
+
+resources:
+  Resources:
+    MyCustomTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: "Second stand alone topic"
+        TopicName: ${self:custom.standAloneTopic}

@@ -1,0 +1,44 @@
+service: aws-sns-advanced
+
+plugins:
+  - serverless-pseudo-parameters
+
+custom:
+  topicName: sns-advanced-topic-example
+  # cloud formation intrinstic function to get ARN of topic.
+  # `MyCustomTopic` references the cloudformation in `resources`
+  topicArn: { "Fn::Join" : ["", [ "arn:aws:sns:", { "Ref" : "AWS::Region" }, ":", { "Ref" : "AWS::AccountId" }, ":", { Fn::GetAtt: [ MyCustomTopic, TopicName ] } ] ]  }
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    TOPIC_NAME: ${self:custom.topicName}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "sns:Publish"
+      Resource: ${self:custom.topicArn}
+
+functions:
+  eventProducer:
+    handler: handler.eventProducer
+    events:
+      - http:
+          path: trigger
+          method: get
+          cors: true
+
+  eventConsumer:
+    handler: handler.eventConsumer
+    events:
+      - sns: arn:aws:sns:${self:provider.region}:#{AWS::AccountId}:${self:custom.topicName}
+
+# This creates a new topic for us via cloud formation.
+resources:
+  Resources:
+    MyCustomTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: "Second stand alone topic created via CloudFormation"
+        TopicName: ${self:custom.topicName}

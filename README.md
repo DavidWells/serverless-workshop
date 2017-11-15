@@ -38,6 +38,9 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 | [Dynamodb Streams](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/dynamodb-streams)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
 | [S3](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/s3)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/s3)  |
 | [Schedule](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/schedule)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/schedule)  |
+| [Sns](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/sns)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/sns)  |
+| [Sns Advanced](https://github.com/davidwells/sls-workshop/tree/master/lessons/sns/sns-advanced)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/sns/sns-advanced)  |
+| [Sns Basic](https://github.com/davidwells/sls-workshop/tree/master/lessons/sns/sns-basic)  | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/sns/sns-basic)  |
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 

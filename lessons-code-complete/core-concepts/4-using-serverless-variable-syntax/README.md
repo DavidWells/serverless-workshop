@@ -1,12 +1,20 @@
 # Using Serverless variable syntax
 
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Background](#background)
+- [Lesson Steps](#lesson-steps)
+- [Other Serverless variable sources:](#other-serverless-variable-sources)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Background
+
 Instead of hardcoding sensitive values in the `serverless.yml` file, you will want to reference them from other places outside of source control.
 
 `serverless.yml` has a powerful variable system that allows you to reference values from a number of different places.
 
-[See variable docs](http://bit.ly/2i91Puy)
+For more information [see the variable docs](http://bit.ly/2i91Puy)
 
-## Steps
+## Lesson Steps
 
 1. Create a `secrets.json` file and add a `MY_SECRET` key and random value in the file.
 

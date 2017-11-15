@@ -42,7 +42,7 @@ functions:
           cors: true
 
 # WORKSHOP_START
-# Step 1. Add the dynamoDB cloudformation to the `resources` block of this_file #
+# Step 1. Add the DynamoDB CloudFormation in `readme.md` to the `resources` block of this_file #
 resources:
 # WORKSHOP_END
 # FINAL_START

@@ -3,7 +3,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
-- [DynamoDB Cloud formation](#dynamodb-cloud-formation)
+- [DynamoDB CloudFormation](#dynamodb-cloudformation)
 - [IAM Roles](#iam-roles)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
@@ -23,7 +23,7 @@ This lesson will cover adding additional resources to your serverless service. W
 ## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
-1. Add the dynamoDB cloudformation to the `resources` block of `serverless.yml`
+1. Add the DynamoDB CloudFormation in `readme.md` to the `resources` block of `serverless.yml`
 
 2. In `serverless.yml`, add a new IAM role the lambda function needs in order to access the newly created dynamoDB table.
 
@@ -56,11 +56,9 @@ This lesson will cover adding additional resources to your serverless service. W
     You should receive a response with the new item. (or an error if dynamo fails)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-## DynamoDB Cloud formation
+## DynamoDB CloudFormation
 
-Cloudformation can be tricky at first. Below is the cloud formation template for a new dynamoDB table.
-
-For additional cloudformation information check out. [cloudformation video tutorials](https://acloud.guru/learn/aws-cloudformation) and [advanced cloudformation video tutorials](https://acloud.guru/learn/aws-advanced-cloudformation)
+CloudFormation can be tricky at first. Below is the cloud formation template for a new dynamoDB table.
 
 ```yml
 Resources:
@@ -78,6 +76,13 @@ Resources:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
 ```
+
+For additional CloudFormation information check out:
+
+- [Reference of all CloudFormation Types](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
+- [AWS CloudFormation code completion for Atom editor](https://atom.io/packages/atom-cform)
+- [CloudFormation video tutorials](https://acloud.guru/learn/aws-cloudformation)
+- [Advanced CloudFormation video tutorials](https://acloud.guru/learn/aws-advanced-cloudformation)
 
 ## IAM Roles
 
