@@ -3,6 +3,7 @@ service: aws-s3-event-example
 
 custom:
   bucketName: my-globally-unique-bucket-name-with-random-string
+  outputBucketName: ${self:custom.bucketName}-output
 
 provider:
   name: aws
@@ -16,10 +17,11 @@ provider:
         - s3:PutObject
       Resource: [
         "arn:aws:s3:::${self:custom.bucketName}/*",
-        "arn:aws:s3:::${self:custom.bucketName}-output/*"
+        "arn:aws:s3:::${self:custom.outputBucketName}/*"
         ]
 
 functions:
+  # save function will save urls to s3
   save:
     handler: save.saveImage
     events:
@@ -39,7 +41,7 @@ resources:
     UploadBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.bucketName}-output
+        BucketName: ${self:custom.outputBucketName}
         AccessControl: PublicRead
         CorsConfiguration:
           CorsRules:

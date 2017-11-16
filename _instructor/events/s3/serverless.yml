@@ -2,25 +2,27 @@
 service: aws-s3-event-example
 
 # WORKSHOP_START
-# Define a `custom` block and make a bucketName
+# Step 2. In this_file, Define a `custom` block and add `bucketName` & `outputBucketName` values. Make it globally unique. We will use this reference in other areas of serverless.yml #
+# Step 3. In this_file, add an `outputBucketName` to the `custom` block. Use serverless variables to reference the orignal bucket name and postfix it with `-ouput` `${self:custom.bucketName}-output` #
 # WORKSHOP_END
 # FINAL_START
 custom:
   bucketName: my-globally-unique-bucket-name-with-random-string
+  outputBucketName: ${self:custom.bucketName}-output
 # FINAL_END
 
 provider:
   name: aws
   runtime: nodejs6.10
   # WORKSHOP_START
-  # Expose the bucketName to `environment` variables
+  # Step 4. In this_file, Expose the `bucketName` to `environment` variables #
   # WORKSHOP_END
   # FINAL_START
   environment:
     BUCKET_NAME: ${self:custom.bucketName}
   # FINAL_END
   # WORKSHOP_START
-  # Create the IAM role `iamRoleStatements` needed to `GetObject` & `PutObject`
+  # Step 5. In this_file, Create the IAM role `iamRoleStatements` needed to `s3:GetObject` & `s3:PutObject`
   # Narrow the scope of the permission to the two buckets in this service
   # WORKSHOP_END
   # FINAL_START
@@ -31,29 +33,23 @@ provider:
         - s3:PutObject
       Resource: [
         "arn:aws:s3:::${self:custom.bucketName}/*",
-        "arn:aws:s3:::${self:custom.bucketName}-output/*"
+        "arn:aws:s3:::${self:custom.outputBucketName}/*"
         ]
   # FINAL_END
 
 functions:
+  # save function will save urls to s3
   save:
     handler: save.saveImage
-    # WORKSHOP_START
-    # Attach the save function to an http POST endpoint
-    # WORKSHOP_END
     events:
       - http:
           path: save-image
           method: post
           cors: true
-  # WORKSHOP_START
-  # Attach the save function to an http POST endpoint
-  # WORKSHOP_END
   resize:
     handler: resize.handleImageResize
   # WORKSHOP_START
-  # attach the s3 event to this function and trigger when images are added to bucket
-  # a.k.a the `ObjectCreated` s3 event. docs link http://bit.ly/2zyiRMB
+  # Step 6. in this_file, attach the s3 event to this function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
   # WORKSHOP_END
   # FINAL_START
     events:
@@ -63,7 +59,7 @@ functions:
   # FINAL_END
 
 # WORKSHOP_START
-# Add an additional bucket in `resources`. This bucket will be used for storing the resized images
+# Step 7. in this_file, add an additional bucket in `resources`. This bucket will be used for storing the resized images. This it to avoid an infinite loop while listening to the s3 events #
 # WORKSHOP_END
 # FINAL_START
 resources:
@@ -71,7 +67,7 @@ resources:
     UploadBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.bucketName}-output
+        BucketName: ${self:custom.outputBucketName}
         AccessControl: PublicRead
         CorsConfiguration:
           CorsRules:

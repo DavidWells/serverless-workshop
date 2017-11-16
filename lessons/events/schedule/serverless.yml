@@ -8,5 +8,4 @@ provider:
 functions:
   cron:
     handler: handler.cronFunction
-    # Add an schedule event to trigger this function every minute
-    # Schedule event docs: http://bit.ly/2ACbjVU
+    # Step 1. In this_file, add a `schedule` event to trigger this function every minute. See `schedule` event docs: http://bit.ly/2ACbjVU

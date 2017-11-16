@@ -1,5 +1,4 @@
+/* Step 2. In this_file, use the `cronFunction` function to do something interesting */
 /* Cron function */
 module.exports.cronFunction = (event, context, callback) => {
-  const time = new Date()
-  console.log(`Function "${context.functionName}" ran at ${time}`)
 }
