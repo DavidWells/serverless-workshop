@@ -95,7 +95,6 @@ This lesson will walk you through creating a basic http functions triggered by a
     ```
 -->
 
-
 <!-- Step 9. Now lets scaffold a project the easy way via the `serverless create` command. In your terminal run
 
     To see a list of available templates run:

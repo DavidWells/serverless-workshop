@@ -1,13 +1,24 @@
-# Kinesis Event Source
+# Using Kinesis as an Event Source
 
-- [kinesis simple](./kinesis-simple) This example walks through setting up a kinesis stream and a separate consumer service.
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [About Kinesis](#about-kinesis)
+- [Example Kinesis Event Batch payload](#example-kinesis-event-batch-payload)
+- [Other Examples](#other-examples)
+- [Shoutouts](#shoutouts)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
-## Kinesis
+This example walks through setting up a kinesis stream and connecting a function to batch consume events placed onto the stream.
+
+Go to [kinesis basic](./kinesis-basic) to start.
+
+## About Kinesis
 
 - Lambda function's can receive up to 100 events per batch in the `event`’s payload.
 - Kinesis streams can be partioned into `shards`
     - Each shard can support a maximum read rate of 2 MBps (max 5 transactions)
     - Each shard has a maximum total data write rate of 1 MBps (max 1,000 records)
+
+<img src="https://user-images.githubusercontent.com/532272/32869755-7d651856-ca2d-11e7-9373-6da55973a9ca.png" width="800" />
 
 ## Example Kinesis Event Batch payload
 

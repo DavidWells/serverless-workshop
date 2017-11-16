@@ -78,7 +78,6 @@ module.exports.scan = (event, context, callback) => {
 
 
 module.exports.delete = (event, context, callback) => {
-
   const body = JSON.parse(event.body)
 
   if (!body || !body.id) {
@@ -90,8 +89,19 @@ module.exports.delete = (event, context, callback) => {
       })
     })
   }
+  /* Step 2. In this_file, implement the dynamoDB deletion here via `dynamoDb.delete` method.
 
-  /* Implement the dynamoDB deletion here via dynamoDb.delete method */
+      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or See the completed code if in `lessons-code-complete` directory
+  */
 
 }
 
+/* Step 8. In this_file, implement the `dynamoStreamHandler` function.
+
+    You will need to iterate over an array of `event.Records` to process the data.
+
+    See the completed code if in `lessons-code-complete` directory
+*/
+/* Function to handle items on the dynamoDB stream */
+module.exports.dynamoStreamHandler = (event, context, callback) => {
+}

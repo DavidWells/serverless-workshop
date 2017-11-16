@@ -11,8 +11,8 @@ provider:
       Action:
         - dynamodb:PutItem
         - dynamodb:Scan
-        # The IAM role must be updated to include `DeleteItem`
-        # For Dynamo Stream access. You will need the `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions
+        # Step 3. In this_file, the IAM role must be updated to include `dynamodb:DeleteItem` permission
+        # Step 7. In this_file, You will need the `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions for Dynamo Stream access.
       Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
 
 functions:
@@ -31,7 +31,8 @@ functions:
           method: post
           cors: true
   # Add a `delete` function triggered by an http POST
-  # Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne
+  # Step 1. In this_file, Add a `delete` function triggered by an http POST event #
+  # Step 8. Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne in this_file
 
 resources:
   Resources:
@@ -48,4 +49,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        # add a stream to the dynamoDB table
+        # Step 6. add a stream to the dynamoDB table by setting the `StreamSpecification` property on the `Properties` of the CloudFormation declaration of the table. Set `StreamViewType: NEW_AND_OLD_IMAGES`

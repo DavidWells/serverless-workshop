@@ -78,7 +78,6 @@ module.exports.scan = (event, context, callback) => {
 
 
 module.exports.delete = (event, context, callback) => {
-
   const body = JSON.parse(event.body)
 
   if (!body || !body.id) {
@@ -90,9 +89,11 @@ module.exports.delete = (event, context, callback) => {
       })
     })
   }
-
   // WORKSHOP_START
-  /* Implement the dynamoDB deletion here via dynamoDb.delete method */
+  /* Step 2. In this_file, implement the dynamoDB deletion here via `dynamoDb.delete` method.
+
+      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or See the completed code if in `lessons-code-complete` directory
+  */
   // WORKSHOP_END
 
   // FINAL_START
@@ -127,9 +128,17 @@ module.exports.delete = (event, context, callback) => {
   // FINAL_END
 }
 
-// FINAL_START
+// WORKSHOP_START
+/* Step 8. In this_file, implement the `dynamoStreamHandler` function.
+
+    You will need to iterate over an array of `event.Records` to process the data.
+
+    See the completed code if in `lessons-code-complete` directory
+*/
+// WORKSHOP_END
 /* Function to handle items on the dynamoDB stream */
 module.exports.dynamoStreamHandler = (event, context, callback) => {
+  // FINAL_START
   event.Records.forEach((record) => {
     console.log(record.eventID)
     console.log(record.eventName)
@@ -142,5 +151,5 @@ module.exports.dynamoStreamHandler = (event, context, callback) => {
     }
   })
   return callback(null, `Successfully processed ${event.Records.length} records.`);
+  // FINAL_END
 }
-// FINAL_END

@@ -56,6 +56,12 @@ const config = {
       return md;
     },
     GENERATE_LESSONS_STEPS(content, options, instance) {
+
+      //console.log('instance.outputDir', instance.outputDir)
+
+      // if (instance.outputDir !== "_instructor/core-concepts/1-http-hello-world") {
+      //   return content
+      // }
       const lessonFiles = globby.sync(['**', '!node_modules'], {
         cwd: instance.outputDir
       })
@@ -93,10 +99,26 @@ const config = {
       }
 
       // console.log('matches', matches)
-      // console.log('clean', cleanMatches(matches))
-      const steps = cleanMatches(matches).sort()
+      const steps = cleanMatches(matches)
 
-      return steps.join('\n\n')
+      const sortedSteps = steps.reduce((accumulator, currentValue, currentIndex, array) => {
+         const number = currentValue.match(/^[0-9]{1,3}/)[0]
+         // console.log(number)
+         // console.log(parseInt(number, 10))
+         accumulator[currentIndex] = {
+           step: parseInt(number, 10),
+      	   value: currentValue
+         }
+         return accumulator
+      }, []).sort(function(a,b){
+        return a.step - b.step
+      }).map((item) => {
+        return item.value
+      })
+
+      console.log('sortedSteps', sortedSteps)
+
+      return sortedSteps.join('\n\n')
     }
   }
 }

@@ -78,7 +78,6 @@ module.exports.scan = (event, context, callback) => {
 
 
 module.exports.delete = (event, context, callback) => {
-
   const body = JSON.parse(event.body)
 
   if (!body || !body.id) {
@@ -90,7 +89,6 @@ module.exports.delete = (event, context, callback) => {
       })
     })
   }
-
 
   const params = {
     TableName: process.env.MY_TABLE,
