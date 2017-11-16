@@ -1,0 +1,23 @@
+
+service: using-dynamic-value
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  queryParamsExample:
+    handler: handler.queryParamsExample
+    events:
+      - http:
+          path: hello
+          method: get
+  pathParamsExample:
+    handler: handler.pathParamsExample
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /{name}
+          method: get

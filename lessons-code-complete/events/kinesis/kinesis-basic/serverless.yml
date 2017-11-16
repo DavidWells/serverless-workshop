@@ -1,0 +1,33 @@
+# Serverless service with kinesis stream resource & batch processing function
+service: kinesis-basic-example
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  streamName: my-kinesis-stream-${self:custom.stage}
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${self:custom.stage}
+
+# `processEvents` is trigged by the kinesis stream
+functions:
+  processEvents:
+    handler: handler.processEvents
+    events:
+      - stream:
+          type: kinesis
+          arn:
+            Fn::GetAtt:
+              - MyKinesisStream # CloudFormation reference defined below
+              - Arn
+
+# Here we define the kinesis stream and set the name & ShardCount
+resources:
+  Resources:
+    # Stream
+    MyKinesisStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ${self:custom.streamName}
+        ShardCount: 1

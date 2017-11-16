@@ -1,0 +1,18 @@
+{
+  "name": "basic-kinesis-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "simulate": "node ./scripts/putRecords.js --name=$npm_config_name --count=$npm_config_count --region=$npm_config_region",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  // FINAL_START
+  "devDependencies": {
+    "aws-sdk": "^2.151.0",
+    "yargs": "^10.0.3"
+  }
+  // FINAL_END
+}

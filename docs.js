@@ -25,6 +25,7 @@ const cleanMatches = (matches) => {
       .replace(/^\<\!--/g, '') // remove html comments
       .replace(/--\>$/g, '') // remove html comments
       .replace(/^\s+|\s+$/g,'')
+      //.replace(/^!$/g,'') // remove trailing !
       .replace(/\n#\s+/g,'\n')
       .replace(/^Step\s+/g, '')
   })
@@ -64,7 +65,12 @@ const config = {
       var matches = []
       if (lessonFiles) {
         lessonFiles.map((f) => {
-          const fileContents = fs.readFileSync(path.join(instance.outputDir, f), 'utf8')
+          const filePath = path.join(instance.outputDir, f)
+          if (fs.lstatSync(filePath).isDirectory()) {
+            // skip dirs
+            return;
+          }
+          const fileContents = fs.readFileSync(filePath, 'utf8')
           const fileType = path.extname(f)
           var regex = jsRegex
           if (fileType === '.js') {

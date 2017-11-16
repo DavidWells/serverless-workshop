@@ -1,0 +1,15 @@
+# Serverless service with kinesis stream resource & batch processing function
+service: kinesis-basic-example
+
+# Step 3. In this_file, define a `custom` block and setup a `stage` value using serverless variable syntax. Set the default stage as 'dev' with CLI options flag to overide it. `${opt:stage, 'dev'}` #
+
+# Step 4. In this_file, inside the `custom` block define a `streamName` value and post fix the variable with the custom stage value. Example: `my-kinesis-stream-${self:custom.stage}` #
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${self:custom.stage}
+
+# Step 6. In this_file, make a new `function` block and connect to the `processEvents` function. The function `events` will be trigged by the kinesis `arn`. http://bit.ly/2htzI8r #
+
+# 2. Define the kinesis stream cloud formation in the `resources` section #

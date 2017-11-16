@@ -2,7 +2,11 @@
 
 This lesson will walk you through creating a basic http functions triggered by a http GET endpoint
 
-## Steps
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Lesson Steps](#lesson-steps)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. In `handler.js`, Create a `200` response code and return the `event` in the response body

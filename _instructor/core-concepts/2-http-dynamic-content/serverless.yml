@@ -1,0 +1,33 @@
+
+service: using-dynamic-value
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  queryParamsExample:
+    handler: handler.queryParamsExample
+    # WORKSHOP_START
+    # Step 1. In this_file, add an `http` GET event with a `path` of `hello` to trigger the `queryParamsExample` function. See the http event docs: http://bit.ly/2mkgV4P #
+    # WORKSHOP_END
+    events:
+    # FINAL_START
+      - http:
+          path: hello
+          method: get
+    # FINAL_END
+  pathParamsExample:
+    handler: handler.pathParamsExample
+    # WORKSHOP_START
+    # Step 4. In this_file, add 2 `http` GET events to trigger the `pathParamsExample` function. The first `path` should be `/` and the second should be `{name}`. See the http event docs: http://bit.ly/2yJui03 #
+    # WORKSHOP_END
+    events:
+    # FINAL_START
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /{name}
+          method: get
+    # FINAL_END
