@@ -1,0 +1,15 @@
+{
+  "name": "step-functions-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-pseudo-parameters": "^1.2.5",
+    "serverless-step-functions": "^1.2.0"
+  }
+}

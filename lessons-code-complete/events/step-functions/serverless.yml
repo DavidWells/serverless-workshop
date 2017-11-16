@@ -1,0 +1,56 @@
+
+service: step-functions-example
+
+custom:
+  stage: ${opt:stage, 'dev'}
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${self:custom.stage}
+  environment:
+    STATE_MACHINE_ARN: ${self:resources.Outputs.MyStateMachine.Value}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "states:*"
+      Resource: ${self:resources.Outputs.MyStateMachine.Value}
+
+functions:
+  sendEmail:
+    handler: handler.sendEmail
+  startStateMachine:
+    handler: handler.startStateMachine
+    events:
+      - http:
+          path: start
+          method: post
+          cors: true
+
+stepFunctions:
+  stateMachines:
+    waitToSendStateMachine:
+      name: myStateMachine
+      definition:
+        Comment: A Task Timer example of the Amazon States Language scheduling a task
+        StartAt: WaitForTimestamp
+        States:
+          WaitForTimestamp:
+            Type: Wait
+            TimestampPath: "$.trigger_date"
+            Next: SendEmail
+          SendEmail:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:#{AWS::StackName}-sendEmail"
+            End: true
+
+resources:
+  Outputs:
+    MyStateMachine:
+      Description: The ARN of the example state machine
+      Value:
+        Ref: MyStateMachine

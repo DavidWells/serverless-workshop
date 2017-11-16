@@ -45,7 +45,7 @@ const config = {
         const dirname = path.dirname(example)
         const niceDirname = path.basename(path.dirname(example))
 
-        const repoBase = 'https://github.com/davidwells/sls-workshop/tree/master'
+        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
         const baseLink = `${repoBase}/${dirname}`
 
         const lessonLink = baseLink.replace(/_instructor/g, 'lessons');

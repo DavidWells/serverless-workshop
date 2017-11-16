@@ -1,0 +1,76 @@
+
+service: step-functions-example
+
+custom:
+  stage: ${opt:stage, 'dev'}
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${self:custom.stage}
+  # WORKSHOP_START
+  # Step 4. In this_file, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `enviroment` variables #
+  # WORKSHOP_END
+  # FINAL_START
+  environment:
+    STATE_MACHINE_ARN: ${self:resources.Outputs.MyStateMachine.Value}
+  # FINAL_END
+  # WORKSHOP_START
+  # Step 5. In this_file, Attach the need `iamRoleStatements` to Allow access to step functions `states:*` #
+  # WORKSHOP_END
+  # FINAL_START
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "states:*"
+      Resource: ${self:resources.Outputs.MyStateMachine.Value}
+  # FINAL_END
+
+functions:
+  sendEmail:
+    handler: handler.sendEmail
+  startStateMachine:
+    handler: handler.startStateMachine
+    events:
+      - http:
+          path: start
+          method: post
+          cors: true
+
+# WORKSHOP_START
+# Define the step function steps in the `stepFunctions` block
+# WORKSHOP_END
+# FINAL_START
+stepFunctions:
+  stateMachines:
+    waitToSendStateMachine:
+      name: myStateMachine
+      definition:
+        Comment: A Task Timer example of the Amazon States Language scheduling a task
+        StartAt: WaitForTimestamp
+        States:
+          WaitForTimestamp:
+            Type: Wait
+            TimestampPath: "$.trigger_date"
+            Next: SendEmail
+          SendEmail:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:#{AWS::StackName}-sendEmail"
+            End: true
+# FINAL_END
+
+# WORKSHOP_START
+# Step 3. In this_file, Define the cloudformation outputs of the step function ARN. We will need this to reference as an environment variable of the service
+# WORKSHOP_END
+# FINAL_START
+resources:
+  Outputs:
+    MyStateMachine:
+      Description: The ARN of the example state machine
+      Value:
+        Ref: MyStateMachine
+# FINAL_END
