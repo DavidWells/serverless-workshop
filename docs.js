@@ -48,7 +48,7 @@ const config = {
         const repoBase = 'https://github.com/davidwells/sls-workshop/tree/master'
         const baseLink = `${repoBase}/${dirname}`
 
-        const lessonLink = baseLink.replace(/_instructor/g, 'lesson');
+        const lessonLink = baseLink.replace(/_instructor/g, 'lessons');
         const answersLink = baseLink.replace(/_instructor/g, 'lessons-code-complete');
         //console.log(content)
         const heading = contents.match(/^# (.*)/g)
