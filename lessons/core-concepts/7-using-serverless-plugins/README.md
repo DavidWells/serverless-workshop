@@ -27,7 +27,7 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
 
     **Via the CLI:**
     ```bash
-    sls plugins list
+    sls plugin list
     ```
 
     **Online:**  
