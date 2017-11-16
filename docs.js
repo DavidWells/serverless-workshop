@@ -42,15 +42,21 @@ const config = {
       examples.forEach((example) => {
         const contents = fs.readFileSync(example, 'utf8')
         const parentDir = path.basename(path.dirname(path.dirname(example)))
-        const dirname = path.basename(path.dirname(example))
-        console.log('dirname', dirname)
-        console.log('parentDir', parentDir)
+        const dirname = path.dirname(example)
+        const niceDirname = path.basename(path.dirname(example))
+
         const repoBase = 'https://github.com/davidwells/sls-workshop/tree/master'
-        const lessonLink = `${repoBase}/lessons/${parentDir}/${dirname}`;
-        const answersLink = `${repoBase}/lessons-code-complete/${parentDir}/${dirname}`;
-        const description = (contents) ? `` : '';
+        const baseLink = `${repoBase}/${dirname}`
+
+        const lessonLink = baseLink.replace(/_instructor/g, 'lesson');
+        const answersLink = baseLink.replace(/_instructor/g, 'lessons-code-complete');
+        //console.log(content)
+        const heading = contents.match(/^# (.*)/g)
+        console.log('heading', heading)
+        const description = (heading && heading[0]) ? heading[0].replace("# ", '') : '';
         // add table rows
-        md += `| [${formatPluginName(dirname)}](${lessonLink}) ${description} | [Answers](${answersLink})  |\n`;
+        md += `| [${formatPluginName(niceDirname)}](${lessonLink}) <br/> ${description} | [Answers](${answersLink})  |\n`;
+        // md += baseLink
       });
 
       return md;
