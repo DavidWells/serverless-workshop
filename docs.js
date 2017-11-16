@@ -33,6 +33,56 @@ const cleanMatches = (matches) => {
 
 const config = {
   transforms: {
+    // TODO fix markdown magic bug */
+    http(content, options, instance) {
+        console.log('instance.outputDir', instance.outputDir)
+        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
+        const baseLink = `${repoBase}/${instance.outputDir}`
+
+        let answersLink = baseLink.replace(/lessons/g, 'lessons-code-complete');
+        answersLink = answersLink.replace(/\_instructor/g, 'lessons-code-complete');
+
+        const link = `## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](${answersLink})`;
+
+      return link;
+    },
+    // TODO fix markdown magic bug */
+    https(content, options, instance) {
+        console.log('instance.outputDir', instance.outputDir)
+        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
+        const baseLink = `${repoBase}/${instance.outputDir}`
+
+        let answersLink = baseLink.replace(/lessons/g, 'lessons-code-complete');
+        answersLink = answersLink.replace(/\_instructor/g, 'lessons-code-complete');
+
+        const link = `## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](${answersLink})`;
+
+      return link;
+    },
+    README_BOTTOM(content, options, instance) {
+        console.log('instance.outputDir', instance.outputDir)
+        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
+        const baseLink = `${repoBase}/${instance.outputDir}`
+
+        let answersLink = baseLink.replace(/lessons/g, 'lessons-code-complete');
+        answersLink = answersLink.replace(/\_instructor/g, 'lessons-code-complete');
+
+        const link = `## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](${answersLink})`;
+
+      return link;
+    },
     GENERATE_LESSONS_LIST(content, options) {
       const examples = globby.sync(['_instructor/**/**.md']);
       console.log('examples', examples)
@@ -55,7 +105,7 @@ const config = {
         console.log('heading', heading)
         const description = (heading && heading[0]) ? heading[0].replace("# ", '') : '';
         // add table rows
-        md += `| [${formatPluginName(niceDirname)}](${lessonLink}) <br/> ${description} | [Answers](${answersLink})  |\n`;
+        md += `| [${formatPluginName(niceDirname)}](${lessonLink}) <br/> ${description} | [Complete Code](${answersLink})  |\n`;
         // md += baseLink
       });
 
@@ -122,7 +172,7 @@ const config = {
         return item.value
       })
 
-      console.log('sortedSteps', sortedSteps)
+      // console.log('sortedSteps', sortedSteps)
 
       return sortedSteps.join('\n\n')
     }

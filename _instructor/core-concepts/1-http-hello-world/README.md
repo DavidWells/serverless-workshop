@@ -4,6 +4,7 @@ This lesson will walk you through creating a basic http functions triggered by a
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps
@@ -109,3 +110,11 @@ This lesson will walk you through creating a basic http functions triggered by a
     # This will create a new service in the my-new-service directory
     ```
 -->
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/1-http-hello-world)
+<!-- AUTO-GENERATED-CONTENT:END -->

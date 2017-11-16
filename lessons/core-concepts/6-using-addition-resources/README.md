@@ -6,6 +6,7 @@
 - [DynamoDB Resources](#dynamodb-resources)
 - [CloudFormation Resources](#cloudformation-resources)
 - [IAM Roles](#iam-roles)
+- [Complete code](#complete-code)
 
 ## Background
 
@@ -116,3 +117,10 @@ AWS IAM is one of the trickiest bits of working with lambda. [Read this introduc
 Additionally you can dive deeper by checking out this video: [Become an AWS IAM Policy Ninja in 60 Minutes or Less](https://www.youtube.com/watch?v=y7-fAT3z8Lo)
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/6-using-addition-resources)

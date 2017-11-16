@@ -3,6 +3,7 @@
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Building Plugins](#building-plugins)
+- [Complete code](#complete-code)
 
 ## Background
 
@@ -85,3 +86,9 @@ Building a plugin is very straight forward. Check out these resources for more i
 
 
 
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/7-using-serverless-plugins)

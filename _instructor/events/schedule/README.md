@@ -69,3 +69,12 @@ Running cron jobs from serverless functions can dramatically reduce your costs a
           - schedule: cron(0 12 * * ? *)
     ```
 -->
+
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/schedule)
+<!-- AUTO-GENERATED-CONTENT:END -->

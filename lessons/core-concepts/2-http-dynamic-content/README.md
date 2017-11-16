@@ -4,6 +4,7 @@ This lesson will walk you setting up an http endpoint that uses dynamic values f
 
 - [Lesson Steps](#lesson-steps)
 - [Troubleshooting](#troubleshooting)
+- [Complete code](#complete-code)
 
 ## Lesson Steps
 
@@ -73,3 +74,10 @@ This lesson will walk you setting up an http endpoint that uses dynamic values f
 ## Troubleshooting
 
 - Sometimes when renaming path params APIgateway gets [this error](https://github.com/serverless/serverless/issues/3785). To fix, run `sls remove` and `sls deploy` to update the URLs
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/2-http-dynamic-content)

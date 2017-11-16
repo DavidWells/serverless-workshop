@@ -3,6 +3,7 @@
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Other Serverless variable sources:](#other-serverless-variable-sources)
+- [Complete code](#complete-code)
 
 ## Background
 
@@ -67,3 +68,10 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/5-using-serverless-variable-syntax)

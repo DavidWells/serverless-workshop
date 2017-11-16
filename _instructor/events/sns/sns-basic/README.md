@@ -8,6 +8,7 @@ See the advanced example for using existing sns topics.
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps
@@ -90,3 +91,12 @@ See the advanced example for using existing sns topics.
 
     Or login to your AWS account and look at sns topic subscribers
 -->
+
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/sns/sns-basic)
+<!-- AUTO-GENERATED-CONTENT:END -->

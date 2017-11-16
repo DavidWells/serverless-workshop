@@ -6,6 +6,7 @@ This lesson will walk us through triggering a lambda function from an s3 event.
 - [Lesson Steps](#lesson-steps)
 - [s3 bucket cloudformation](#s3-bucket-cloudformation)
 - [Triggering events from existing buckets](#triggering-events-from-existing-buckets)
+- [Complete code](#complete-code)
 
 ## Lesson Steps
 
@@ -104,3 +105,10 @@ You will need to install the [serverless-external-s3-event plugin](https://githu
 
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/s3)

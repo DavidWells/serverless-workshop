@@ -25,3 +25,12 @@ This lesson will walk you through creating a basic http functions triggered by a
     sls deploy
     ```
 -->
+
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/3-http-post-with-cors)
+<!-- AUTO-GENERATED-CONTENT:END -->

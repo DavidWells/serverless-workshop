@@ -5,6 +5,7 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Lesson Steps](#lesson-steps)
 - [Additional resources](#additional-resources)
+- [Complete code](#complete-code)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps
@@ -201,3 +202,12 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
 
     This will pull in the latest logs for the `sendEmail` function and tail them. You should see the log statements of the function with the timestamp of when the function ran
 -->
+
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/step-functions)
+<!-- AUTO-GENERATED-CONTENT:END -->

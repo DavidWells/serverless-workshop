@@ -3,6 +3,7 @@
 This lesson will walk you through creating a basic http functions triggered by a http GET endpoint
 
 - [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
 
 ## Lesson Steps
 
@@ -60,3 +61,9 @@ This lesson will walk you through creating a basic http functions triggered by a
 
 
 
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/1-http-hello-world)

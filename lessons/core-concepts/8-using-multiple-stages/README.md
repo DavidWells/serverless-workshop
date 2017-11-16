@@ -3,6 +3,7 @@
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
 - [Real World Examples](#real-world-examples)
+- [Complete code](#complete-code)
 
 ## Background
 
@@ -93,3 +94,10 @@ However, you can override this value in a number of ways.
 
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/8-using-multiple-stages)

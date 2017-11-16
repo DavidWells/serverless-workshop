@@ -73,3 +73,10 @@ The service will have one function that will batch process the events coming int
 
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/kinesis/kinesis-basic)

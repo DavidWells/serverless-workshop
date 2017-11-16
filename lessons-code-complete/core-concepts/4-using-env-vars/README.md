@@ -36,3 +36,10 @@ yamlKey: ${file(foo.${opt.stage}.json)}
 ```
 
 We will be using these nested variables in future lessons
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/4-using-env-vars)

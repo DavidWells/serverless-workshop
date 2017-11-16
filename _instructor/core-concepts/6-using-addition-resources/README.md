@@ -7,6 +7,7 @@
 - [DynamoDB Resources](#dynamodb-resources)
 - [CloudFormation Resources](#cloudformation-resources)
 - [IAM Roles](#iam-roles)
+- [Complete code](#complete-code)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
@@ -151,3 +152,12 @@ Additionally you can dive deeper by checking out this video: [Become an AWS IAM 
 
     You should receive a response with the new item. (or an error if dynamo fails)
 -->
+
+
+<!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/6-using-addition-resources)
+<!-- AUTO-GENERATED-CONTENT:END -->

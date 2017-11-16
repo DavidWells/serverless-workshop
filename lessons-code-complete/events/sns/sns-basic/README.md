@@ -7,6 +7,7 @@ In this example the serverless framework automatically creates the sns topics fo
 See the advanced example for using existing sns topics.
 
 - [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
 
 ## Lesson Steps
 
@@ -53,3 +54,10 @@ See the advanced example for using existing sns topics.
 
 
 
+
+
+## Complete code
+
+If you need help or get stuck refer to the completed code of this lesson
+
+[View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/sns/sns-basic)
