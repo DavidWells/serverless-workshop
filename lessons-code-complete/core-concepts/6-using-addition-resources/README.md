@@ -2,8 +2,9 @@
 
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
-- [About DynamoDB](#about-dynamodb)
 - [DynamoDB CloudFormation](#dynamodb-cloudformation)
+- [DynamoDB Resources](#dynamodb-resources)
+- [CloudFormation Resources](#cloudformation-resources)
 - [IAM Roles](#iam-roles)
 
 ## Background
@@ -14,8 +15,8 @@ Resources like a database, an additional s3 bucket, a kinesis stream, or an SQS 
 
 There are two things we need to do to add addition resources.
 
-1. Define the resources needed in the `serverless.yml` `resouces` block
-2. Add any additional permissions the functions in the service will need to interact with those resources.
+1. Define the resources needed in the `serverless.yml` `resources` block
+2. Add any additional IAM permissions the functions will need to interact with those resources.
 
 This lesson will cover adding additional resources to your serverless service. We will walk through adding a dynamoDB table to your service.
 
@@ -58,19 +59,6 @@ This lesson will cover adding additional resources to your serverless service. W
 
     You should receive a response with the new item. (or an error if dynamo fails)
 
-## About DynamoDB
-
-DynamoDB is a noSQL database thats crazy fast.
-
-It can also trigger lambda functions. 🔥
-
-Key concepts: `Partition Key`, `Sort key`, & `Provisioned Throughput`
-
-![dynamo-schema](https://user-images.githubusercontent.com/532272/32819548-ad9aa9d2-c97e-11e7-8161-b261cd1f8696.png)
-
-- [Intro to DynamoDB](https://blog.insightdatascience.com/getting-started-with-aws-serverless-architecture-tutorial-on-kinesis-and-dynamodb-using-twitter-38a1352ca16d#6aea)
-- [22 hour video course on all things Dynamo](https://acloud.guru/learn/aws-dynamodb)
-
 ## DynamoDB CloudFormation
 
 CloudFormation can be tricky at first. Below is the cloud formation template for a new dynamoDB table.
@@ -91,6 +79,28 @@ Resources:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
 ```
+
+## DynamoDB Resources
+
+DynamoDB is a noSQL database thats crazy fast.
+
+It can also trigger lambda functions. 🔥
+
+**Resources**:
+
+- [Intro to DynamoDB](https://blog.insightdatascience.com/getting-started-with-aws-serverless-architecture-tutorial-on-kinesis-and-dynamodb-using-twitter-38a1352ca16d#6aea)
+- [22 hour video course on all things Dynamo](https://acloud.guru/learn/aws-dynamodb)
+
+**Key concepts:**
+
+- `Partition Key`: Like all key-value stores, a partition key is a unique identifier for an entry
+- `Sort key`: or hash key. This is helpful for adding additional sorting to table.
+- `Provisioned Throughput`: Pricing of DynamoDB is done based on how many reads/writes you provision.
+
+<img width="800" src="https://user-images.githubusercontent.com/532272/32819548-ad9aa9d2-c97e-11e7-8161-b261cd1f8696.png"/>
+
+
+## CloudFormation Resources
 
 For additional CloudFormation information check out:
 

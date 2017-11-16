@@ -6,7 +6,7 @@ They keep things out of source control and are used very frequently in CI/CD flo
 
 This lesson will teach you the basics of using environment variables in lambda functions.
 
-## Steps
+## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. In `serverless.yml`, add an environment key & value to the `provider` section. This will allow all functions in the secret to access the value. http://bit.ly/2yVp4CR
@@ -20,3 +20,21 @@ This lesson will teach you the basics of using environment variables in lambda f
 5. After adding your environment variables to serverless.yml and handler.js.
 Run `sls deploy` to deploy the service
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+
+## Extra credit
+
+Serverless variables can be nested together. This makes them very useful in a deployment setting.
+
+Try and set a nested serverless variable in your service.
+
+Example of nested variable:
+
+```yml
+yamlKey: ${file(foo.${opt.stage}.json)}
+
+# First ${opt.stage} resolves
+# then ${file(foo.WHATEVER.json)} resolves
+```
+
+We will be using these nested variables in future lessons
