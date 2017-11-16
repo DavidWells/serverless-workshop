@@ -22,6 +22,6 @@ functions:
           cors: true
   resize:
     handler: resize.handleImageResize
-  # Step 6. in this_file, attach the s3 event to this function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
+  # Step 6. in this_file, attach the s3 event to the `resize` function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
 
 # Step 7. in this_file, add an additional bucket in `resources`. This bucket will be used for storing the resized images. This it to avoid an infinite loop while listening to the s3 events #

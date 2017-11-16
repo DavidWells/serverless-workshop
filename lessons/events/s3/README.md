@@ -25,7 +25,7 @@ This lesson will walk us through triggering a lambda function from an s3 event.
 
 5. In `serverless.yml`, Create the IAM role `iamRoleStatements` needed to `s3:GetObject` & `s3:PutObject`
 
-6. in `serverless.yml`, attach the s3 event to this function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB
+6. in `serverless.yml`, attach the s3 event to the `resize` function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB
 
 7. in `serverless.yml`, add an additional bucket in `resources`. This bucket will be used for storing the resized images. This it to avoid an infinite loop while listening to the s3 events
 

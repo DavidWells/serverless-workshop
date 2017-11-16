@@ -42,7 +42,7 @@ If you need help, look in the **lessons-code-complete** directory for the comple
 | [S3](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/s3) <br/> Triggering Lambda functions from s3 events | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/s3)  |
 | [Schedule](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/schedule) <br/> Triggering functions via cron schedules | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/schedule)  |
 | [Sns](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/sns) <br/> Using AWS SNS as event source | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/sns)  |
-| [Sns Advanced](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/sns/sns-advanced) <br/> Advanced SNS Example | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/sns/sns-advanced)  |
+| [Sns Advanced](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/sns/sns-advanced) <br/> Using External SNS Topics Example | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/sns/sns-advanced)  |
 | [Sns Basic](https://github.com/davidwells/sls-workshop/tree/master/lessons/events/sns/sns-basic) <br/> Basic SNS Example | [Answers](https://github.com/davidwells/sls-workshop/tree/master/lessons-code-complete/events/sns/sns-basic)  |
 
 <!-- AUTO-GENERATED-CONTENT:END -->

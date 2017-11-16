@@ -1,28 +1,11 @@
 service: aws-sns-basic
 
-custom:
-  topicName: sns-basic-topic-example
+
+# Step 1. In this_file, Define a `custom` block and add `topicName`. We will use this reference in other areas of serverless.yml #
 
 provider:
   name: aws
   runtime: nodejs6.10
-  environment:
-    TOPIC_NAME: ${self:custom.topicName}
-  iamRoleStatements:
-    - Effect: "Allow"
-      Action:
-        - "sns:Publish"
-      Resource: arn:aws:sns:${self:provider.region}:*:${self:custom.topicName}
-
-functions:
-  eventProducer:
-    handler: handler.eventProducer
-    events:
-      - http:
-          path: trigger
-          method: get
-          cors: true
-  eventConsumer:
-    handler: handler.eventConsumer
-    events:
-      - sns: ${self:custom.topicName}
+  # Step 3. In this_file, Expose the `TOPIC_NAME` to `environment` variables using the `${self:custom.topicName}` reference #
+  # Step 4. In this_file, Create the IAM role `iamRoleStatements` needed to `sns:Publish`
+  # Narrow the scope of the permission to the sns in this service

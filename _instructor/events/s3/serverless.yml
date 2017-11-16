@@ -49,7 +49,7 @@ functions:
   resize:
     handler: resize.handleImageResize
   # WORKSHOP_START
-  # Step 6. in this_file, attach the s3 event to this function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
+  # Step 6. in this_file, attach the s3 event to the `resize` function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
   # WORKSHOP_END
   # FINAL_START
     events:

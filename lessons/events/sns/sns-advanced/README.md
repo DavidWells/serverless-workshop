@@ -1,4 +1,4 @@
-# Advanced SNS Example
+# Using External SNS Topics Example
 
 This example demonstrates how to use an external SNS or already existing SNS topic as an event source.
 
