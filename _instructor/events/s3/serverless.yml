@@ -47,7 +47,7 @@ functions:
           method: post
           cors: true
   resize:
-    handler: resize.handleImageResize
+    handler: resize.resizeImage
   # WORKSHOP_START
   # Step 6. in this_file, attach the s3 event to the `resize` function and trigger when images are added to bucket. a.k.a the `ObjectCreated` s3 event. See the s3 event docs link http://bit.ly/2zyiRMB #
   # WORKSHOP_END
