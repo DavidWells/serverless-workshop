@@ -30,7 +30,7 @@ functions:
           method: post
           cors: true
   resize:
-    handler: resize.handleImageResize
+    handler: resize.resizeImage
     events:
       - s3:
           bucket: ${self:custom.bucketName}
