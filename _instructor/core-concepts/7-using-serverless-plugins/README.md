@@ -30,7 +30,7 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
 
     **Via the CLI:**
     ```bash
-    sls plugins list
+    sls plugin list
     ```
 
     **Online:**  
@@ -91,7 +91,7 @@ Building a plugin is very straight forward. Check out these resources for more i
 
     **Via the CLI:**
     ```bash
-    sls plugins list
+    sls plugin list
     ```
 
     **Online:**  
