@@ -4,6 +4,41 @@ This lesson will walk you through triggering lambda functions from an scheduled 
 
 Running cron jobs from serverless functions can dramatically reduce your costs associated with scheduled running jobs.
 
+## Scheduling Syntax
+
+You can schedule functions to run using Schedule Expressions Using Rate or Cron.
+
+The rate format looks like:
+
+```
+rate(Value Unit)
+
+
+rate(5 minutes) # Invoke Lambda function every 5 minutes
+rate(1 hour) # Invoke Lambda function every hour
+rate(7 days) # Invoke Lambda function every seven days
+```
+
+The cron format consists of:
+
+```
+cron(Minutes Hours Day-of-month Month Day-of-week Year)
+```
+
+
+```
+*    *    *    *    *
+┬    ┬    ┬    ┬    ┬
+│    │    │    │    │
+│    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
+│    │    │    └───── month (1 - 12)
+│    │    └────────── day of month (1 - 31)
+│    └─────────────── hour (0 - 23)
+└──────────────────── minute (0 - 59)
+```
+
+See [AWS docs](http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html) for more information
+
 ## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
