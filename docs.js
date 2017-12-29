@@ -33,40 +33,6 @@ const cleanMatches = (matches) => {
 
 const config = {
   transforms: {
-    // TODO fix markdown magic bug */
-    http(content, options, instance) {
-        console.log('instance.outputDir', instance.outputDir)
-        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
-        const baseLink = `${repoBase}/${instance.outputDir}`
-
-        let answersLink = baseLink.replace(/lessons/g, 'lessons-code-complete');
-        answersLink = answersLink.replace(/\_instructor/g, 'lessons-code-complete');
-
-        const link = `## Complete code
-
-If you need help or get stuck refer to the completed code of this lesson
-
-[View Complete Code](${answersLink})`;
-
-      return link;
-    },
-    // TODO fix markdown magic bug */
-    https(content, options, instance) {
-        console.log('instance.outputDir', instance.outputDir)
-        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
-        const baseLink = `${repoBase}/${instance.outputDir}`
-
-        let answersLink = baseLink.replace(/lessons/g, 'lessons-code-complete');
-        answersLink = answersLink.replace(/\_instructor/g, 'lessons-code-complete');
-
-        const link = `## Complete code
-
-If you need help or get stuck refer to the completed code of this lesson
-
-[View Complete Code](${answersLink})`;
-
-      return link;
-    },
     README_BOTTOM(content, options, instance) {
         console.log('instance.outputDir', instance.outputDir)
         const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
@@ -115,7 +81,8 @@ If you need help or get stuck refer to the completed code of this lesson
 
       //console.log('instance.outputDir', instance.outputDir)
 
-      // if (instance.outputDir !== "_instructor/core-concepts/1-http-hello-world") {
+      // debug single file
+      // if (instance.outputDir !== "_instructor/events/step-functions") {
       //   return content
       // }
       const lessonFiles = globby.sync(['**', '!node_modules'], {
@@ -171,8 +138,6 @@ If you need help or get stuck refer to the completed code of this lesson
       }).map((item) => {
         return item.value
       })
-
-      // console.log('sortedSteps', sortedSteps)
 
       return sortedSteps.join('\n\n')
     }

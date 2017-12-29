@@ -111,7 +111,6 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
 - [How To Manage Your AWS Step Functions With Serverless](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/)
 
 
-
 ## Complete code
 
 If you need help or get stuck refer to the completed code of this lesson

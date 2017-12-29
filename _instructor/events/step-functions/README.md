@@ -203,7 +203,6 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
     This will pull in the latest logs for the `sendEmail` function and tail them. You should see the log statements of the function with the timestamp of when the function ran
 -->
 
-
 <!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
 ## Complete code
 

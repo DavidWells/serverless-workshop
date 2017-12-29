@@ -3,6 +3,7 @@
  */
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 const markdownMagic = require('markdown-magic')
 const globby = require('markdown-magic').globby
 
@@ -19,9 +20,10 @@ const directories = [
 const lessonFiles = globby.sync(directories)
 
 if (lessonFiles) {
+  console.log(chalk.yellow('Removing comments from student files'))
   lessonFiles.map((f) => {
     const filePath = path.resolve(f)
-    console.log('filePath', filePath)
+    // console.log('filePath', filePath)
     const fileContents = fs.readFileSync(filePath, 'utf8')
     //console.log(fileContents)
     const fileType = path.extname(f)
@@ -30,4 +32,5 @@ if (lessonFiles) {
     fs.writeFileSync(filePath, updatedContents)
     //console.log('updatedContents', updatedContents)
   })
+  console.log(chalk.green('All Done!'))
 }

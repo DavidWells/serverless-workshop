@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "docs": "node docs.js",
-    "presplit": "rm -rf lessons && rm -rf lessons-code-complete && npm run docs",
-    "split": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessons-code-complete",
-    "postsplit": "node postDocs.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predocgen": "rm -rf lessons && rm -rf lessons-code-complete && npm run docs",
+    "docgen": "split-guide generate --templatesDir _instructor --exercisesDir lessons --exercisesFinalDir lessons-code-complete",
+    "postdocgen": "node postDocs.js"
   },
   "author": "David Wells",
   "license": "MIT",
   "devDependencies": {
-    "markdown-magic": "^0.1.19",
+    "markdown-magic": "^0.1.20",
     "split-guide-yml": "0.0.3"
   }
 }
