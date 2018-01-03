@@ -1,12 +1,12 @@
 # Serverless Workshop
 
-This repo will teach you the [core concepts of serverless](https://github.com/DavidWells/serverless-workshop/tree/0eea84b0855bf63955ff8a2c76220f1dd8cc9ce6/lessons-code-complete/core-concepts) and walk through a variety of fully working and ready to deploy [example architectures](https://github.com/DavidWells/serverless-workshop/tree/0eea84b0855bf63955ff8a2c76220f1dd8cc9ce6/lessons-code-complete/events)
+This repo will teach you the [core concepts of serverless](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts) and walk through a variety of ready to deploy [serverless architectures](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events)
 
 ## Using this repo
 
 Work from the [**lessons**](./lessons) folders.
 
-If you need help, look in the **lessons-code-complete** directory for the completed code.
+If you need help, look in the [**lessons-code-complete**](./lessons-code-complete) directory for the completed code.
 
 ```
 |- lessons (work from these)
