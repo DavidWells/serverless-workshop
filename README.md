@@ -2,6 +2,16 @@
 
 This repo will teach you the [core concepts of serverless](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts) and walk through a variety of ready to deploy [serverless architectures](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events)
 
+## Table of Contents
+
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Using this repo](#using-this-repo)
+- [Workshop Lessons](#workshop-lessons)
+- [Helpful Tools](#helpful-tools)
+- [Prerequisites & Setup Steps](#prerequisites--setup-steps)
+- [Troubleshooting & FAQ](#troubleshooting--faq)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Using this repo
 
 After following the [prerequisite setup steps](https://github.com/DavidWells/serverless-workshop#prerequisites--setup-steps), work from the [**lessons**](./lessons) folders.
@@ -12,16 +22,6 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 |- lessons (work from these)
 |- lessons-code-complete (answers if you need to see them)
 ```
-
-## Table of Contents
-
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-- [Using this repo](#using-this-repo)
-- [Workshop Lessons](#workshop-lessons)
-- [Helpful Tools](#helpful-tools)
-- [Prerequisites & Setup Steps](#prerequisites--setup-steps)
-- [Troubleshooting & FAQ](#troubleshooting--faq)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Workshop Lessons
 
@@ -57,10 +57,10 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 
 ## Prerequisites & Setup Steps
 
-1. **Install the latest LTS version of **[Node](https://nodejs.org/). [How to install Node](https://docs.npmjs.com/getting-started/installing-node).
+1. **Install the latest LTS version of[Node](https://nodejs.org/)**. [How to install Node](https://docs.npmjs.com/getting-started/installing-node).
 2. **Install [git](https://git-scm.com/downloads) version control**.
-3. **Setup a AWS account (if you don't already have one). **You can setup a free account here: [setup free AWS account](https://aws.amazon.com/free/). It's recommended to not use pre-existing AWS account running production code.
-4. **[Install serverless CLI](https://serverless.com/framework/docs/getting-started/) **by running `npm install serverless -g` on the command line. 
+3. **Setup a AWS account** (if you don't already have one). You can setup a free account here: [setup free AWS account](https://aws.amazon.com/free/). It's recommended to not use pre-existing AWS account running production code.
+4. **[Install serverless CLI](https://serverless.com/framework/docs/getting-started/)** by running `npm install serverless -g` on the command line. 
 5. **Run `serverless --help` in your terminal to validate the Serverless CLI works on your machine.**
 6. **Then connect the serverless framework with your AWS credentials**. [See the docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/) or [watch the video](https://www.youtube.com/watch?v=KngM5bfpttA)
 
