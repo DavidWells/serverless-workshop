@@ -4,7 +4,7 @@ This repo will teach you the [core concepts of serverless](https://github.com/Da
 
 ## Using this repo
 
-Work from the [**lessons**](./lessons) folders.
+After following the [prerequisite setup steps](https://github.com/DavidWells/serverless-workshop#prerequisites--setup-steps), work from the [**lessons**](./lessons) folders.
 
 If you need help, look in the [**lessons-code-complete**](./lessons-code-complete) directory for the completed code.
 
