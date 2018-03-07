@@ -12,7 +12,7 @@
   "author": "David Wells",
   "license": "MIT",
   "devDependencies": {
-    "markdown-magic": "^0.1.20",
+    "markdown-magic": "^0.1.21",
     "split-guide-yml": "0.0.3"
   }
 }
