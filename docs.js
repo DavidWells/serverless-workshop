@@ -10,7 +10,7 @@ const toTitleCase = (str) => { // eslint-disable-line
   return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 }
 
-const formatPluginName = (string) => { // eslint-disable-line
+const formatName = (string) => { // eslint-disable-line
   return toTitleCase(string.replace(/-/g, ' '));
 }
 
@@ -49,34 +49,30 @@ If you need help or get stuck refer to the completed code of this lesson
 
       return link;
     },
+    // Build lessons list from _instructor directory
     GENERATE_LESSONS_LIST(content, options) {
-      const examples = globby.sync(['_instructor/**/**.md']);
-      console.log('examples', examples)
-      // Make table header
-      let md = '| Lesson | Final Code  |\n';
-      md += '|:--------------------------- |:-----|\n';
-      examples.forEach((example) => {
-        const contents = fs.readFileSync(example, 'utf8')
-        const parentDir = path.basename(path.dirname(path.dirname(example)))
-        const dirname = path.dirname(example)
-        const niceDirname = path.basename(path.dirname(example))
+      const lessonsPath = path.join(__dirname, '_instructor')
+      const files = fs.readdirSync(lessonsPath)
 
-        const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
-        const baseLink = `${repoBase}/${dirname}`
+      const data = files.filter((file) => {
+        const filePath = path.join(lessonsPath, file)
+        const stat = fs.statSync(filePath)
+        // return all directories
+        return stat && stat.isDirectory()
+      }).map((file) => {
+        const filePath = path.join(lessonsPath, file)
+        const examples = globby.sync([`${filePath}/**/**.md`]);
 
-        const lessonLink = baseLink.replace(/_instructor/g, 'lessons');
-        const answersLink = baseLink.replace(/_instructor/g, 'lessons-code-complete');
-        //console.log(content)
-        const heading = contents.match(/^# (.*)/g)
-        console.log('heading', heading)
-        const description = (heading && heading[0]) ? heading[0].replace("# ", '') : '';
-        // add table rows
-        md += `| [${formatPluginName(niceDirname)}](${lessonLink}) <br/> ${description} | [Complete Code](${answersLink})  |\n`;
-        // md += baseLink
-      });
+        let md = `### ${formatName(file)}
 
-      return md;
+${generateTable(examples)}
+`
+        return md
+      })
+
+      return data.join('\n');
     },
+
     GENERATE_LESSONS_STEPS(content, options, instance) {
 
       //console.log('instance.outputDir', instance.outputDir)
@@ -142,6 +138,34 @@ If you need help or get stuck refer to the completed code of this lesson
       return sortedSteps.join('\n\n')
     }
   }
+}
+
+// build lessons table
+function generateTable(examples) {
+  let md = '| Lesson | Final Code  |\n';
+  md += '|:--------------------------- |:-----|\n';
+  examples.forEach((example) => {
+    console.log(example)
+
+    const contents = fs.readFileSync(example, 'utf8')
+    const dirname = path.basename(path.dirname(example))
+    const parentDir = path.basename(path.dirname(path.dirname(example)))
+
+    console.log('dirname', dirname)
+    const repoBase = 'https://github.com/DavidWells/serverless-workshop/tree/master'
+    const baseLink = `${repoBase}/_instructor/${parentDir}/${dirname}`
+
+    const lessonLink = baseLink.replace(/_instructor/g, 'lessons');
+    const answersLink = baseLink.replace(/_instructor/g, 'lessons-code-complete');
+    //console.log(content)
+    const heading = contents.match(/^# (.*)/g)
+    console.log('heading', heading)
+    const description = (heading && heading[0]) ? heading[0].replace("# ", '') : '';
+    // add table rows
+    md += `| [${formatName(dirname)}](${lessonLink}) <br/> ${description} | [Complete Code](${answersLink})  |\n`;
+    // md += baseLink
+  });
+  return md
 }
 
 markdownMagic(['README.md', '_instructor/**/**.md'], config, () => {

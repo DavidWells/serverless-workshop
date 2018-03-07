@@ -49,7 +49,7 @@ This lesson will walk you setting up an http endpoint that uses dynamic values f
 
     Set the response body with the dynamic HTML.
 
-    Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
+    Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
 
 6. Deploy the service.
 

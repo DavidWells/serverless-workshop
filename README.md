@@ -7,6 +7,8 @@ This repo will teach you the [core concepts of serverless](https://github.com/Da
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Using this repo](#using-this-repo)
 - [Workshop Lessons](#workshop-lessons)
+  * [Core Concepts](#core-concepts)
+  * [Events](#events)
 - [Helpful Tools](#helpful-tools)
 - [Prerequisites & Setup Steps](#prerequisites--setup-steps)
 - [Troubleshooting & FAQ](#troubleshooting--faq)
@@ -26,6 +28,8 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 ## Workshop Lessons
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_LIST)-->
+### Core Concepts
+
 | Lesson | Final Code  |
 |:--------------------------- |:-----|
 | [1 Http Hello World](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/core-concepts/1-http-hello-world) <br/> Deploying Your First Endpoint | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/1-http-hello-world)  |
@@ -36,15 +40,22 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 | [6 Using Addition Resources](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/core-concepts/6-using-addition-resources) <br/> Defining additional resources | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/6-using-addition-resources)  |
 | [7 Using Serverless Plugins](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/core-concepts/7-using-serverless-plugins) <br/> Extending Serverless Functionality with plugins | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/7-using-serverless-plugins)  |
 | [8 Using Multiple Stages](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/core-concepts/8-using-multiple-stages) <br/> Deploying to Multiple Stages | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/8-using-multiple-stages)  |
+
+
+### Events
+
+| Lesson | Final Code  |
+|:--------------------------- |:-----|
 | [Dynamodb Streams](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/dynamodb-streams) <br/> Defining additional resources | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
-| [Kinesis Basic](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/kinesis/kinesis-basic) <br/> Simple Kinesis Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/kinesis/kinesis-basic)  |
+| [Kinesis Basic](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/kinesis/kinesis-basic) <br/> Simple Kinesis Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/kinesis/kinesis-basic)  |
 | [Kinesis](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/kinesis) <br/> Using Kinesis as an Event Source | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/kinesis)  |
 | [S3](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/s3) <br/> Triggering Lambda functions from s3 events | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/s3)  |
 | [Schedule](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/schedule) <br/> Triggering functions via cron schedules | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/schedule)  |
 | [Sns](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/sns) <br/> Using AWS SNS as event source | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/sns)  |
-| [Sns Advanced](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/sns/sns-advanced) <br/> Using External SNS Topics Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/sns/sns-advanced)  |
-| [Sns Basic](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/sns/sns-basic) <br/> Basic SNS Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/sns/sns-basic)  |
+| [Sns Advanced](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/sns/sns-advanced) <br/> Using External SNS Topics Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/sns/sns-advanced)  |
+| [Sns Basic](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/sns/sns-basic) <br/> Basic SNS Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/sns/sns-basic)  |
 | [Step Functions](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/step-functions) <br/> Using AWS Step Functions | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/step-functions)  |
+
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 

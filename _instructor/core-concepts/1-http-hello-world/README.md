@@ -10,7 +10,7 @@ This lesson will walk you through creating a basic http functions triggered by a
 ## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
-1. In `handler.js`, Create a `200` response code and return the `event` in the response body
+1. In `handler.js`, Create a `200` response code and return the `event` data in the response body
 
 2. After your handler has a response. It's time to deploy. Open your terminal and run the following command:
 
