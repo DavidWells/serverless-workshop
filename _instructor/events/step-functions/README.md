@@ -56,7 +56,7 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
                 End: true
     ```
 
-4. In `serverless.yml`, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `enviroment` variables
+4. In `serverless.yml`, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `environment` variables
 
 5. In `serverless.yml`, Attach the need `iamRoleStatements` to Allow access to step functions `states:*`
 

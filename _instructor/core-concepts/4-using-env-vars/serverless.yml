@@ -20,7 +20,7 @@ functions:
           path: foo
           method: get
   # WORKSHOP_START
-  # Step 2. In this_file, add an environment variable to the `bar` function. Adding `enviroment` to the function level scope them to a single function. http://bit.ly/2yVp4CR #
+  # Step 2. In this_file, add an environment variable to the `bar` function. Adding `environment` to the function level scope them to a single function. http://bit.ly/2yVp4CR #
   # WORKSHOP_END
   bar:
     handler: handler.bar

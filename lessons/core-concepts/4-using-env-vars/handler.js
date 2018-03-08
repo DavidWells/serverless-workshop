@@ -1,4 +1,4 @@
-/* Step 3. In this_file, access your newly created enviroment variable off of `process.env` and return it in the `foo` function response */
+/* Step 3. In this_file, access your newly created environment variable off of `process.env` and return it in the `foo` function response */
 module.exports.foo = (event, context, callback) => {
   const response = {
     statusCode: 200,
@@ -15,7 +15,7 @@ module.exports.foo = (event, context, callback) => {
   return callback(null, response)
 }
 
-/* Step 4. In this_file, access your newly created `bar` enviroment variable off of `process.env` and return it in the `bar` function response  */
+/* Step 4. In this_file, access your newly created `bar` environment variable off of `process.env` and return it in the `bar` function response  */
 module.exports.bar = (event, context, callback) => {
 
   const response = {

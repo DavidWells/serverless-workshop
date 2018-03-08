@@ -13,7 +13,7 @@ provider:
   runtime: nodejs6.10
   stage: ${self:custom.stage}
   # WORKSHOP_START
-  # Step 4. In this_file, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `enviroment` variables #
+  # Step 4. In this_file, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `environment` variables #
   # WORKSHOP_END
   # FINAL_START
   environment:
