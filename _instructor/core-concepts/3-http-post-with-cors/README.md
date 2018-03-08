@@ -10,7 +10,12 @@ For these cross domain api calls to work, **cors** must be enabled.
 
 This lesson will walk through creating an http function triggered by a `POST` request with **CORS** support enabled.
 
-## Steps
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Lesson Steps
 
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. In `serverless.yml`, add the `cors` settings to `http` event. See the http event docs for more info http://bit.ly/2mkgV4P
@@ -28,6 +33,12 @@ This lesson will walk through creating an http function triggered by a `POST` re
     ```bash
     sls deploy
     ```
+
+4. (optional) Setting a custom domain
+
+    Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain. This will side step the need for CORs support.
+
+    One thing to note: when running integration tests against multiple services, you still might need to hit the raw AWS endpoint. In this case, it's recommended that you still use the cors enabled endpoints.
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 <!-- Step 3. Now deploy the `cors` enabled endpoint.
@@ -39,7 +50,12 @@ This lesson will walk through creating an http function triggered by a `POST` re
     ```
 -->
 
-Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain.
+<!-- Step 4. (optional) Setting a custom domain
+
+    Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain. This will side step the need for CORs support.
+
+    One thing to note: when running integration tests against multiple services, you still might need to hit the raw AWS endpoint. In this case, it's recommended that you still use the cors enabled endpoints.
+-->
 
 <!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
 ## Complete code

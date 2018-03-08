@@ -10,7 +10,10 @@ For these cross domain api calls to work, **cors** must be enabled.
 
 This lesson will walk through creating an http function triggered by a `POST` request with **CORS** support enabled.
 
-## Steps
+- [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
+
+## Lesson Steps
 
 1. In `serverless.yml`, add the `cors` settings to `http` event. See the http event docs for more info http://bit.ly/2mkgV4P
 
@@ -28,8 +31,13 @@ This lesson will walk through creating an http function triggered by a `POST` re
     sls deploy
     ```
 
+4. (optional) Setting a custom domain
 
-Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain.
+    Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain. This will side step the need for CORs support.
+
+    One thing to note: when running integration tests against multiple services, you still might need to hit the raw AWS endpoint. In this case, it's recommended that you still use the cors enabled endpoints.
+
+
 
 ## Complete code
 
