@@ -57,6 +57,8 @@ This lesson we will be adding a delete function to remove users from the databas
     sls info
     ```
 
+    `POST - https://xyz123.execute-api.us-east-1.amazonaws.com/dev/delete`
+
     Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
 
     Send this json in the body of the request
@@ -103,6 +105,8 @@ This lesson we will be adding a delete function to remove users from the databas
     # get endpoints if you need
     sls info
     ```
+
+    `POST - https://xyz123.execute-api.us-east-1.amazonaws.com/dev/delete`
 
     Take your live `delete` endpoint & `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
 
@@ -193,6 +197,8 @@ For additional cloudformation information check out. https://acloud.guru/learn/a
     sls info
     ```
 
+    `POST - https://xyz123.execute-api.us-east-1.amazonaws.com/dev/delete`
+
     Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
 
     Send this json in the body of the request
@@ -228,6 +234,8 @@ For additional cloudformation information check out. https://acloud.guru/learn/a
     # get endpoints if you need
     sls info
     ```
+
+    `POST - https://xyz123.execute-api.us-east-1.amazonaws.com/dev/delete`
 
     Take your live `delete` endpoint & `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
 
