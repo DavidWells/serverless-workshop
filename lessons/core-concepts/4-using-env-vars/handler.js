@@ -1,4 +1,11 @@
-/* Step 3. In this_file, access your newly created environment variable off of `process.env` and return it in the `foo` function response */
+/* Step 3. In this_file, access the newly created environment variables
+
+    Lambda environment variables are accessible on the `process.env` object in node.
+
+    `process.env.[YourEnvKeyName]`
+
+    Return your environment variable in the `foo` function response 
+*/
 module.exports.foo = (event, context, callback) => {
   const response = {
     statusCode: 200,

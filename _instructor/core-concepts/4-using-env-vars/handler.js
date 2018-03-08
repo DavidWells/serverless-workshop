@@ -1,5 +1,12 @@
 // WORKSHOP_START
-/* Step 3. In this_file, access your newly created environment variable off of `process.env` and return it in the `foo` function response */
+/* Step 3. In this_file, access the newly created environment variables
+
+    Lambda environment variables are accessible on the `process.env` object in node.
+
+    `process.env.[YourEnvKeyName]`
+
+    Return the environment variable in the `foo` function response
+*/
 // WORKSHOP_END
 module.exports.foo = (event, context, callback) => {
   // FINAL_START
@@ -28,7 +35,12 @@ module.exports.foo = (event, context, callback) => {
 }
 
 // WORKSHOP_START
-/* Step 4. In this_file, access your newly created `bar` environment variable off of `process.env` and return it in the `bar` function response  */
+/* Step 4. In this_file, access the newly created scoped `bar` environment variables
+
+    `process.env.[YourEnvKeyName]`
+
+    Return the environment variable in the `bar` function response
+*/
 // WORKSHOP_END
 module.exports.bar = (event, context, callback) => {
   // FINAL_START

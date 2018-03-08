@@ -12,7 +12,13 @@ This lesson will teach you the basics of using environment variables in lambda f
 
 2. In `serverless.yml`, add an environment variable to the `bar` function. Adding `environment` to the function level scope them to a single function. http://bit.ly/2yVp4CR
 
-3. In `handler.js`, access your newly created environment variable off of `process.env` and return it in the `foo` function response
+3. In `handler.js`, access the newly created environment variables
+
+    Lambda environment variables are accessible on the `process.env` object in node.
+
+    `process.env.[YourEnvKeyName]`
+
+    Return your environment variable in the `foo` function response
 
 4. In `handler.js`, access your newly created `bar` environment variable off of `process.env` and return it in the `bar` function response
 

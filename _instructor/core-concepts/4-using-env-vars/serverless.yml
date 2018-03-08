@@ -2,7 +2,7 @@
 service: using-env-variables-example
 
 # WORKSHOP_START
-# Step 1. In this_file, add an environment key & value to the `provider` section. This will allow all functions in the secret to access the value. http://bit.ly/2yVp4CR #
+# Step 1. In this_file, add an environment key & value to the `provider` section. This will allow all functions in the service to access the value. http://bit.ly/2yVp4CR #
 # WORKSHOP_END
 provider:
   name: aws
@@ -20,7 +20,7 @@ functions:
           path: foo
           method: get
   # WORKSHOP_START
-  # Step 2. In this_file, add an environment variable to the `bar` function. Adding `environment` to the function level scope them to a single function. http://bit.ly/2yVp4CR #
+  # Step 2. In this_file, add an environment variable to the `bar` function. Adding `environment` to the function level will scope the value to a single function. http://bit.ly/2yVp4CR #
   # WORKSHOP_END
   bar:
     handler: handler.bar
@@ -32,8 +32,3 @@ functions:
       - http:
           path: bar
           method: get
-
-# WORKSHOP_START
-# Step 5. After adding your environment variables to serverless.yml and handler.js.
-# Run `sls deploy` to deploy the service #
-# WORKSHOP_END

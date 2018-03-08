@@ -77,12 +77,26 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 
 ## Troubleshooting & FAQ
 
-- `Y A M L Exception`? check your `yaml` indentation syntax. [yaml validator](http://yaml-online-parser.appspot.com/) |  [yaml validator two](https://jsonformatter.org/yaml-validator)
+- `I don't see my [insert AWS service XYZ] in the AWS console`
+
+    This happens to the best of us. Make sure you are in the correct region in the AWS console. You can get the current region of your service by typing `sls info` into the terminal.
+
+- `serverless deploy` hangs
+
+    This typically happens when aws credentials are misconfigured. Double check your `~/.aws/credentials` file and make sure the values are correct.
+
+- `Y A M L Exception`
+
+    check your `yaml` indentation syntax. [yaml validator](http://yaml-online-parser.appspot.com/) | [yaml validator two](https://jsonformatter.org/yaml-validator)
 
 - `Unable to import module 'handler': Error at Function.Module._resolveFilename (module.js:469:15)`
 
-  This error means lambda can't find your included `node_modules`. Make sure you `npm install` in your project and install all your dependancies locally before running `sls deploy`
+    This error means lambda can't find your included `node_modules`. Make sure you `npm install` in your project and install all your dependancies locally before running `sls deploy`
 
-- `Unable to delete bucket` error. Your s3 bucket in question might have files in it. You will need to head into AWS cloudformation in the console and manually delete the stack.
+- `Unable to delete bucket` error.
 
-- `Stack [xyz] cannot be deleted while in status UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS` This happens when cloudformation gets stuck in a weird state. You might need to log into the AWS console, head into cloudformation and delete the stack from the UI
+    Your s3 bucket in question might have files in it. You will need to head into AWS cloudformation in the console and manually delete the bucket and cloudformation stack.
+
+- `Stack [xyz] cannot be deleted while in status UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS`
+
+    This happens when cloudformation gets stuck in a weird state. You might need to log into the AWS console, head into cloudformation and delete the stack from the UI
