@@ -22,4 +22,3 @@ functions:
       - http:
           path: bar
           method: get
-

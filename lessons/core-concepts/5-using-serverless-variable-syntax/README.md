@@ -23,6 +23,8 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     }
     ```
 
+    Note: This is just an example of one variable source (a file reference), for production applications you would typically use the `ssm` variable source to pull sensitive values from AWS SSM secret management service
+
 2. In `serverless.yml`, replace the hardcoded value for the for `MY_SECRET` environment variable with a serverless variable using the file reference syntax `${file(path):key}`. Reference the `VAR_FROM_FILE` value from `secrets.json`
 
 3. Create a `.gitignore` file in this directory ignore the `secrets.json` file.
@@ -49,7 +51,6 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     sls invoke -f foo
     ```
 
-
 ## Other Serverless variable sources:
 
 - [environment variables](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-environment-variables)
@@ -60,10 +61,6 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 - [variables from AWS SSM Parameter Store](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-using-the-ssm-parameter-store)
 - [CloudFormation stack outputs](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-cloudformation-outputs)
 - [properties exported from Javascript files (sync or async)](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-in-javascript-files)
-
-
-
-
 
 
 

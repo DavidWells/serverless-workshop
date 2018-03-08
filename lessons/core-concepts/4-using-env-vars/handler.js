@@ -4,7 +4,7 @@
 
     `process.env.[YourEnvKeyName]`
 
-    Return your environment variable in the `foo` function response 
+    Return the environment variable in the `foo` function response
 */
 module.exports.foo = (event, context, callback) => {
   const response = {
@@ -22,7 +22,12 @@ module.exports.foo = (event, context, callback) => {
   return callback(null, response)
 }
 
-/* Step 4. In this_file, access your newly created `bar` environment variable off of `process.env` and return it in the `bar` function response  */
+/* Step 4. In this_file, access the newly created scoped `bar` environment variables
+
+    `process.env.[YourEnvKeyName]`
+
+    Return the environment variable in the `bar` function response
+*/
 module.exports.bar = (event, context, callback) => {
 
   const response = {

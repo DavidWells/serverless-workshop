@@ -26,6 +26,8 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     }
     ```
 
+    Note: This is just an example of one variable source (a file reference), for production applications you would typically use the `ssm` variable source to pull sensitive values from AWS SSM secret management service
+
 2. In `serverless.yml`, replace the hardcoded value for the for `MY_SECRET` environment variable with a serverless variable using the file reference syntax `${file(path):key}`. Reference the `VAR_FROM_FILE` value from `secrets.json`
 
 3. Create a `.gitignore` file in this directory ignore the `secrets.json` file.
@@ -53,7 +55,6 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     ```
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-
 ## Other Serverless variable sources:
 
 - [environment variables](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-environment-variables)
@@ -73,6 +74,9 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
       "VAR_FROM_FILE": "super-secret-api-key"
     }
     ```
+
+    Note: This is just an example of one variable source (a file reference), for production applications you would typically use the `ssm` variable source to pull sensitive values from AWS SSM secret management service
+
 -->
 
 <!-- Step 3. Create a `.gitignore` file in this directory ignore the `secrets.json` file.
@@ -80,8 +84,6 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     This is important for keeping secret values, like API keys, out of version control.
 
 -->
-
-
 
 <!-- Step 4. After adding the new file reference variable, it's time to deploy. Open your terminal and run the following command:
 
@@ -92,7 +94,6 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     If you run into an error, check that the [serverless variable syntax](http://bit.ly/2i91Puy) is correct.
 
 -->
-
 
 <!-- Step 5. Trigger the function and validate your variable is correct.
 
@@ -105,9 +106,7 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
     ```bash
     sls invoke -f foo
     ```
-
 -->
-
 
 <!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
 ## Complete code

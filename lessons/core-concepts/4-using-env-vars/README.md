@@ -8,9 +8,9 @@ This lesson will teach you the basics of using environment variables in lambda f
 
 ## Lesson Steps
 
-1. In `serverless.yml`, add an environment key & value to the `provider` section. This will allow all functions in the secret to access the value. http://bit.ly/2yVp4CR
+1. In `serverless.yml`, add an environment key & value to the `provider` section. This will allow all functions in the service to access the value. http://bit.ly/2yVp4CR
 
-2. In `serverless.yml`, add an environment variable to the `bar` function. Adding `environment` to the function level scope them to a single function. http://bit.ly/2yVp4CR
+2. In `serverless.yml`, add an environment variable to the `bar` function. Adding `environment` to the function level will scope the value to a single function. http://bit.ly/2yVp4CR
 
 3. In `handler.js`, access the newly created environment variables
 
@@ -18,12 +18,37 @@ This lesson will teach you the basics of using environment variables in lambda f
 
     `process.env.[YourEnvKeyName]`
 
-    Return your environment variable in the `foo` function response
+    Return the environment variable in the `foo` function response
 
-4. In `handler.js`, access your newly created `bar` environment variable off of `process.env` and return it in the `bar` function response
+4. In `handler.js`, access the newly created scoped `bar` environment variables
 
-5. After adding your environment variables to serverless.yml and handler.js.
-Run `sls deploy` to deploy the service
+    `process.env.[YourEnvKeyName]`
+
+    Return the environment variable in the `bar` function response
+
+5. Now deploy the service
+
+    Open your terminal and run the following command:
+
+    ```bash
+    sls deploy
+    ```
+
+6. Verify the environment variables are set
+
+    Invoke the functions to verify they are returning the environment values
+
+    Open your terminal and run the following command:
+
+    ```bash
+    sls invoke -f foo
+    # then
+    sls invoke -f bar
+    ```
+
+    You can also verify environment keys are set by logging into the AWS console and opening up the lambda function
+
+
 
 
 ## Extra credit
