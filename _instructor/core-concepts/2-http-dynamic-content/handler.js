@@ -73,7 +73,7 @@ module.exports.pathParamsExample = (event, context, callback) => {
 }
 
 /* Utility function for rendering HTML */
-const generateHtmlPage = (content) => {
+function generateHtmlPage(content) {
   /* for security always escape output html */
   // const safeValues = escapeHtml(content)
   return `
@@ -88,7 +88,7 @@ const generateHtmlPage = (content) => {
 }
 
 /* Utility function for rendering hello message HTML */
-const greetPerson = (name) => {
+function greetPerson(name) {
   const userName = name || 'Unknown Person!'
   return `<p>Hey ${userName}!</p>`
 }
