@@ -9,7 +9,11 @@ This lesson will walk you through creating a basic http functions triggered by a
 <!-- AUTO-GENERATED-CONTENT:START (GENERATE_LESSONS_STEPS)-->
 1. In `serverless.yml`, add the `cors` settings to `http` event. See the http event docs for more info http://bit.ly/2mkgV4P
 
-2. In `handler.js`, Set `headers` in the function response for CORS to work.  http://bit.ly/2mkgV4P
+2. In `handler.js`, set `headers` key of the function response object.
+
+    Set the `"Access-Control-Allow-Origin"` and `"Access-Control-Allow-Credentials"` headers. This is required for CORs to function properly.
+
+    For additional information, see the cors docs http://bit.ly/2FlFSWB
 
 3. After your handler has a response. It's time to deploy the `cors` enabled endpoint. Open your terminal and run the following command:
 

@@ -1,5 +1,10 @@
 // WORKSHOP_START
-/* Step 2. In this_file, Set `headers` in the function response for CORS to work.  http://bit.ly/2mkgV4P */
+/* Step 2. In this_file, set `headers` key of the function response object.
+
+    Set the `"Access-Control-Allow-Origin"` and `"Access-Control-Allow-Credentials"` headers. This is required for CORs to function properly.
+
+    For additional information, see the cors docs http://bit.ly/2FlFSWB
+*/
 // WORKSHOP_END
 module.exports.functionWithCors = (event, context, callback) => {
   const response = {
@@ -7,9 +12,9 @@ module.exports.functionWithCors = (event, context, callback) => {
     // FINAL_START
     headers: {
       /* Required for CORS support to work */
-      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Origin": "*",
       /* Required for cookies, authorization headers with HTTPS */
-      "Access-Control-Allow-Credentials" : true
+      "Access-Control-Allow-Credentials": true
     },
     // FINAL_END
     body: JSON.stringify({
