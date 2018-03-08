@@ -3,7 +3,7 @@
 This lesson we will be adding a delete function to remove users from the database and trigger another function from the dynamo `REMOVE` event
 
 - [Lesson Steps](#lesson-steps)
-- [DynamoDB cloudformation with stream](#dynamodb-cloudformation-with-stream)
+- [DynamoDB Stream CloudFormation](#dynamodb-stream-cloudformation)
 - [Complete code](#complete-code)
 
 ## Lesson Steps
@@ -130,7 +130,7 @@ This lesson we will be adding a delete function to remove users from the databas
 
     You should see events triggering your lambda functions
 
-## DynamoDB cloudformation with stream
+## DynamoDB Stream CloudFormation
 
 ```yml
 Resources:
@@ -152,7 +152,7 @@ Resources:
         StreamViewType: NEW_AND_OLD_IMAGES
 ```
 
-For additional cloudformation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation
+For additional CloudFormation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation
 
 
 ## Complete code
