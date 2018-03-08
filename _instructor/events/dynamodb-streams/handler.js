@@ -90,9 +90,9 @@ module.exports.delete = (event, context, callback) => {
     })
   }
   // WORKSHOP_START
-  /* Step 2. In this_file, implement the dynamoDB deletion here via `dynamoDb.delete` method.
+  /* Step 1. In this_file, implement the delete item function here via `dynamoDb.delete` method.
 
-      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or See the completed code if in `lessons-code-complete` directory
+      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or see the completed code in `lessons-code-complete` directory
   */
   // WORKSHOP_END
 

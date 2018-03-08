@@ -11,8 +11,8 @@ provider:
       Action:
         - dynamodb:PutItem
         - dynamodb:Scan
-        # Step 3. In this_file, the IAM role must be updated to include `dynamodb:DeleteItem` permission
-        # Step 7. In this_file, You will need the `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions for Dynamo Stream access.
+        # Step 3. In this_file, the `iamRoleStatements` must be updated to include `dynamodb:DeleteItem` permission to allow for the `delete` function to remove items from the dynamo table.
+        # Step 7. In this_file, We need to update the dynamodb IAM permissions `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions for functions to access the Dynamo Stream.
       Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
 
 functions:
@@ -31,8 +31,8 @@ functions:
           method: post
           cors: true
   # Add a `delete` function triggered by an http POST
-  # Step 1. In this_file, Add a `delete` function triggered by an http POST event #
-  # Step 8. Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne in this_file
+  # Step 2. In this_file, add the `delete` function exported from `handler.js` and attach it to an http POST event. #
+  # Step 8. In this_file, add a `handleStream` function triggered by a dynamo Stream. [See stream docs](http://bit.ly/2mhkJne)
 
 resources:
   Resources:
@@ -49,4 +49,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        # Step 6. add a stream to the dynamoDB table by setting the `StreamSpecification` property on the `Properties` of the CloudFormation declaration of the table. Set `StreamViewType: NEW_AND_OLD_IMAGES`
+        # Step 6. Now, add a stream to the dynamoDB table by setting the `StreamSpecification` property on the `Properties` of the CloudFormation declaration of the `myDynamoTable` table. Set `StreamViewType: NEW_AND_OLD_IMAGES`. [CloudFormation dynamob docs](http://amzn.to/2txNq3a)

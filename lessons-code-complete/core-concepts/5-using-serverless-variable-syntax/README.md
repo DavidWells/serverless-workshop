@@ -2,7 +2,7 @@
 
 - [Background](#background)
 - [Lesson Steps](#lesson-steps)
-- [Other Serverless variable sources:](#other-serverless-variable-sources)
+- [Serverless variable sources](#serverless-variable-sources)
 - [Complete code](#complete-code)
 
 ## Background
@@ -42,16 +42,18 @@ For more information [see the variable docs](http://bit.ly/2i91Puy)
 5. Trigger the function and validate your variable is correct.
 
     Visit the url and validate your variable is in the response.
+
     ```bash
-    https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/dev
+    https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/foo
     ```
 
     or open your terminal and run the following command:
+
     ```bash
     sls invoke -f foo
     ```
 
-## Other Serverless variable sources:
+## Serverless variable sources
 
 - [environment variables](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-environment-variables)
 - [CLI options](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-cli-options)

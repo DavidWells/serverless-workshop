@@ -10,16 +10,18 @@
 
 ## Background
 
-Very often when building serverless micro services they require additional resources to be setup outside of just functions and endpoints.
+When building serverless services, it's pretty common to require additional resources to be setup outside of simple functions & endpoints.
 
-Resources like a database, an additional s3 bucket, a kinesis stream, or an SQS queue.
+Resources like a databases, additional s3 buckets, a kinesis stream, or an SQS queue might be required for real world use cases.
 
 There are two things we need to do to add addition resources.
 
-1. Define the resources needed in the `serverless.yml` `resources` block
+1. Define the resources needed in the `serverless.yml` file's `resources` block
 2. Add any additional IAM permissions the functions will need to interact with those resources.
 
-This lesson will cover adding additional resources to your serverless service. We will walk through adding a dynamoDB table to your service.
+This lesson will cover adding additional resources to your serverless service.
+
+We will walk through adding a dynamoDB table to your service.
 
 ## Lesson Steps
 
@@ -32,6 +34,7 @@ This lesson will cover adding additional resources to your serverless service. W
 4. **Deploy the service**
 
     Run the following command in your CLI
+
     ```bash
     sls deploy
     ```
@@ -39,6 +42,7 @@ This lesson will cover adding additional resources to your serverless service. W
 5. **Trigger the live create endpoint**
 
     To get information about the service run
+
     ```bash
     sls info
     # https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
@@ -47,6 +51,7 @@ This lesson will cover adding additional resources to your serverless service. W
     Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to post to it.
 
     Send this json in the body of the request
+
     ```json
     {
       "email": "lololol@lolol.com"
@@ -54,6 +59,7 @@ This lesson will cover adding additional resources to your serverless service. W
     ```
 
     `curl` example:
+
     ```bash
     curl -vvv -X POST -d '{"email": "lololol@lolol.com"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
     ```

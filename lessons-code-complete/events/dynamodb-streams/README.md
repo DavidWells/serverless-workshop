@@ -8,13 +8,13 @@ This lesson we will be adding a delete function to remove users from the databas
 
 ## Lesson Steps
 
-1. In `serverless.yml`, Add a `delete` function triggered by an http POST event
+1. In `handler.js`, implement the delete item function here via `dynamoDb.delete` method.
 
-2. In `handler.js`, implement the dynamoDB deletion here via `dynamoDb.delete` method.
+      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or see the completed code in `lessons-code-complete` directory
 
-      You can view the dynamoDB docs here: http://amzn.to/2ilqYlM or See the completed code if in `lessons-code-complete` directory
+2. In `serverless.yml`, add the `delete` function exported from `handler.js` and attach it to an http POST event.
 
-3. In `serverless.yml`, the IAM role must be updated to include `dynamodb:DeleteItem` permission
+3. In `serverless.yml`, the `iamRoleStatements` must be updated to include `dynamodb:DeleteItem` permission to allow for the `delete` function to remove items from the dynamo table.
 
 4. **Deploy the service.**
 
@@ -24,39 +24,57 @@ This lesson we will be adding a delete function to remove users from the databas
     sls deploy
     ```
 
-    The deploy command should return a list of live URL endpoints for you to test out.
+    After deploying. Add a user to the database with the create endpoint.
 
-    ```bash
-    https://xyz.execute-api.us-east-1.amazonaws.com/dev/delete
+    POST to `https://xyz.execute-api.us-east-1.amazonaws.com/dev/create`
+
+    With the body:
+
+    ```json
+    {
+      "email": "test@test.com"
+    }
+    ```
+
+    This will return the auto generated user ID. We will use this id in the deletion step below.
+
+    ```json
+    {
+      "id": "4cgl4td0mufwl0wiqrepuba9k9",
+      "timestamp": 1520547428623,
+      "email": "test@test.com"
+    }
     ```
 
 5. **Trigger the live delete endpoint**
 
-    To get information about the service run
+    To get live endpoints & additional information about the service run
+
     ```bash
     sls info
-    # https://xxx.execute-api.us-west-2.amazonaws.com/dev/delete
     ```
 
-    Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to post to it.
+    Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
 
     Send this json in the body of the request
+
     ```json
     {
-      "id": "id-here"
+      "id": "4cgl4td0mufwl0wiqrepuba9k9"
     }
     ```
 
     `curl` example:
+
     ```bash
-    curl -vvv -X POST -d '{"id": "id-here"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/delete
+    curl -vvv -X POST -d '{"id": "4cgl4td0mufwl0wiqrepuba9k9"}' -H "Content-Type: application/json" https://xyz.execute-api.us-east-1.amazonaws.com/dev/delete
     ```
 
     You should receive a response with the new item. (or an error if dynamo fails)
 
-6. add a stream to the dynamoDB table by setting the `StreamSpecification` property on the `Properties` of the CloudFormation declaration of the table. Set `StreamViewType: NEW_AND_OLD_IMAGES`
+6. Now, add a stream to the dynamoDB table by setting the `StreamSpecification` property on the `Properties` of the CloudFormation declaration of the `myDynamoTable` table. Set `StreamViewType: NEW_AND_OLD_IMAGES`. [CloudFormation dynamob docs](http://amzn.to/2txNq3a)
 
-7. In `serverless.yml`, You will need the `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions for Dynamo Stream access.
+7. In `serverless.yml`, We need to update the dynamodb IAM permissions `GetRecords`, `GetShardIterator`, `DescribeStream`, `ListStreams` permissions for functions to access the Dynamo Stream.
 
 8. In `handler.js`, implement the `dynamoStreamHandler` function.
 
@@ -64,11 +82,11 @@ This lesson we will be adding a delete function to remove users from the databas
 
     See the completed code if in `lessons-code-complete` directory
 
-8. Add a `handleStream` function triggered by a dynamo Stream http://bit.ly/2mhkJne in `serverless.yml`
+8. In `serverless.yml`, add a `handleStream` function triggered by a dynamo Stream. [See stream docs](http://bit.ly/2mhkJne)
 
 9. **Deploy the service again.**
 
-    Now you have configured you configured your stream and set the correct permissions for your functions to listen to dynamo changes, lets redeploy
+    Now you have configured you configured your stream and set the correct permissions for your functions to listen to dynamo changes, it is time to redeploy
 
     Open your terminal and run the following command:
 
@@ -79,9 +97,24 @@ This lesson we will be adding a delete function to remove users from the databas
 10. **Trigger the live delete endpoint** again
 
     ```bash
+    # get endpoints if you need
     sls info
+    ```
 
-    # https://xxx.execute-api.us-west-2.amazonaws.com/dev/delete
+    Take your live `delete` endpoint & `curl` it or use [PostMan](https://www.getpostman.com) to run the function.
+
+    Send this json in the body of the request
+
+    ```json
+    {
+      "id": "your-id-here"
+    }
+    ```
+
+    `curl` example:
+
+    ```bash
+    curl -vvv -X POST -d '{"id": "your-id-here"}' -H "Content-Type: application/json" https://xyz.execute-api.us-east-1.amazonaws.com/dev/delete
     ```
 
     Trigged the endpoint again and verify that the item was deleted from your database.
@@ -116,7 +149,6 @@ Resources:
 ```
 
 For additional cloudformation information check out. https://acloud.guru/learn/aws-cloudformation and https://acloud.guru/learn/aws-advanced-cloudformation
-
 
 
 ## Complete code
