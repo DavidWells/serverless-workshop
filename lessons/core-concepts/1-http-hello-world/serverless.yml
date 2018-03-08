@@ -8,4 +8,4 @@ provider:
 functions:
   hello:
     handler: handler.hello
-    # Step 4. In this_file, add an `http` GET event to trigger this function. http://bit.ly/2mkgV4P #
+    # Step 4. In this_file, add an `events` section and an `http` GET event with the path of `hello` to trigger this function. See http event docs for more details http://bit.ly/2mkgV4P #

@@ -22,7 +22,7 @@ module.exports.queryParamsExample = (event, context, callback) => {
 
     Set the response body with the dynamic HTML.
 
-    Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
+    Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
 module.exports.pathParamsExample = (event, context, callback) => {
   const response = {

@@ -1,49 +1,61 @@
 # Deploying Your First Endpoint
 
-This lesson will walk you through creating a basic http functions triggered by a http GET endpoint
+This lesson will walk through creating a basic function triggered by a http GET endpoint
 
 - [Lesson Steps](#lesson-steps)
 - [Complete code](#complete-code)
 
 ## Lesson Steps
 
-1. In `handler.js`, Create a `200` response code and return the `event` in the response body
+1. In `handler.js`, Create a `200` response code and return the `event` data in the response body.
 
-2. After your handler has a response. It's time to deploy. Open your terminal and run the following command:
+    The response needs a `statusCode` and a `body` object returned. Remember to `JSON.stringify` the body.
+
+    For more details, see the http event docs link http://bit.ly/2mkgV4P
+
+2. After your handler is returning a response, it's time to deploy.
+
+    Open your terminal and run the following command:
 
     ```bash
+    # sls is shorthand for serverless
     sls deploy
     ```
 
-3. You can invoke the function from your terminal with
+3. Invoke the function to ensure it's working properly
+
+    Open your terminal and run the [`invoke`](http://bit.ly/2FjBrf3) command:
 
     ```bash
     sls invoke -f hello
     ```
 
-4. In `serverless.yml`, add an `http` GET event to trigger this function. http://bit.ly/2mkgV4P
+4. In `serverless.yml`, add an `events` section and an `http` GET event with the path of `hello` to trigger this function. See http event docs for more details http://bit.ly/2mkgV4P
 
-6. Deploy the function again after declaring the `http` event in `serverless.yml`
+5. Deploy the function again after declaring the `http` event in `serverless.yml`
 
     ```bash
     sls deploy
     ```
 
-7. The `serverless deploy` command will return a live URL of your service you can visit in your browser
+6. The `serverless deploy` command will return a live URL of your service you can visit in your browser
 
     ```bash
     https://xyz-123.execute-api.us-east-1.amazonaws.com/dev/hello
     ```
 
-8. To retrieve the service information at a later time, run the `sls info` command
+7. To retrieve the service information at a later time, run the `sls info` command
 
     ```bash
     sls info
     ```
 
-9. Now lets scaffold a project the easy way via the `serverless create` command. In your terminal run
+8. We can shortcut this process with the `serverless create` command.
+
+    The [`sls create` command](http://bit.ly/2G8q86G) lets users scaffold a project the easy way.
 
     To see a list of available templates run:
+
     ```bash
     sls create
     ```
@@ -52,8 +64,9 @@ This lesson will walk you through creating a basic http functions triggered by a
 
     ```bash
     sls create -t hello-world -p my-new-service
-    # This will create a new service in the my-new-service directory
     ```
+
+    This will create a new service in the `my-new-service` directory
 
 
 
