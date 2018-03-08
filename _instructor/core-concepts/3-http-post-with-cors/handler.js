@@ -1,7 +1,7 @@
 // WORKSHOP_START
 /* Step 2. In this_file, set `headers` key of the function response object.
 
-    Set the `"Access-Control-Allow-Origin"` and `"Access-Control-Allow-Credentials"` headers. This is required for CORs to function properly.
+    Set the `"Access-Control-Allow-Origin"` & `"Access-Control-Allow-Credentials"` headers.
 
     For additional information, see the cors docs http://bit.ly/2FlFSWB
 */

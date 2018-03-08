@@ -1,8 +1,14 @@
 # Deploying an http POST endpoint with CORS support
 
-This lesson will walk you through creating a basic http functions triggered by a http POST endpoint with CORS support.
+Lambda functions are commonly used for backend APIs for frontend web apps.
 
-`cors` is needed for interacting (a.k.a making `ajax` calls) to API endpoints from web applications.
+By default, the urls for your APIs will be on an AWS domain like `https://abc-123.execute-api.us-east-1.amazonaws.com/dev/hello`.
+
+For these cross domain api calls to work, **cors** must be enabled.
+
+**CORS** or Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to let a user agent gain permission to access selected resources from a server on a different origin (domain) than the site currently in use.
+
+This lesson will walk through creating an http function triggered by a `POST` request with **CORS** support enabled.
 
 ## Steps
 
@@ -11,25 +17,29 @@ This lesson will walk you through creating a basic http functions triggered by a
 
 2. In `handler.js`, set `headers` key of the function response object.
 
-    Set the `"Access-Control-Allow-Origin"` and `"Access-Control-Allow-Credentials"` headers. This is required for CORs to function properly.
+    Set the `"Access-Control-Allow-Origin"` & `"Access-Control-Allow-Credentials"` headers.
 
     For additional information, see the cors docs http://bit.ly/2FlFSWB
 
-3. After your handler has a response. It's time to deploy the `cors` enabled endpoint. Open your terminal and run the following command:
+3. Now deploy the `cors` enabled endpoint.
+
+    Open your terminal and run the following command:
 
     ```bash
     sls deploy
     ```
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+<!-- Step 3. Now deploy the `cors` enabled endpoint.
 
-<!-- Step 3. After your handler has a response. It's time to deploy the `cors` enabled endpoint. Open your terminal and run the following command:
+    Open your terminal and run the following command:
 
     ```bash
     sls deploy
     ```
 -->
 
+Alternatively, You can [setup a custom domain](https://serverless.com/blog/serverless-api-gateway-domain/) to mask your AWS urls with your own domain.
 
 <!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
 ## Complete code
