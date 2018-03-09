@@ -51,14 +51,16 @@ This lesson will walk through triggering a lambda function in response to an s3 
     Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to post to it.
 
     Send this json in the body of the request
+
     ```json
     {
-      "image_url": "http://to-image-url.com/image.jpg",
-      "key": "file-name-key"
+      "image_url": "https://flavorwire.files.wordpress.com/2015/09/o-bill-facebook.jpg",
+      "key": "bill-murray.jpg"
     }
     ```
 
     `curl` example:
+
     ```bash
     curl -vvv -X POST -d '{"image_url": "url", "key": "file-name-key"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
     ```
@@ -105,7 +107,6 @@ resources:
 Want to trigger a function from an already existing s3 bucket?
 You will need to install the [serverless-external-s3-event plugin](https://github.com/matt-filion/serverless-external-s3-event) https://github.com/matt-filion/serverless-external-s3-event
 
-
 <!-- Step 1. Install the required dependancies.
 
     In your terminal run the following command.
@@ -135,14 +136,16 @@ You will need to install the [serverless-external-s3-event plugin](https://githu
     Take your live endpoint and `curl` it or use [PostMan](https://www.getpostman.com) to post to it.
 
     Send this json in the body of the request
+
     ```json
     {
-      "image_url": "http://to-image-url.com/image.jpg",
-      "key": "file-name-key"
+      "image_url": "https://flavorwire.files.wordpress.com/2015/09/o-bill-facebook.jpg",
+      "key": "bill-murray.jpg"
     }
     ```
 
     `curl` example:
+
     ```bash
     curl -vvv -X POST -d '{"image_url": "url", "key": "file-name-key"}' -H "Content-Type: application/json" https://xxx.execute-api.us-west-2.amazonaws.com/dev/create
     ```
@@ -160,9 +163,7 @@ You will need to install the [serverless-external-s3-event plugin](https://githu
     ```
 
     Or login to your AWS account and look at the input and output bucket
-
 -->
-
 
 <!-- AUTO-GENERATED-CONTENT:START (README_BOTTOM) -->
 ## Complete code
