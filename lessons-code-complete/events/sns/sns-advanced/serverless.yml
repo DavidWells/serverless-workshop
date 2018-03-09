@@ -45,8 +45,8 @@ functions:
       - sns: arn:aws:sns:${self:provider.region}:#{AWS::AccountId}:${self:custom.topicName}
 
 resources:
-# This creates a new topic for us via cloud formation.
   Resources:
+    # This creates a new sns topic.
     MyCustomTopic:
       Type: AWS::SNS::Topic
       Properties:

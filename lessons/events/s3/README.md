@@ -1,10 +1,9 @@
 # Triggering Lambda functions from s3 events
 
-This lesson will walk us through triggering a lambda function from an s3 event.
-
+This lesson will walk through triggering a lambda function in response to an s3 `ObjectCreated` event.
 
 - [Lesson Steps](#lesson-steps)
-- [s3 bucket cloudformation](#s3-bucket-cloudformation)
+- [S3 bucket CloudFormation template](#s3-bucket-cloudformation-template)
 - [Triggering events from existing buckets](#triggering-events-from-existing-buckets)
 - [Complete code](#complete-code)
 
@@ -15,7 +14,7 @@ This lesson will walk us through triggering a lambda function from an s3 event.
     In your terminal run the following command.
 
     ```bash
-    npm i async gm node-fetch --save
+    npm install async gm node-fetch --save
     ```
 
 2. In `serverless.yml`, Define a `custom` block and add `bucketName` & `outputBucketName` values. Make it globally unique. We will use this reference in other areas of serverless.yml
@@ -74,7 +73,7 @@ This lesson will walk us through triggering a lambda function from an s3 event.
 
     Or login to your AWS account and look at the input and output bucket
 
-## s3 bucket cloudformation
+## S3 bucket CloudFormation template
 
 ```yml
 resources:

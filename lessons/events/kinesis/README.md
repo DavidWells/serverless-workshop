@@ -1,7 +1,7 @@
 # Using Kinesis as an Event Source
 
 - [About Kinesis](#about-kinesis)
-- [Example Kinesis Event Batch payload](#example-kinesis-event-batch-payload)
+- [Example Kinesis batch event payload](#example-kinesis-batch-event-payload)
 - [Other Examples](#other-examples)
 - [Shoutouts](#shoutouts)
 
@@ -18,7 +18,7 @@ Go to [kinesis basic](./kinesis-basic) to start.
 
 <img src="https://user-images.githubusercontent.com/532272/32869755-7d651856-ca2d-11e7-9373-6da55973a9ca.png" width="800" />
 
-## Example Kinesis Event Batch payload
+## Example Kinesis batch event payload
 
 ```json
 {
@@ -63,7 +63,7 @@ Go to [kinesis basic](./kinesis-basic) to start.
 
 - [Amazon Kinesis Streams fan-out via Kinesis Analytics](https://github.com/alexcasalboni/kinesis-streams-fan-out-kinesis-analytics)
 - [hello-retail-workshop](https://github.com/Nordstrom/hello-retail-workshop)
-
+- [Serverless analytics](https://github.com/sbstjn/serverless-analytics)
 
 ## Shoutouts
 

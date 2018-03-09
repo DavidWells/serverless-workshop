@@ -4,7 +4,10 @@ In this lesson we will deploy a new service with a kinesis stream.
 
 The service will have one function that will batch process the events coming into the kinesis stream.
 
-## Steps
+- [Lesson Steps](#lesson-steps)
+- [Complete code](#complete-code)
+
+## Lesson Steps
 
 1. Install the projects dependencies.
 
@@ -17,6 +20,8 @@ The service will have one function that will batch process the events coming int
     This will install our dev dependancies needed for simulating events on our kinesis stream
 
 2. Define the kinesis stream in `serverless.yml`
+
+    Under the `resources` block of `serverless.yml`, add in the CloudFormation needed to create a kinesis stream
 
     ```yml
     resources:

@@ -74,8 +74,8 @@ resources:
 # Step 3. In this_file, define a `resources` block and add the CloudFormation to create a new SNS topic. See `readme.md` for SNS CloudFormation template #
 # WORKSHOP_END
 # FINAL_START
-# This creates a new topic for us via cloud formation.
   Resources:
+    # This creates a new sns topic.
     MyCustomTopic:
       Type: AWS::SNS::Topic
       Properties:
