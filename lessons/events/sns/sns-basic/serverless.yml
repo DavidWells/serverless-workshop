@@ -1,7 +1,6 @@
 service: aws-sns-basic
 
-
-# Step 1. In this_file, Define a `custom` block and add `topicName`. We will use this reference in other areas of serverless.yml #
+# Step 1. In this_file, Define a `custom` block and add `topicName`. We will use this reference in other areas of `serverless.yml` #
 
 provider:
   name: aws

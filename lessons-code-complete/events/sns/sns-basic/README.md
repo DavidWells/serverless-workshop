@@ -1,17 +1,17 @@
 # Basic SNS Example
 
-This example shows how we can use SNS topics for consuming events.
+This example shows how we can use SNS topics and Lambda functions for consuming events.
 
-In this example the serverless framework automatically creates the sns topics for you.
+In this basic example the serverless framework automatically creates the sns topic for you.
 
-See the advanced example for using existing sns topics.
+See the advanced example for how to subscribe to existing sns topics.
 
 - [Lesson Steps](#lesson-steps)
 - [Complete code](#complete-code)
 
 ## Lesson Steps
 
-1. In `serverless.yml`, Define a `custom` block and add `topicName`. We will use this reference in other areas of serverless.yml
+1. In `serverless.yml`, Define a `custom` block and add `topicName`. We will use this reference in other areas of `serverless.yml`
 
 2. in `serverless.yml`, attach the `sns` event to the `eventConsumer` function. See the sns event docs link http://bit.ly/2mvPbdF
 
@@ -51,6 +51,13 @@ See the advanced example for using existing sns topics.
 
     Or login to your AWS account and look at sns topic subscribers
 
+8. (optional) **Clean up the service**
+
+    To remove the full service and sns topics run
+
+    ```bash
+    sls remove
+    ```
 
 
 
