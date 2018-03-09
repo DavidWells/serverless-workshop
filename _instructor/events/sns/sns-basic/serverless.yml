@@ -19,8 +19,7 @@ provider:
     TOPIC_NAME: ${self:custom.topicName}
   # FINAL_END
   # WORKSHOP_START
-  # Step 4. In this_file, Create the IAM role `iamRoleStatements` needed to `sns:Publish`
-  # Narrow the scope of the permission to the sns in this service
+  # Step 4. In this_file, Create the IAM role `iamRoleStatements` needed to `sns:Publish`. This allows for our `eventProducer` function to publish messages to our SNS topic.
   # WORKSHOP_END
   # FINAL_START
   iamRoleStatements:

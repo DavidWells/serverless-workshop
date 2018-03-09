@@ -7,7 +7,17 @@ custom:
   topicName: sns-advanced-topic-example
   # cloud formation intrinstic function to get ARN of topic.
   # `MyCustomTopic` references the cloudformation in `resources`
-  topicArn: { "Fn::Join" : ["", [ "arn:aws:sns:", { "Ref" : "AWS::Region" }, ":", { "Ref" : "AWS::AccountId" }, ":", { Fn::GetAtt: [ MyCustomTopic, TopicName ] } ] ]  }
+  topicArn:
+    Fn::Join:
+      - ''
+      - - 'arn:aws:sns:'
+        - Ref: AWS::Region
+        - ":"
+        - Ref: AWS::AccountId
+        - ":"
+        - Fn::GetAtt:
+          - MyCustomTopic
+          - TopicName
 
 provider:
   name: aws
@@ -34,8 +44,8 @@ functions:
     events:
       - sns: arn:aws:sns:${self:provider.region}:#{AWS::AccountId}:${self:custom.topicName}
 
-# This creates a new topic for us via cloud formation.
 resources:
+# This creates a new topic for us via cloud formation.
   Resources:
     MyCustomTopic:
       Type: AWS::SNS::Topic

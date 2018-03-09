@@ -20,7 +20,7 @@ See the advanced example for how to subscribe to existing sns topics.
 
 3. In `serverless.yml`, Expose the `TOPIC_NAME` to `environment` variables using the `${self:custom.topicName}` reference
 
-4. In `serverless.yml`, Create the IAM role `iamRoleStatements` needed to `sns:Publish`
+4. In `serverless.yml`, Create the IAM role `iamRoleStatements` needed to `sns:Publish`. This allows for our `eventProducer` function to publish messages to our SNS topic.
 
 5. **Deploy the service**
 
