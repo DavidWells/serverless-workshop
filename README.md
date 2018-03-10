@@ -20,11 +20,11 @@ After following the [prerequisite setup steps](https://github.com/DavidWells/ser
 
 If you get stuck or want to look ahead checkout the [**lessons-code-complete**](./lessons-code-complete) directory for the completed code.
 
-```
-|- _instructor # ignore these 🙈
-|- lessons     # work from these files! ✅
-|- lessons-code-complete # Complete lesson answers 💡
-```
+Repo directory structure:
+
+- **/lessons** - ✅ work from these files!
+- **/lessons-code-complete** - 💡Complete lesson answers
+- **/_instructor** - 🙈 ignore these, unless updating lessons 
 
 ## Workshop Lessons
 
