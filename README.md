@@ -113,7 +113,7 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 
     This should return the list of commands from the CLI tool.
 
-    Now let's verify your AWS account is correctly configured
+    Now let's verify your AWS account is correctly configured. Open up your terminal and run the following commands:
 
     ```bash
     # create a test project
