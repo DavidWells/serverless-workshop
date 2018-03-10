@@ -1,5 +1,7 @@
 # Simple Kinesis Example
 
+- [ ] TODO update script to work on windows. `yargs` isn't working properly.
+
 In this lesson we will deploy a new service with a kinesis stream.
 
 The service will have one function that will batch process the events coming into the kinesis stream.

@@ -46,7 +46,7 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 
 | Lesson | Final Code  |
 |:--------------------------- |:-----|
-| [Dynamodb Streams](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/dynamodb-streams) <br/> Defining additional resources | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
+| [Dynamodb Streams](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/dynamodb-streams) <br/> Using DynamoDB streams | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)  |
 | [Kinesis Basic](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/kinesis/kinesis-basic) <br/> Simple Kinesis Example | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/kinesis/kinesis-basic)  |
 | [Kinesis](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/kinesis) <br/> Using Kinesis as an Event Source | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/kinesis)  |
 | [S3](https://github.com/DavidWells/serverless-workshop/tree/master/lessons/events/s3) <br/> Triggering Lambda functions from s3 events | [Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/s3)  |

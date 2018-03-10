@@ -1,4 +1,4 @@
-# Defining additional resources
+# Using DynamoDB streams
 
 This lesson we will be adding a delete function to remove users from the database and trigger another function from the dynamo `REMOVE` event
 
