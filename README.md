@@ -68,12 +68,64 @@ If you need help, look in the [**lessons-code-complete**](./lessons-code-complet
 
 ## Prerequisites & Setup Steps
 
-1. **Install the latest LTS version of[Node](https://nodejs.org/)**. [How to install Node](https://docs.npmjs.com/getting-started/installing-node).
-2. **Install [git](https://git-scm.com/downloads) version control**.
-3. **Setup a AWS account** (if you don't already have one). You can setup a free account here: [setup free AWS account](https://aws.amazon.com/free/). It's recommended to not use pre-existing AWS account running production code.
-4. **[Install serverless CLI](https://serverless.com/framework/docs/getting-started/)** by running `npm install serverless -g` on the command line. 
-5. **Run `serverless --help` in your terminal to validate the Serverless CLI works on your machine.**
-6. **Then connect the serverless framework with your AWS credentials**. [See the docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/) or [watch the video](https://www.youtube.com/watch?v=KngM5bfpttA)
+1. **Install the latest LTS version of [Node](https://nodejs.org/)**. [How to install Node](https://docs.npmjs.com/getting-started/installing-node).
+2. **Verify you have [git](https://git-scm.com/downloads) on your machine**
+
+    Most machines come pre-loaded with git. 🎉
+
+    To verify you have `git`, open up your terminal and run:
+
+    ```bash
+    which git
+    ```
+
+    This should return a path of where git is installed. If the command returns `git not found`, we will need to install git on your machine.
+
+3. **Setup a AWS account**. 
+
+    If you don't already have an AWS account, let's get one setup.
+
+    [Click here to setup a free AWS account](https://aws.amazon.com/free/)
+
+    It's recommended to not use pre-existing AWS account running production code.
+
+    Make sure you add valid billing information and verify your account.
+
+4. **[Install serverless CLI](https://serverless.com/framework/docs/getting-started/)**
+
+    Open up your terminal and run:
+
+    ```bash
+    npm install serverless -g
+    ```
+
+5. **Connect the serverless CLI with your AWS account credentials**. 
+
+    [See the docs](https://serverless.com/framework/docs/providers/aws/guide/credentials/) or [watch the video](https://www.youtube.com/watch?v=KngM5bfpttA)
+
+6. **Verify the Serverless CLI works on your machine**
+
+    Open up your terminal and run:
+
+    ```
+    serverless --help
+    ```
+
+    This should return the list of commands from the CLI tool.
+
+    Now let's verify your AWS account is correctly configured
+
+    ```bash
+    # create a test project
+    serverless create --template aws-nodejs --path my-test-service
+    # move into the `my-test-service` directory
+    cd my-test-service
+    # deploy the test service to verify AWS credentials
+    serverless deploy
+    ```
+
+    This should deploy the test service into AWS. If you encounter errors, please ping me and we can get them sorted out.
+
 
 ## Troubleshooting & FAQ
 
