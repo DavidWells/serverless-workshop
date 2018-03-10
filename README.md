@@ -24,7 +24,7 @@ Repo directory structure:
 
 - **/lessons** - ✅ work from these files!
 - **/lessons-code-complete** - 💡Complete lesson answers
-- **/_instructor** - 🙈 ignore these, unless updating lessons 
+- **/_instructor** - 🙈 ignore these, unless updating lessons
 
 ## Workshop Lessons
 
@@ -127,6 +127,11 @@ Repo directory structure:
 
     This should deploy the test service into AWS. If you encounter errors, please ping me and we can get them sorted out.
 
+**Bonus setup:**
+
+- If you have an IDE/editor with YAML linting it will be helpful. (like this [atom plugin](https://atom.io/packages/linter-js-yaml), or [vs code plugin](https://marketplace.visualstudio.com/items?itemName=djabraham.vscode-yaml-validation))
+- Install [postman](https://www.getpostman.com/) for quick & easy testing of endpoints we deploy
+- It's also recommended that you use [nvm](https://github.com/creationix/nvm) (node version manager) just in case you need to change versions of node for the workshop.
 
 ## Troubleshooting & FAQ
 
