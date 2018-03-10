@@ -18,11 +18,12 @@ This repo will teach you the [core concepts of serverless](https://github.com/Da
 
 After following the [prerequisite setup steps](https://github.com/DavidWells/serverless-workshop#prerequisites--setup-steps), work from the [**lessons**](./lessons) folders.
 
-If you need help, look in the [**lessons-code-complete**](./lessons-code-complete) directory for the completed code.
+If you get stuck or want to look ahead checkout the [**lessons-code-complete**](./lessons-code-complete) directory for the completed code.
 
 ```
-|- lessons (work from these)
-|- lessons-code-complete (answers if you need to see them)
+|- _instructor # ignore these 🙈
+|- lessons     # work from these files! ✅
+|- lessons-code-complete # Complete lesson answers 💡
 ```
 
 ## Workshop Lessons
