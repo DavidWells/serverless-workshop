@@ -7,8 +7,7 @@
     "deploy": "sls deploy"
   },
   "author": "David Wells",
-  "license": "MIT",
-  // FINAL_START
+  "license": "MIT"// FINAL_START,
   "dependencies": {
     "async": "^2.6.0",
     "gm": "^1.23.0",

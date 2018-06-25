@@ -2,7 +2,7 @@
 service: using-serverless-plugins
 
 plugins:
-  - serverless-stack-output
+  - serverless-manifest-plugin
 
 custom:
   output:

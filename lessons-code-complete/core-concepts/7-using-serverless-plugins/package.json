@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "serverless-manifest-plugin": "0.0.4",
     "serverless-stack-output": "^0.2.3"
   }
 }

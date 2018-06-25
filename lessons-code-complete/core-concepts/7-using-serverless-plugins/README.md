@@ -30,14 +30,14 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
     sls plugin list
     ```
 
-    **Online:**  
+    **Online:**
 
     Head to the [Serverless Plugins repository](https://github.com/serverless/plugins#community-contributed-plugins) for a list of available plugins
 
 2. **Installing Plugins**
 
     ```bash
-    sls plugin install -n serverless-stack-output
+    sls plugin install -n serverless-manifest-plugin
     ```
 
     This command will install the plugin into your node_modules folder and save it to the package.json devDependencies.
@@ -46,17 +46,17 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
 
     ```yml
     plugins:
-      - serverless-stack-output
+      - serverless-manifest-plugin
     ```
 
 3. **Configuring Plugins**
 
     Plugins handle a wide variety of use cases and thus have their own configuration requirements. Make sure to read the README.md of the plugin you are using to add any additional configuration it may require.
 
-
-    The `serverless-stack-output` plugin requires a new field in `serverless.yml`
+    Typically plugins will use settings defined in a `custom` key in `serverless.yml`
 
     ```yml
+    # example
     custom:
       output:
         file: .serverless/manifest.json
@@ -67,7 +67,7 @@ There are a ton of [serverless plugins](https://github.com/serverless/plugins#co
 4. **Removing Plugins**
 
     ```bash
-    sls plugin uninstall -n serverless-stack-output
+    sls plugin uninstall -n serverless-manifest-plugin
     ```
 
     Typically this works but some plugins aren't validating inputs. If you run into any errors, manually remove the plugin from the `plugins` array in the `serverless.yml` file

@@ -3,7 +3,7 @@ service: using-serverless-plugins
 
 # FINAL_START
 plugins:
-  - serverless-stack-output
+  - serverless-manifest-plugin
 
 custom:
   output:

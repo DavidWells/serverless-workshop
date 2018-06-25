@@ -87,6 +87,17 @@ Resources:
         WriteCapacityUnits: 1
 ```
 
+IAM policy for accessing DynamoDB
+
+```yml
+iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:PutItem
+      - dynamodb:Scan
+    Resource: { Fn::GetAtt: [ myDynamoTable, Arn ] }
+```    
+
 ## DynamoDB Resources
 
 DynamoDB is a noSQL database thats crazy fast.

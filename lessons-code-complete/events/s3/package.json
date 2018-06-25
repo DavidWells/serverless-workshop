@@ -7,8 +7,7 @@
     "deploy": "sls deploy"
   },
   "author": "David Wells",
-  "license": "MIT",
-  "dependencies": {
+  "license": "MIT"  "dependencies": {
     "async": "^2.6.0",
     "gm": "^1.23.0",
     "node-fetch": "^1.6.3"

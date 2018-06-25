@@ -7,5 +7,4 @@
     "deploy": "sls deploy"
   },
   "author": "David Wells",
-  "license": "MIT",
-}
+  "license": "MIT"}
