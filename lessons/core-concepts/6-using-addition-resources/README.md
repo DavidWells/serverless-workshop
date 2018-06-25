@@ -77,10 +77,10 @@ Resources:
     Properties:
       TableName: 'my-table-name'
       AttributeDefinitions:
-        - AttributeName: url
+        - AttributeName: id
           AttributeType: S
       KeySchema:
-        - AttributeName: url
+        - AttributeName: id
           KeyType: HASH
       ProvisionedThroughput:
         ReadCapacityUnits: 1
