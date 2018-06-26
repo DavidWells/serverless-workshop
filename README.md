@@ -2,13 +2,6 @@
 
 This repo will teach you the [core concepts of serverless](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts) and walk through a variety of ready to deploy [serverless architectures](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events)
 
-## Upcoming Live Workshops
-
-| Location       | Date             | Link                                                                         |
-|----------------|------------------|------------------------------------------------------------------------------|
-| San Francisco  | June 6/7th, 2018 | [Register here](https://t.co/S5MdFEJJ9v)                                     |
-| New York City  | June 27, 2018    | [Register here](https://qconnewyork.com/ny2018/workshop/serverless-workshop) | 
-
 ## Table of Contents
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
