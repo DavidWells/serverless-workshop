@@ -2,6 +2,8 @@
 
 This repo will teach you the [core concepts of serverless](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts) and walk through a variety of ready to deploy [serverless architectures](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events)
 
+If you'd like the serverless training for your team, [get in touch with me](https://davidwells.io/contact/).
+
 ## Table of Contents
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
