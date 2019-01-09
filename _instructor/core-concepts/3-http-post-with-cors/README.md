@@ -64,3 +64,25 @@ If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/3-http-post-with-cors)
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Locking down cors to a specific domain
+
+```yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors:
+            origin: 'api.myorigin.com'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+allowCredentials: true
+```
