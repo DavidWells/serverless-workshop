@@ -84,5 +84,5 @@ functions:
               - X-Api-Key
               - X-Amz-Security-Token
               - X-Amz-User-Agent
-allowCredentials: true
+            allowCredentials: true
 ```
