@@ -172,3 +172,23 @@ If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/s3)
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Alternative methods
+
+You can wire up s3 notifications via cloudformation as well. See [docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html)
+
+Example cloudformation:
+
+```yml
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      ...
+      Properties:
+        NotificationConfiguration:
+          TopicConfigurations:
+            - Event: s3:ObjectCreated:Put
+              Topic:
+                Ref: BucketTopic
+```
