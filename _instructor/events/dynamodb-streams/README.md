@@ -270,3 +270,7 @@ If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Additional Resources
+
+- [Modeling Relational Data in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-modeling-nosql-B.html)
