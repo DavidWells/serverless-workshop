@@ -140,3 +140,7 @@ If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/1-http-hello-world)
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Additional Resources
+
+- [API gateway deepdive video](https://www.twitch.tv/videos/408651893?t=00h03m34s)
