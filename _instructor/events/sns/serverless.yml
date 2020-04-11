@@ -6,7 +6,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   environment:
     TOPIC_NAME: ${self:custom.topicName}
   iamRoleStatements:

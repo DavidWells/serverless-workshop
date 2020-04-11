@@ -6,7 +6,7 @@ service: aws-s3-event-example
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   # Step 4. In this_file, Expose the `bucketName` to `environment` variables #
   # Step 5. In this_file, Create the IAM role `iamRoleStatements` needed to `s3:GetObject` & `s3:PutObject`
   # Narrow the scope of the permission to the two buckets in this service

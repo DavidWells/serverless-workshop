@@ -14,7 +14,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   stage: ${self:custom.stage}
 
 # WORKSHOP_START

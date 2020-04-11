@@ -3,7 +3,7 @@ service: using-env-variables-example
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   environment:
     MY_ENV_VAR: 'hello there'
 

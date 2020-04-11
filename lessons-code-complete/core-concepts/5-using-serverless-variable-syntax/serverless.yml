@@ -3,7 +3,7 @@ service: serverless-variables-syntax-example
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   environment:
     MY_SECRET: ${file(./secrets.json):VAR_FROM_FILE}
 

@@ -4,7 +4,7 @@ service: using-env-variables-example
 # Step 1. In this_file, add an environment key & value to the `provider` section. This will allow all functions in the service to access the value. http://bit.ly/2yVp4CR #
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
 
 functions:
   foo:

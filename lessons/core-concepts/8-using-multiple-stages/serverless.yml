@@ -5,7 +5,7 @@ service: using-multiple-stages
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   # Step 4. In this_file, set the stage key to the custom.stage value set in previous step
   # Step 5. In this_file, set an environment variable that uses the serverless file variable syntax to grab a file name with the current stage in it. Example `config.dev.json`. Hint this uses nested variables http://bit.ly/2AHvkKO
 

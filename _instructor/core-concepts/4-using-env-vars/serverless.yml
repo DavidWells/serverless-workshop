@@ -6,7 +6,7 @@ service: using-env-variables-example
 # WORKSHOP_END
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   # FINAL_START
   environment:
     MY_ENV_VAR: 'hello there'

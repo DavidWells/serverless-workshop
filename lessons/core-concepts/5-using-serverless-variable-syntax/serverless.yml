@@ -4,7 +4,7 @@ service: serverless-variables-syntax-example
 # Step 2. In this_file, replace the hardcoded value for the for `MY_SECRET` environment variable with a serverless variable using the file reference syntax `${file(path):key}`. Reference the `VAR_FROM_FILE` value from `secrets.json` #
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   environment:
     MY_SECRET: xyz123
 

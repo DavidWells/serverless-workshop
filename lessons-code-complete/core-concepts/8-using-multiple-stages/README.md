@@ -34,7 +34,7 @@ However, you can override this value in a number of ways.
 
     provider:
       name: aws
-      runtime: nodejs6.10
+      runtime: nodejs12.x
       stage: qa
     ```
 
@@ -45,7 +45,7 @@ However, you can override this value in a number of ways.
 
     provider:
       name: aws
-      runtime: nodejs6.10
+      runtime: nodejs12.x
       stage: ${opt:stage, 'dev'}
     ```
 

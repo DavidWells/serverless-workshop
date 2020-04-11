@@ -4,6 +4,6 @@ service: aws-sns-basic
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   # Step 3. In this_file, Expose the `TOPIC_NAME` to `environment` variables using the `${self:custom.topicName}` reference #
   # Step 4. In this_file, Create the IAM role `iamRoleStatements` needed to `sns:Publish`. This allows for our `eventProducer` function to publish messages to our SNS topic.

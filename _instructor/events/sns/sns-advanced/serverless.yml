@@ -31,7 +31,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   # WORKSHOP_START
   # Step 5. In this_file, expose the `TOPIC_NAME` to `environment` variables using the `${self:custom.topicName}` reference. This is for the eventProducer to send message to our newly created topic #
   # WORKSHOP_END
