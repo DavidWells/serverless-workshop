@@ -1,5 +1,5 @@
 
-module.exports.foo = (event, context, callback) => {
+export const foo = (event, context, callback) => {
   // FINAL_START
   console.log('process.env.MY_SECRET', process.env.MY_SECRET)
   // FINAL_END

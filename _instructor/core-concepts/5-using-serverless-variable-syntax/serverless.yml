@@ -6,7 +6,7 @@ service: serverless-variables-syntax-example
 # WORKSHOP_END
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   # WORKSHOP_START
   environment:
     MY_SECRET: xyz123

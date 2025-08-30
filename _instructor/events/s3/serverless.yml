@@ -13,7 +13,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   # WORKSHOP_START
   # Step 4. In this_file, Expose the `bucketName` to `environment` variables #
   # WORKSHOP_END

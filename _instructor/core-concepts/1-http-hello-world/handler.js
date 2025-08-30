@@ -1,5 +1,5 @@
 
-module.exports.hello = (event, context, callback) => {
+export const hello = (event, context, callback) => {
   // WORKSHOP_START
   /* Step 1. In this_file, Create a `200` response code and return the `event` data in the response body.
 

@@ -6,7 +6,7 @@
 
     Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.queryParamsExample = (event, context, callback) => {
+export const queryParamsExample = (event, context, callback) => {
   // WORKSHOP_START
   const response = {
     statusCode: 200,
@@ -42,7 +42,7 @@ module.exports.queryParamsExample = (event, context, callback) => {
 
     Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.pathParamsExample = (event, context, callback) => {
+export const pathParamsExample = (event, context, callback) => {
   // WORKSHOP_START
   const response = {
     statusCode: 200,

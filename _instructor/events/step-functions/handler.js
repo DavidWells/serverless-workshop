@@ -1,7 +1,7 @@
 /* run step function */
-const AWS = require('aws-sdk')
+import { SFNClient, StartExecutionCommand } from '@aws-sdk/client-sfn';
 const STATE_MACHINE_ARN = process.env.STATE_MACHINE_ARN
-const stepfunctions = new AWS.StepFunctions()
+const stepfunctions = new SFNClient({});
 
 // WORKSHOP_START
 /* Step 6. In this_file the `startStateMachine` will handle the creation of the new step function.
@@ -11,7 +11,7 @@ const stepfunctions = new AWS.StepFunctions()
     See docs for more details http://amzn.to/2zP0OPW
 */
 // WORKSHOP_END
-module.exports.startStateMachine = (event, context, callback) => {
+export const startStateMachine = async (event, context, callback) => {
   const body = JSON.parse(event.body)
   const taskName = body.taskName
   const startAt = body.startAt
@@ -32,11 +32,8 @@ module.exports.startStateMachine = (event, context, callback) => {
     })
   }
   // start step function
-  stepfunctions.startExecution(params, (err, data) => {
-    if (err) {
-      console.log(err, err.stack) // an error occurred
-      return callback(err)
-    }
+  try {
+    const data = await stepfunctions.send(new StartExecutionCommand(params));
     console.log(data) // successful response
     console.log(data.executionArn) // needed for cancels
     console.log(data.startDate)
@@ -48,12 +45,15 @@ module.exports.startStateMachine = (event, context, callback) => {
       }),
     };
     return callback(null, response)
-  })
+  } catch (err) {
+    console.log(err, err.stack) // an error occurred
+    return callback(err)
+  }
   // FINAL_END
 }
 
 
-module.exports.sendEmail = (event, context, callback) => {
+export const sendEmail = (event, context, callback) => {
   const time = new Date()
   console.log(`send email triggered at ${time}`)
 

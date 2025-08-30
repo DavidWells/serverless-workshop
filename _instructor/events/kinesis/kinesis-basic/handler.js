@@ -3,7 +3,7 @@
   Step 6. the `processEvents` in this_file will handle the batch processing of kinesis events
 */
 // WORKSHOP_END
-module.exports.processEvents = (event, context, callback) => {
+export const processEvents = (event, context, callback) => {
   // Process kinesis event
   if (event.Records) {
     event.Records.forEach((record) => {

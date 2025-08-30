@@ -10,7 +10,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   stage: ${self:custom.stage}
   # WORKSHOP_START
   # Step 4. In this_file, reference the Output value of the state machine. ${self:resources.Outputs.MyStateMachine.Value} in the `environment` variables #
