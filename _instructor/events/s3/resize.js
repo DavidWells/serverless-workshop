@@ -11,7 +11,7 @@ const gmIM = gm.subClass({
 // get reference to S3 client
 const s3 = new S3Client({});
 
-export const resizeImage = async (event, context, callback) => {
+export const resizeImage = async (event, context) => {
   // Read options from the event.
   console.log("Reading options from event:\n", util.inspect(event, {
       depth: 5
@@ -24,12 +24,12 @@ export const resizeImage = async (event, context, callback) => {
   if (srcBucket === dstBucket) {
     console.log('Destination bucket must not match source bucket.')
     console.log('This would result in an infinite loop')
-    return callback(null, {
+    return {
       statusCode: 501,
       body: JSON.stringify({
         error: 'Destination Matches source bucket'
       }),
-    });
+    };
   }
 
   // Image sizes and output folder paths
@@ -171,6 +171,6 @@ export const resizeImage = async (event, context, callback) => {
         imageProcessed: true
       }),
     }
-    return callback(null, response)
+    return response
   })
 }

@@ -3,7 +3,7 @@
   Step 6. the `processEvents` in this_file will handle the batch processing of kinesis events
 */
 // WORKSHOP_END
-export const processEvents = (event, context, callback) => {
+export const processEvents = (event, context) => {
   // Process kinesis event
   if (event.Records) {
     event.Records.forEach((record) => {
@@ -23,5 +23,5 @@ export const processEvents = (event, context, callback) => {
       console.log('NEGATIVE decoded record:', payload)
     })
   }
-  return callback(null, `Successfully processed ${event.Records.length} records.`);
+  return `Successfully processed ${event.Records.length} records.`;
 }

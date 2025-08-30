@@ -8,7 +8,7 @@
     Return the environment variable in the `foo` function response
 */
 // WORKSHOP_END
-export const foo = (event, context, callback) => {
+export const foo = (event, context) => {
   // FINAL_START
   console.log('process.env.MY_ENV_VAR', process.env.MY_ENV_VAR)
   /* MY_ENV_VAR_FOR_BAR will be undefined */
@@ -31,7 +31,7 @@ export const foo = (event, context, callback) => {
       // FINAL_END
     }),
   }
-  return callback(null, response)
+  return response
 }
 
 // WORKSHOP_START
@@ -42,7 +42,7 @@ export const foo = (event, context, callback) => {
     Return the environment variable in the `bar` function response
 */
 // WORKSHOP_END
-export const bar = (event, context, callback) => {
+export const bar = (event, context) => {
   // FINAL_START
   /* both env variables will be accessible in bar */
   console.log('process.env.MY_ENV_VAR', process.env.MY_ENV_VAR)
@@ -66,5 +66,5 @@ export const bar = (event, context, callback) => {
       // FINAL_END
     }),
   }
-  return callback(null, response)
+  return response
 }

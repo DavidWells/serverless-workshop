@@ -1,5 +1,5 @@
 
-export const foo = (event, context, callback) => {
+export const foo = (event, context) => {
   // FINAL_START
   console.log('process.env.MY_SECRET', process.env.MY_SECRET)
   // FINAL_END
@@ -15,5 +15,5 @@ export const foo = (event, context, callback) => {
       message: `my super secret thing ${process.env.MY_SECRET}`
     }),
   }
-  return callback(null, response)
+  return response
 }

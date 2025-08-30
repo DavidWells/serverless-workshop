@@ -11,7 +11,7 @@ const stepfunctions = new SFNClient({});
     See docs for more details http://amzn.to/2zP0OPW
 */
 // WORKSHOP_END
-export const startStateMachine = async (event, context, callback) => {
+export const startStateMachine = async (event, context) => {
   const body = JSON.parse(event.body)
   const taskName = body.taskName
   const startAt = body.startAt
@@ -44,16 +44,16 @@ export const startStateMachine = async (event, context, callback) => {
         params: params
       }),
     };
-    return callback(null, response)
+    return response
   } catch (err) {
     console.log(err, err.stack) // an error occurred
-    return callback(err)
+    throw err
   }
   // FINAL_END
 }
 
 
-export const sendEmail = (event, context, callback) => {
+export const sendEmail = (event, context) => {
   const time = new Date()
   console.log(`send email triggered at ${time}`)
 
@@ -65,5 +65,5 @@ export const sendEmail = (event, context, callback) => {
     }),
   };
 
-  return callback(null, response);
+  return response;
 };

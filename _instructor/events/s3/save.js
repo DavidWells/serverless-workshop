@@ -3,7 +3,7 @@ import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 const s3 = new S3Client({});
 const BUCKET_NAME = process.env.BUCKET_NAME
 
-export const saveImage = async (event, context, callback) => {
+export const saveImage = async (event, context) => {
   const key = event.key || JSON.parse(event.body).key
   const imageURL = event.image_url || JSON.parse(event.body).image_url
 
@@ -17,14 +17,14 @@ export const saveImage = async (event, context, callback) => {
       Body: buffer,
     }));
     
-    return callback(null, {
+    return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
         message: 'image saved to bucket'
       }),
-    })
+    }
   } catch (error) {
-    return callback(error, null)
+    throw error
   }
 }

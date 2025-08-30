@@ -8,18 +8,18 @@ const client = new DynamoDBClient({});
 const dynamoDb = DynamoDBDocumentClient.from(client);
 
 // Save item in DynamoDB table
-export const create = async (event, context, callback) => {
+export const create = async (event, context) => {
   const timestamp = new Date().getTime()
   const body = JSON.parse(event.body)
 
   if (!body || !body.email) {
-    return callback(null, {
+    return {
       statusCode: 401,
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         error: 'no body found or email found'
       })
-    })
+    }
   }
 
   const params = {
@@ -39,20 +39,20 @@ export const create = async (event, context, callback) => {
       statusCode: 200,
       body: JSON.stringify(params.Item),
     }
-    return callback(null, response)
+    return response
   } catch (error) {
     // handle potential errors
     console.error(error)
-    return callback(null, {
+    return {
       statusCode: error.statusCode || 501,
       headers: { 'Content-Type': 'text/plain' },
       body: 'Couldn\'t create the dynamo item.',
-    })
+    }
   }
 }
 
 /* Scan a dynamoDB table and return items */
-export const scan = async (event, context, callback) => {
+export const scan = async (event, context) => {
   const params = {
     TableName: process.env.MY_TABLE,
   }
@@ -64,30 +64,30 @@ export const scan = async (event, context, callback) => {
       statusCode: 200,
       body: JSON.stringify(result.Items),
     }
-    return callback(null, response)
+    return response
   } catch (error) {
     // handle potential errors
     console.error(error)
-    return callback(null, {
+    return {
       statusCode: error.statusCode || 501,
       headers: { 'Content-Type': 'text/plain' },
       body: 'Couldn\'t fetch the todos.',
-    })
+    }
   }
 }
 
 
-export const delete = async (event, context, callback) => {
+export const delete = async (event, context) => {
   const body = JSON.parse(event.body)
 
   if (!body || !body.id) {
-    return callback(null, {
+    return {
       statusCode: 401,
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         error: 'no body found or id found'
       })
-    })
+    }
   }
   // WORKSHOP_START
   /* Step 1. In this_file, implement the delete item function here via `dynamoDb.delete` method.
@@ -114,15 +114,15 @@ export const delete = async (event, context, callback) => {
         message: `user ${body.id} deleted`
       }),
     }
-    return callback(null, response)
+    return response
   } catch (error) {
     // handle potential errors
     console.error(error)
-    return callback(null, {
+    return {
       statusCode: error.statusCode || 501,
       headers: { 'Content-Type': 'text/plain' },
       body: 'Couldn\'t remove the todo item.',
-    })
+    }
   }
   // FINAL_END
 }
@@ -136,7 +136,7 @@ export const delete = async (event, context, callback) => {
 */
 // WORKSHOP_END
 /* Function to handle items on the dynamoDB stream */
-export const dynamoStreamHandler = (event, context, callback) => {
+export const dynamoStreamHandler = (event, context) => {
   // FINAL_START
   event.Records.forEach((record) => {
     console.log(record.eventID)
@@ -149,6 +149,6 @@ export const dynamoStreamHandler = (event, context, callback) => {
       console.log('REMOVAL EVENT. DO REMOVAL STUFF')
     }
   })
-  return callback(null, `Successfully processed ${event.Records.length} records.`);
+  return `Successfully processed ${event.Records.length} records.`;
   // FINAL_END
 }
