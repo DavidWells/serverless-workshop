@@ -6,7 +6,7 @@
 
     Return the environment variable in the `foo` function response
 */
-module.exports.foo = (event, context, callback) => {
+export const foo = (event, context) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -19,7 +19,7 @@ module.exports.foo = (event, context, callback) => {
       message: 'return env variable here'
     }),
   }
-  return callback(null, response)
+  return response
 }
 
 /* Step 4. In this_file, access the newly created scoped `bar` environment variables
@@ -28,7 +28,7 @@ module.exports.foo = (event, context, callback) => {
 
     Return the environment variable in the `bar` function response
 */
-module.exports.bar = (event, context, callback) => {
+export const bar = (event, context) => {
 
   const response = {
     statusCode: 200,
@@ -42,5 +42,5 @@ module.exports.bar = (event, context, callback) => {
       message: 'return env variable here'
     }),
   }
-  return callback(null, response)
+  return response
 }

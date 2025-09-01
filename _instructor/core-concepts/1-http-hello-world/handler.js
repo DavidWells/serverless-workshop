@@ -1,5 +1,5 @@
 
-module.exports.hello = (event, context, callback) => {
+export const hello = (event, context) => {
   // WORKSHOP_START
   /* Step 1. In this_file, Create a `200` response code and return the `event` data in the response body.
 
@@ -8,7 +8,7 @@ module.exports.hello = (event, context, callback) => {
     For more details, see the http event docs link http://bit.ly/2mkgV4P
   */
   const response = {}
-  return callback(null, response);
+  return response;
   // WORKSHOP_END
   // FINAL_START
   const response = {
@@ -19,7 +19,6 @@ module.exports.hello = (event, context, callback) => {
       event: event,
     }),
   }
-  /** callback(error, response) */
-  return callback(null, response)
+  return response
   // FINAL_END
 }

@@ -6,6 +6,7 @@ This lesson will walk through triggering a lambda function in response to an s3 
 - [S3 bucket CloudFormation template](#s3-bucket-cloudformation-template)
 - [Triggering events from existing buckets](#triggering-events-from-existing-buckets)
 - [Complete code](#complete-code)
+- [Alternative methods](#alternative-methods)
 
 ## Lesson Steps
 
@@ -111,3 +112,23 @@ You will need to install the [serverless-external-s3-event plugin](https://githu
 If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/s3)
+
+## Alternative methods
+
+You can wire up s3 notifications via cloudformation as well. See [docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html)
+
+Example cloudformation:
+
+```yml
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      ...
+      Properties:
+        NotificationConfiguration:
+          TopicConfigurations:
+            - Event: s3:ObjectCreated:Put
+              Topic:
+                Ref: BucketTopic
+```

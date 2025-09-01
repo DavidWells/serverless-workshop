@@ -6,7 +6,7 @@
     For additional information, see the cors docs http://bit.ly/2FlFSWB
 */
 // WORKSHOP_END
-module.exports.functionWithCors = (event, context, callback) => {
+export const functionWithCors = (event, context) => {
   const response = {
     statusCode: 200,
     // FINAL_START
@@ -22,5 +22,5 @@ module.exports.functionWithCors = (event, context, callback) => {
       event: event,
     }),
   }
-  return callback(null, response)
+  return response
 }

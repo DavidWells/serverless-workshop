@@ -1,4 +1,4 @@
-module.exports.processEvents = (event, context, callback) => {
+export const processEvents = (event, context) => {
   // Process kinesis event
   if (event.Records) {
     event.Records.forEach((record) => {
@@ -18,5 +18,5 @@ module.exports.processEvents = (event, context, callback) => {
       console.log('NEGATIVE decoded record:', payload)
     })
   }
-  return callback(null, `Successfully processed ${event.Records.length} records.`);
+  return `Successfully processed ${event.Records.length} records.`;
 }

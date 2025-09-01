@@ -1,5 +1,7 @@
-const AWS = require('aws-sdk')
-const argv = require('yargs').argv
+import { KinesisClient, PutRecordsCommand } from '@aws-sdk/client-kinesis';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+const argv = yargs(hideBin(process.argv)).argv;
 
 const streamName = argv.name
 const numberOfEvents = argv.count || 20
@@ -10,8 +12,8 @@ if (!streamName) {
   return false
 }
 
-function putRecords() {
-  const kinesis = new AWS.Kinesis({region: AWS_REGION})
+async function putRecords() {
+  const kinesis = new KinesisClient({region: AWS_REGION})
   const params = {
     Records: Array.from(Array(parseInt(numberOfEvents))).map((_, i) => {
       const n = (Math.random() * 100).toFixed(2) * (Math.random() > 0.5 ? 1 : -1);
@@ -28,7 +30,7 @@ function putRecords() {
     }),
     StreamName: streamName,
   };
-  return kinesis.putRecords(params).promise();
+  return await kinesis.send(new PutRecordsCommand(params));
 }
 
 putRecords().then((res) => {

@@ -1,0 +1,9 @@
+{
+  "name": "sns-handler",
+  "version": "1.0.0",
+  "description": "SNS handler using AWS SDK v3",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.668.0"
+  }
+}

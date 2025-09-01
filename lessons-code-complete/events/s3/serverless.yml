@@ -7,7 +7,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   environment:
     BUCKET_NAME: ${self:custom.bucketName}
   iamRoleStatements:

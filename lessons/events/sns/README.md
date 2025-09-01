@@ -16,6 +16,10 @@ Amazon Simple Notification Service (Amazon SNS) is a web service that coordinate
 - [Basic Example]('./basic')
 - [Advanced Example]('./advanced')
 
+## Other Examples
+
+- [Lambda (publisher) => SNS => Lambda (consumer)](https://github.com/didil/serverless-lambda-sns-example)
+
 ## Troubleshooting
 
 - `event.sns.arn.indexOf is not a function` means there is a `yaml` indentation error

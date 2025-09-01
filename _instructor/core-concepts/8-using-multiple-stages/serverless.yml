@@ -11,7 +11,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   # WORKSHOP_START
   # Step 4. In this_file, set the stage key to the custom.stage value set in previous step
   # WORKSHOP_END

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
+  "type": "module",
   "scripts": {
     "simulate": "node ./scripts/putRecords.js --name=$npm_config_name --count=$npm_config_count --region=$npm_config_region",
     "test": "echo \"Error: no test specified\" && exit 1"

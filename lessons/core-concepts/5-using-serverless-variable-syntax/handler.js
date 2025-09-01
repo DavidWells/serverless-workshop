@@ -1,5 +1,5 @@
 
-module.exports.foo = (event, context, callback) => {
+export const foo = (event, context) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -12,5 +12,5 @@ module.exports.foo = (event, context, callback) => {
       message: `my super secret thing ${process.env.MY_SECRET}`
     }),
   }
-  return callback(null, response)
+  return response
 }

@@ -6,7 +6,7 @@
 
     Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.queryParamsExample = (event, context, callback) => {
+export const queryParamsExample = (event, context) => {
   // WORKSHOP_START
   const response = {
     statusCode: 200,
@@ -14,7 +14,7 @@ module.exports.queryParamsExample = (event, context, callback) => {
       message: 'Hi ⊂◉‿◉つ',
     }),
   }
-  return callback(null, response)
+  return response
   // WORKSHOP_END
   // FINAL_START
   let name
@@ -24,13 +24,13 @@ module.exports.queryParamsExample = (event, context, callback) => {
   /* generate the hello paragraph */
   const helloParagraph = greetPerson(name)
 
-  return callback(null, {
+  return {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html',
     },
     body: generateHtmlPage(helloParagraph),
-  })
+  }
   // FINAL_END
 }
 
@@ -42,7 +42,7 @@ module.exports.queryParamsExample = (event, context, callback) => {
 
     Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.pathParamsExample = (event, context, callback) => {
+export const pathParamsExample = (event, context) => {
   // WORKSHOP_START
   const response = {
     statusCode: 200,
@@ -50,7 +50,7 @@ module.exports.pathParamsExample = (event, context, callback) => {
       message: 'Hi ⊂◉‿◉つ',
     }),
   }
-  return callback(null, response)
+  return response
   // WORKSHOP_END
   // FINAL_START
   let name
@@ -61,14 +61,14 @@ module.exports.pathParamsExample = (event, context, callback) => {
   /* generate the hello paragraph */
   const helloParagraph = greetPerson(name)
 
-  // callback is sending HTML back
-  return callback(null, {
+  // return is sending HTML back
+  return {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html',
     },
     body: generateHtmlPage(helloParagraph),
-  })
+  }
   // FINAL_END
 }
 

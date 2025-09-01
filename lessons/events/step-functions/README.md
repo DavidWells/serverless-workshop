@@ -112,6 +112,7 @@ This example will walk us through using [AWS step functions](https://aws.amazon.
 - [Trigger Step functions with AWS Lambda (Video)](https://www.youtube.com/watch?v=u-ALakoQ8kM)
 - [Passing data between steps in Step Functions (Video)](https://www.youtube.com/watch?v=5RXSTTOiPzk)
 - [AWS re:Invent 2016: Serverless Apps with AWS Step Functions (Video)](https://www.youtube.com/watch?v=75MRve4nv8s)
+- [Wait state in AWS Step Functions](http://vgaltes.com/post/step-functions-wait-state/)
 
 
 ## Complete code

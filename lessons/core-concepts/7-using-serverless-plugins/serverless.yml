@@ -4,7 +4,7 @@ service: using-serverless-plugins
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
 
 functions:
   hello:

@@ -4,7 +4,7 @@
 
     For additional information, see the cors docs http://bit.ly/2FlFSWB
 */
-module.exports.functionWithCors = (event, context, callback) => {
+export const functionWithCors = (event, context) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -12,5 +12,5 @@ module.exports.functionWithCors = (event, context, callback) => {
       event: event,
     }),
   }
-  return callback(null, response)
+  return response
 }

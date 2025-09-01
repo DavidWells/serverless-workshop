@@ -1,16 +1,17 @@
 // dependencies
-const util = require('util')
-const path = require('path')
-const async = require('async')
-const AWS = require('aws-sdk')
-const gm = require('gm').subClass({
+import util from 'util';
+import path from 'path';
+import async from 'async';
+import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
+import gm from 'gm';
+const gmIM = gm.subClass({
   imageMagick: true
 })
 
 // get reference to S3 client
-const s3 = new AWS.S3()
+const s3 = new S3Client({});
 
-module.exports.resizeImage = (event, context, callback) => {
+export const resizeImage = async (event, context) => {
   // Read options from the event.
   console.log("Reading options from event:\n", util.inspect(event, {
       depth: 5
@@ -23,12 +24,12 @@ module.exports.resizeImage = (event, context, callback) => {
   if (srcBucket === dstBucket) {
     console.log('Destination bucket must not match source bucket.')
     console.log('This would result in an infinite loop')
-    return callback(null, {
+    return {
       statusCode: 501,
       body: JSON.stringify({
         error: 'Destination Matches source bucket'
       }),
-    });
+    };
   }
 
   // Image sizes and output folder paths
@@ -79,10 +80,10 @@ module.exports.resizeImage = (event, context, callback) => {
         // Download the image from S3 into a buffer.
         // sadly it downloads the image several times, but we couldn't place it outside
         // the variable was not recognized
-        s3.getObject({
+        s3.send(new GetObjectCommand({
           Bucket: srcBucket,
           Key: srcKey
-        }, next)
+        })).then(result => next(null, result)).catch(next)
         console.timeEnd("downloadImage")
       },
       function convert(response, next) {
@@ -90,7 +91,7 @@ module.exports.resizeImage = (event, context, callback) => {
         console.time("convertImage")
         console.log(`Reponse content type: ${response.ContentType}`)
         console.log("Conversion")
-        gm(response.Body)
+        gmIM(response.Body)
           .antialias(true)
           .density(300)
           .toBuffer('JPG', (err, buffer) => {
@@ -106,7 +107,7 @@ module.exports.resizeImage = (event, context, callback) => {
         console.time("processImage")
         // Transform the image buffer in memory.
         // gm(response.Body).size(function(err, size) {
-        gm(response).size(function(err, size) {
+        gmIM(response).size(function(err, size) {
           // console.log("buf content type " + buf.ContentType)
           if (err) {
             console.log(err)
@@ -140,12 +141,12 @@ module.exports.resizeImage = (event, context, callback) => {
         console.log("upload: " + index)
         console.log(`uploadPath: /${keyPath}`)
         // Stream the transformed image to a different folder.
-        s3.putObject({
+        s3.send(new PutObjectCommand({
           Bucket: dstBucket,
           Key: keyPath,
           Body: data,
           ContentType: 'JPG'
-        }, next)
+        })).then(result => next(null, result)).catch(next)
         console.timeEnd("uploadImage")
       }
     ], function(err, result) {
@@ -170,6 +171,6 @@ module.exports.resizeImage = (event, context, callback) => {
         imageProcessed: true
       }),
     }
-    return callback(null, response)
+    return response
   })
 }

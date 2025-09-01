@@ -3,7 +3,7 @@ service: event-driven-app
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   # WORKSHOP_START
   # Step 3. In this_file, add the database table name to the service's `environment` variables. The `aws-sdk` will need to know the table name in order to access the table
   # WORKSHOP_END

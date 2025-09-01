@@ -1,0 +1,10 @@
+{
+  "name": "dynamodb-streams-handler",
+  "version": "1.0.0",
+  "description": "DynamoDB streams handler using AWS SDK v3",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.668.0",
+    "@aws-sdk/lib-dynamodb": "^3.668.0"
+  }
+}
