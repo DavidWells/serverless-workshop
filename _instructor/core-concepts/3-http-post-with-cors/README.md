@@ -13,6 +13,7 @@ This lesson will walk through creating an http function triggered by a `POST` re
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Lesson Steps](#lesson-steps)
 - [Complete code](#complete-code)
+- [Locking down cors to a specific domain](#locking-down-cors-to-a-specific-domain)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps

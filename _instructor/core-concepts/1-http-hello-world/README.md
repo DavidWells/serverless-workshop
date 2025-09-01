@@ -5,6 +5,7 @@ This lesson will walk through creating a basic function triggered by a http GET 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Lesson Steps](#lesson-steps)
 - [Complete code](#complete-code)
+- [Additional Resources](#additional-resources)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps

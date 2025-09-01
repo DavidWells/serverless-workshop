@@ -6,6 +6,7 @@ This lesson we will be adding a delete function to remove users from the databas
 - [Lesson Steps](#lesson-steps)
 - [DynamoDB Stream CloudFormation](#dynamodb-stream-cloudformation)
 - [Complete code](#complete-code)
+- [Additional Resources](#additional-resources)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps

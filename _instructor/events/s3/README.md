@@ -7,6 +7,7 @@ This lesson will walk through triggering a lambda function in response to an s3 
 - [S3 bucket CloudFormation template](#s3-bucket-cloudformation-template)
 - [Triggering events from existing buckets](#triggering-events-from-existing-buckets)
 - [Complete code](#complete-code)
+- [Alternative methods](#alternative-methods)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Lesson Steps
