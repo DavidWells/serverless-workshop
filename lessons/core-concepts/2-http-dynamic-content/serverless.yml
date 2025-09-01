@@ -3,7 +3,7 @@ service: using-dynamic-value
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
 
 functions:
   queryParamsExample:

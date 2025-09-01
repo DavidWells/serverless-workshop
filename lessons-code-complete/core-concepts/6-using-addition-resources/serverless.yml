@@ -3,7 +3,7 @@ service: event-driven-app
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   environment:
     # Here we reference the table name defined below. This is a cloud formation ref
     MY_TABLE: { Ref: myDynamoTable }

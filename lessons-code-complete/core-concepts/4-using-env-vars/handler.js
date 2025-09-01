@@ -1,4 +1,4 @@
-module.exports.foo = (event, context, callback) => {
+export const foo = (event, context) => {
   console.log('process.env.MY_ENV_VAR', process.env.MY_ENV_VAR)
   /* MY_ENV_VAR_FOR_BAR will be undefined */
   console.log('process.env.MY_ENV_VAR_FOR_BAR', process.env.MY_ENV_VAR_FOR_BAR)
@@ -14,10 +14,10 @@ module.exports.foo = (event, context, callback) => {
       message: `hello ${process.env.MY_ENV_VAR}`
     }),
   }
-  return callback(null, response)
+  return response
 }
 
-module.exports.bar = (event, context, callback) => {
+export const bar = (event, context) => {
   /* both env variables will be accessible in bar */
   console.log('process.env.MY_ENV_VAR', process.env.MY_ENV_VAR)
   console.log('process.env.MY_ENV_VAR_FOR_BAR', process.env.MY_ENV_VAR_FOR_BAR)
@@ -34,5 +34,5 @@ module.exports.bar = (event, context, callback) => {
       message: `hello ${process.env.MY_ENV_VAR_FOR_BAR}`
     }),
   }
-  return callback(null, response)
+  return response
 }

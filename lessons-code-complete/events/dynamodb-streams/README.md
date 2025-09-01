@@ -5,6 +5,7 @@ This lesson we will be adding a delete function to remove users from the databas
 - [Lesson Steps](#lesson-steps)
 - [DynamoDB Stream CloudFormation](#dynamodb-stream-cloudformation)
 - [Complete code](#complete-code)
+- [Additional Resources](#additional-resources)
 
 ## Lesson Steps
 
@@ -160,3 +161,7 @@ For additional CloudFormation information check out. https://acloud.guru/learn/a
 If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/events/dynamodb-streams)
+
+## Additional Resources
+
+- [Modeling Relational Data in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-modeling-nosql-B.html)

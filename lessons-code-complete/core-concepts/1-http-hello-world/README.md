@@ -4,6 +4,7 @@ This lesson will walk through creating a basic function triggered by a http GET 
 
 - [Lesson Steps](#lesson-steps)
 - [Complete code](#complete-code)
+- [Additional Resources](#additional-resources)
 
 ## Lesson Steps
 
@@ -80,3 +81,7 @@ This lesson will walk through creating a basic function triggered by a http GET 
 If you need help or get stuck refer to the completed code of this lesson
 
 [View Complete Code](https://github.com/DavidWells/serverless-workshop/tree/master/lessons-code-complete/core-concepts/1-http-hello-world)
+
+## Additional Resources
+
+- [API gateway deepdive video](https://www.twitch.tv/videos/408651893?t=00h03m34s)

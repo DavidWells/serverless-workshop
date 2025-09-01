@@ -6,14 +6,14 @@
 
     Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.queryParamsExample = (event, context, callback) => {
+export const queryParamsExample = (event, context) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
       message: 'Hi ⊂◉‿◉つ',
     }),
   }
-  return callback(null, response)
+  return response
 }
 
 /* Step 5. In this_file, use the `pathParamsExample` function to return html in the callback.
@@ -24,14 +24,14 @@ module.exports.queryParamsExample = (event, context, callback) => {
 
     Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.pathParamsExample = (event, context, callback) => {
+export const pathParamsExample = (event, context) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
       message: 'Hi ⊂◉‿◉つ',
     }),
   }
-  return callback(null, response)
+  return response
 }
 
 /* Utility function for rendering HTML */

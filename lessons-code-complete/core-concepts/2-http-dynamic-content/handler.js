@@ -6,7 +6,7 @@
 
     Finally remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.queryParamsExample = (event, context, callback) => {
+export const queryParamsExample = (event, context) => {
   let name
   if (event.queryStringParameters && event.queryStringParameters.name) {
     name = event.queryStringParameters.name
@@ -14,13 +14,13 @@ module.exports.queryParamsExample = (event, context, callback) => {
   /* generate the hello paragraph */
   const helloParagraph = greetPerson(name)
 
-  return callback(null, {
+  return {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html',
     },
     body: generateHtmlPage(helloParagraph),
-  })
+  }
 }
 
 /* Step 5. In this_file, use the `pathParamsExample` function to return html in the callback.
@@ -31,7 +31,7 @@ module.exports.queryParamsExample = (event, context, callback) => {
 
     Finally, remember to set the headers of the response as `'Content-Type': 'text/html'` to return HTML instead of the default `json`
  */
-module.exports.pathParamsExample = (event, context, callback) => {
+export const pathParamsExample = (event, context) => {
   let name
   if (event.pathParameters && event.pathParameters.name) {
     name = event.pathParameters.name
@@ -40,14 +40,14 @@ module.exports.pathParamsExample = (event, context, callback) => {
   /* generate the hello paragraph */
   const helloParagraph = greetPerson(name)
 
-  // callback is sending HTML back
-  return callback(null, {
+  // return is sending HTML back
+  return {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html',
     },
     body: generateHtmlPage(helloParagraph),
-  })
+  }
 }
 
 /* Utility function for rendering HTML */

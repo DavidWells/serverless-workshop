@@ -7,7 +7,7 @@ service: kinesis-basic-example
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs22.x
   stage: ${self:custom.stage}
 
 # Step 6. In this_file, make a new `function` block and connect to the `processEvents` function. The function `events` will be trigged by the kinesis `arn`. http://bit.ly/2htzI8r #

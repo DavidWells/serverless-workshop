@@ -1,5 +1,5 @@
 
-module.exports.hello = (event, context, callback) => {
+export const hello = (event, context) => {
   const response = {
     /* Status code required for default lambda integration */
     statusCode: 200,
@@ -8,6 +8,5 @@ module.exports.hello = (event, context, callback) => {
       event: event,
     }),
   }
-  /** callback(error, response) */
-  return callback(null, response)
+  return response
 }
